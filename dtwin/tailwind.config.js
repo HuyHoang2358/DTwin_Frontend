@@ -8,6 +8,12 @@ module.exports = {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        bodydark2: "#8A99AF",
+        bodydark1: "#DEE4EE",
+        graydark: "#0F3A48",
+        blacklight: "#1C2434",
+      },
     },
   },
   plugins: [
