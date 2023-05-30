@@ -24,12 +24,47 @@
       <nav class="pl-4 py-4 mt-12 font-light">
         <h3 class="mb-2 ml-4 text-base text-bodydark2 text-left">MENU</h3>
         <router-link
-          class="flex items-center mt-2 duration-200 text-bodydark1 hover:bg-graydark px-4 py-2 text-xl"
-          :class="[$route.name === 'Dashboard' ? activeClass : inactiveClass]"
-          to="/dashboard"
+          class="flex items-center mt-2 duration-200 text-bodydark1 hover:bg-graydark px-4 py-2 text-lg"
+          to="/admin"
         >
           <i class="fa-solid fa-table-columns"></i>
           <span class="mx-4 font-light tracking-wide">Dashboard</span>
+        </router-link>
+        <router-link
+          class="flex mt-2 duration-200 text-bodydark1 hover:bg-graydark px-4 py-2 text-lg"
+          :to="{ name: 'admin.user.index' }"
+        >
+          <p class="w-6 h-6">
+            <icon-tag :name="'user'"></icon-tag>
+          </p>
+          <span class="mx-4 font-light tracking-wide">User</span>
+        </router-link>
+        <router-link
+          class="flex mt-2 duration-200 text-bodydark1 hover:bg-graydark px-4 py-2 text-lg"
+          :to="{ name: 'admin.menu.index' }"
+        >
+          <p class="w-6 h-6">
+            <icon-tag :name="'menu'"></icon-tag>
+          </p>
+          <span class="mx-4 font-light tracking-wide">Menu</span>
+        </router-link>
+        <router-link
+          class="flex mt-2 duration-200 text-bodydark1 hover:bg-graydark px-4 py-2 text-lg"
+          :to="{ name: 'admin.right.index' }"
+        >
+          <p class="w-6 h-6">
+            <icon-tag :name="'menu'"></icon-tag>
+          </p>
+          <span class="mx-4 font-light tracking-wide">Right</span>
+        </router-link>
+        <router-link
+          class="flex mt-2 duration-200 text-bodydark1 hover:bg-graydark px-4 py-2 text-lg"
+          :to="{ name: 'admin.role.index' }"
+        >
+          <p class="w-6 h-6">
+            <i class="fa-brands fa-centos"></i>
+          </p>
+          <span class="mx-4 font-light tracking-wide">Role</span>
         </router-link>
       </nav>
     </div>
@@ -37,20 +72,13 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
+import iconTag from "@/components/IconTag";
 export default {
   props: [""],
-  components: {},
+  components: { iconTag },
   data() {
     return {
       isOpen: true,
-      inactiveClass: ref(
-        "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100"
-      ),
-      activeClass: ref(
-        "bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100"
-      ),
     };
   },
   methods: {},
