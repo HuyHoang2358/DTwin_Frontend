@@ -154,7 +154,7 @@ import axios from "axios";
 import errorAlert from "@/components/alerts/ErrorAlert";
 import successAlert from "@/components/alerts/SuccessAlert";
 import {
-  API_DOMAIN,
+  SYS_API_DOMAIN,
   API_EDIT_USER,
   API_GET_USER_BY_USERID,
   headers,
@@ -188,7 +188,7 @@ export default {
   methods: {
     getUserInformation() {
       const endpoint =
-        API_DOMAIN + API_GET_USER_BY_USERID + "?userId=" + this.userId;
+        SYS_API_DOMAIN + API_GET_USER_BY_USERID + "?userId=" + this.userId;
       axios
         .get(endpoint, { headers })
         .then((response) => {
@@ -214,7 +214,7 @@ export default {
     },
 
     submitForm() {
-      const endpoint = API_DOMAIN + API_EDIT_USER;
+      const endpoint = SYS_API_DOMAIN + API_EDIT_USER;
       axios
         .post(endpoint, this.user, { headers })
         .then((response) => {

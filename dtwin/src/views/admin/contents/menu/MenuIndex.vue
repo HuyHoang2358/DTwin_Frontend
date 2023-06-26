@@ -158,7 +158,7 @@ import successAlert from "@/components/alerts/SuccessAlert";
 
 import {
   API_DELETE_MENU,
-  API_DOMAIN,
+  SYS_API_DOMAIN,
   API_GET_MENUS,
   API_GET_MENU_BY_APPID,
   headers,
@@ -202,7 +202,7 @@ export default {
   },
   methods: {
     getALlMenus() {
-      const endpoint = API_DOMAIN + API_GET_MENUS;
+      const endpoint = SYS_API_DOMAIN + API_GET_MENUS;
       axios
         .get(endpoint, { headers })
         .then((response) => {
@@ -216,7 +216,7 @@ export default {
       if (this.filter.appId === "All App") this.getALlMenus();
       else {
         const endpoint =
-          API_DOMAIN + API_GET_MENU_BY_APPID + "?appId=" + this.filter.appId;
+          SYS_API_DOMAIN + API_GET_MENU_BY_APPID + "?appId=" + this.filter.appId;
         axios
           .get(endpoint, { headers })
           .then((response) => {
@@ -229,7 +229,7 @@ export default {
     },
     deleteMenu(menuId) {
       if (confirm("Do you really want to delete?")) {
-        const endpoint = API_DOMAIN + API_DELETE_MENU;
+        const endpoint = SYS_API_DOMAIN + API_DELETE_MENU;
         this.deleteIds.menuList = [menuId];
         axios
           .post(endpoint, this.deleteIds, { headers })

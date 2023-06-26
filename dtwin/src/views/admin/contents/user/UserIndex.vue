@@ -196,7 +196,12 @@
 import MainLayout from "@/views/admin/layouts/MainLayout";
 import IconTag from "@/components/IconTag";
 import axios from "axios";
-import { API_DOMAIN, API_GET_USERS, API_SEARCH_USER, headers } from "@/config";
+import {
+  SYS_API_DOMAIN,
+  API_GET_USERS,
+  API_SEARCH_USER,
+  headers,
+} from "@/config";
 export default {
   props: [""],
   components: { MainLayout, IconTag },
@@ -217,7 +222,7 @@ export default {
   methods: {
     getAllUsers() {
       const endpoint =
-        API_DOMAIN +
+        SYS_API_DOMAIN +
         API_GET_USERS +
         "?page=" +
         this.page +
@@ -251,7 +256,7 @@ export default {
         this.getAllUsers();
       } else {
         const endpoint =
-          API_DOMAIN +
+          SYS_API_DOMAIN +
           API_SEARCH_USER +
           "?page=" +
           this.page +

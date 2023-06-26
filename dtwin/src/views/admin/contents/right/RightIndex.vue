@@ -57,7 +57,7 @@
 import MainLayout from "@/views/admin/layouts/MainLayout";
 import axios from "axios";
 
-import { API_DOMAIN, API_GET_RIGHTS, headers } from "@/config";
+import { SYS_API_DOMAIN, API_GET_RIGHTS, headers } from "@/config";
 
 export default {
   props: [""],
@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     getALlRights() {
-      const endpoint = API_DOMAIN + API_GET_RIGHTS;
+      const endpoint = SYS_API_DOMAIN + API_GET_RIGHTS;
       axios
         .get(endpoint, { headers })
         .then((response) => {

@@ -307,7 +307,7 @@ import axios from "axios";
 import errorAlert from "@/components/alerts/ErrorAlert";
 import successAlert from "@/components/alerts/SuccessAlert";
 import {
-  API_DOMAIN,
+  SYS_API_DOMAIN,
   API_EDIT_ROLE,
   API_GET_MENUS,
   API_GET_RIGHTS,
@@ -381,7 +381,7 @@ export default {
   methods: {
     submitForm() {
       console.log(this.form);
-      const endpoint = API_DOMAIN + API_EDIT_ROLE;
+      const endpoint = SYS_API_DOMAIN + API_EDIT_ROLE;
       axios
         .post(endpoint, this.form, { headers })
         .then((response) => {
@@ -404,7 +404,7 @@ export default {
         });
     },
     getALlRoles() {
-      const endpoint = API_DOMAIN + API_GET_ROLES;
+      const endpoint = SYS_API_DOMAIN + API_GET_ROLES;
       axios
         .get(endpoint, { headers })
         .then((response) => {
@@ -415,7 +415,7 @@ export default {
         });
     },
     getALlMenus() {
-      const endpoint = API_DOMAIN + API_GET_MENUS;
+      const endpoint = SYS_API_DOMAIN + API_GET_MENUS;
       axios
         .get(endpoint, { headers })
         .then((response) => {
@@ -426,7 +426,7 @@ export default {
         });
     },
     getAllRights() {
-      const endpoint = API_DOMAIN + API_GET_RIGHTS;
+      const endpoint = SYS_API_DOMAIN + API_GET_RIGHTS;
       axios
         .get(endpoint, { headers })
         .then((response) => {
@@ -440,7 +440,7 @@ export default {
       this.page = 0;
       if (this.select.userName !== "") {
         const endpoint =
-          API_DOMAIN +
+          SYS_API_DOMAIN +
           API_SEARCH_USER +
           "?page=0&searchValue=" +
           this.select.userName +
@@ -514,7 +514,7 @@ export default {
     },
 
     getRoleDetail() {
-      const endpoint = API_DOMAIN + API_GET_ROLE + "?roleId=" + this.roleId;
+      const endpoint = SYS_API_DOMAIN + API_GET_ROLE + "?roleId=" + this.roleId;
       axios
         .get(endpoint, { headers })
         .then((response) => {

@@ -148,7 +148,7 @@
 import MainLayout from "@/views/admin/layouts/MainLayout";
 import IconTag from "@/components/IconTag";
 import axios from "axios";
-import { API_DOMAIN, API_GET_USERS_IN_ROLE, headers } from "@/config";
+import { SYS_API_DOMAIN, API_GET_USERS_IN_ROLE, headers } from "@/config";
 export default {
   props: [""],
   components: { MainLayout, IconTag },
@@ -169,7 +169,7 @@ export default {
   methods: {
     getUsersInRole() {
       const endpoint =
-        API_DOMAIN +
+        SYS_API_DOMAIN +
         API_GET_USERS_IN_ROLE +
         "?page=" +
         this.page +

@@ -214,6 +214,7 @@ import textError from "@/components/notifications/TextError";
 import axios from "axios";
 import errorAlert from "@/components/alerts/ErrorAlert";
 import successAlert from "@/components/alerts/SuccessAlert";
+import { API_CREATE_USER, SYS_API_DOMAIN, headers } from "@/config";
 
 export default {
   props: [""],
@@ -262,13 +263,7 @@ export default {
     },
 
     submitForm() {
-      const headers = {
-        Authorization:
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2ODM5ODM2NTksInNjb3BlIjpbIlNZU1RFTS5WSUVXIiwiU1lTVEVNLkVESVQiLCJTWVNURU0uU0VORE1BSUwiXSwicm9sZSI6WyJTWVNURU1fQURNSU4iXSwidXNlcl9uYW1lIjoiYWRtaW4iLCJqdGkiOiI0YTczNWM4ZS1mN2NjLTRhNWItODMwNi1mZjA5MzYzOTc1ZWIifQ.ohP9jZ2q0rpjwWqWzEIEAwaWmokivEUYjF3DErWqNJV8eWXXGdPfEmFD4P41Hql4vqjGX_X5dObYK6Apj8cPDDhtqMR1sBTWReeqMsJQE1iY8NdUeGU8WAVt4JRZ7HDXDGFlHPgaLxCF5OpeN0Fj3XmWmaFg_3NXWjfkWrvf_0RiwOPyD1G0BshzEWF-W2zlK_htfNDYJKpcUjHAKQi-rCE8IuWjD41MfWx8hENpPCt-38OzucOly4oL1sMOH5E4HzM3x524BhfpTr90eDKYRjvAs8pZG4IOA81kPFfDpRlB4jd1-j4zZiu7PU8Mx0YOdoSDqIW17h0Z9-QmFYaxeA",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      };
-      const endpoint = "http://172.16.30.214:9000/api/user/create-user";
+      const endpoint = SYS_API_DOMAIN + API_CREATE_USER;
       axios
         .post(endpoint, this.form, { headers })
         .then((response) => {

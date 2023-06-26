@@ -199,7 +199,7 @@ import textError from "@/components/notifications/TextError";
 import axios from "axios";
 import errorAlert from "@/components/alerts/ErrorAlert";
 import successAlert from "@/components/alerts/SuccessAlert";
-import { API_ADD_NEW_MENU, API_DOMAIN, API_GET_MENUS, headers } from "@/config";
+import {API_ADD_NEW_MENU, API_GET_MENUS, headers, SYS_API_DOMAIN} from "@/config";
 
 export default {
   props: [""],
@@ -247,7 +247,7 @@ export default {
   },
   methods: {
     submitForm() {
-      const endpoint = API_DOMAIN + API_ADD_NEW_MENU;
+      const endpoint = SYS_API_DOMAIN + API_ADD_NEW_MENU;
       axios
         .post(endpoint, this.form, { headers })
         .then((response) => {
@@ -269,12 +269,11 @@ export default {
         });
     },
     getALlMenus() {
-      const endpoint = API_DOMAIN + API_GET_MENUS;
+      const endpoint = SYS_API_DOMAIN + API_GET_MENUS;
       axios
         .get(endpoint, { headers })
         .then((response) => {
-          let data = response.data.data;
-          this.menus = data;
+          this.menus = response.data.data;
         })
         .catch((e) => {
           console.log(e);

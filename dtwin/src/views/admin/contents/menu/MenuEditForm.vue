@@ -202,7 +202,7 @@ import axios from "axios";
 import errorAlert from "@/components/alerts/ErrorAlert";
 import successAlert from "@/components/alerts/SuccessAlert";
 import {
-  API_DOMAIN,
+  SYS_API_DOMAIN,
   API_GET_MENUS,
   API_UPDATE_NEW_MENU,
   headers,
@@ -257,7 +257,7 @@ export default {
   },
   methods: {
     submitForm() {
-      const endpoint = API_DOMAIN + API_UPDATE_NEW_MENU;
+      const endpoint = SYS_API_DOMAIN + API_UPDATE_NEW_MENU;
       axios
         .post(endpoint, this.menu, { headers })
         .then((response) => {
@@ -280,7 +280,7 @@ export default {
         });
     },
     getALlMenus() {
-      const endpoint = API_DOMAIN + API_GET_MENUS;
+      const endpoint = SYS_API_DOMAIN + API_GET_MENUS;
       axios
         .get(endpoint, { headers })
         .then((response) => {

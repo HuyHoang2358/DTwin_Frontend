@@ -140,7 +140,7 @@ import errorAlert from "@/components/alerts/ErrorAlert";
 import successAlert from "@/components/alerts/SuccessAlert";
 
 import {
-  API_DOMAIN,
+  SYS_API_DOMAIN,
   API_GET_ROLES,
   headers,
   API_DELETE_ROLE,
@@ -196,7 +196,7 @@ export default {
   },
   methods: {
     getALlRoles() {
-      const endpoint = API_DOMAIN + API_GET_ROLES;
+      const endpoint = SYS_API_DOMAIN + API_GET_ROLES;
       axios
         .get(endpoint, { headers })
         .then((response) => {
@@ -210,7 +210,10 @@ export default {
       if (this.filter.appId === "All App") this.getALlRoles();
       else {
         const endpoint =
-          API_DOMAIN + API_GET_ROLE_BY_APPID + "?appId=" + this.filter.appId;
+          SYS_API_DOMAIN +
+          API_GET_ROLE_BY_APPID +
+          "?appId=" +
+          this.filter.appId;
         axios
           .get(endpoint, { headers })
           .then((response) => {
@@ -223,7 +226,7 @@ export default {
     },
     deleteRole(roleId) {
       if (confirm("Do you really want to delete?")) {
-        const endpoint = API_DOMAIN + API_DELETE_ROLE;
+        const endpoint = SYS_API_DOMAIN + API_DELETE_ROLE;
         this.deleteIds.roleList = [roleId];
         axios
           .post(endpoint, this.deleteIds, { headers })

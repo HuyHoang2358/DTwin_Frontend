@@ -99,7 +99,7 @@
 
 <script>
 import MainLayout from "@/views/admin/layouts/MainLayout";
-import { API_DOMAIN, API_GET_USER_BY_USERID, headers } from "@/config";
+import { SYS_API_DOMAIN, API_GET_USER_BY_USERID, headers } from "@/config";
 import axios from "axios";
 
 export default {
@@ -124,7 +124,7 @@ export default {
   methods: {
     getUserInformation() {
       const endpoint =
-        API_DOMAIN + API_GET_USER_BY_USERID + "?userId=" + this.userId;
+        SYS_API_DOMAIN + API_GET_USER_BY_USERID + "?userId=" + this.userId;
       axios
         .get(endpoint, { headers })
         .then((response) => {
