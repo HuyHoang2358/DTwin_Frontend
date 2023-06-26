@@ -199,7 +199,12 @@ import textError from "@/components/notifications/TextError";
 import axios from "axios";
 import errorAlert from "@/components/alerts/ErrorAlert";
 import successAlert from "@/components/alerts/SuccessAlert";
-import {API_ADD_NEW_MENU, API_GET_MENUS, headers, SYS_API_DOMAIN} from "@/config";
+import {
+  API_ADD_NEW_MENU,
+  API_GET_MENUS,
+  headers,
+  SYS_API_DOMAIN,
+} from "@/config";
 
 export default {
   props: [""],

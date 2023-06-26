@@ -216,7 +216,10 @@ export default {
       if (this.filter.appId === "All App") this.getALlMenus();
       else {
         const endpoint =
-          SYS_API_DOMAIN + API_GET_MENU_BY_APPID + "?appId=" + this.filter.appId;
+          SYS_API_DOMAIN +
+          API_GET_MENU_BY_APPID +
+          "?appId=" +
+          this.filter.appId;
         axios
           .get(endpoint, { headers })
           .then((response) => {
