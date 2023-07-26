@@ -196,12 +196,8 @@
 import MainLayout from "@/views/admin/layouts/MainLayout";
 import IconTag from "@/components/IconTag";
 import axios from "axios";
-import {
-  SYS_API_DOMAIN,
-  API_GET_USERS,
-  API_SEARCH_USER,
-  headers,
-} from "@/config";
+import USER_API from "../../../../apis/modules/user";
+import { SYS_API_DOMAIN, API_SEARCH_USER, headers } from "@/config";
 export default {
   props: [""],
   components: { MainLayout, IconTag },
@@ -220,26 +216,14 @@ export default {
     this.getAllUsers();
   },
   methods: {
-    getAllUsers() {
-      const endpoint =
-        SYS_API_DOMAIN +
-        API_GET_USERS +
-        "?page=" +
-        this.page +
-        "&size=" +
-        this.pageSize;
-      axios
-        .get(endpoint, { headers })
-        .then((response) => {
-          let data = response.data.data;
-          this.totalPage = data.totalPage;
-          this.page = data.page;
-          this.totalUser = data.total;
-          this.users = data.items;
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+    async getAllUsers() {
+      let response = await USER_API.get_users(this.page, this.pageSize);
+      console.log(response);
+      let data = response.data.data;
+      this.totalPage = data.totalPage;
+      this.page = data.page;
+      this.totalUser = data.total;
+      this.users = data.items;
     },
     openPage(pageIndex) {
       this.page = pageIndex - 1;

@@ -1,0 +1,59 @@
+.menu_logo_area{
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0
+}
+.menu_logo_background{
+    background-image: linear-gradient(to top, rgba(29, 29, 29, 1), rgba(52, 52, 52, 1))
+}
+.menu_logo{
+    background-image: linear-gradient(to top, rgba(226, 4, 57, 0.2), rgba(55, 55, 55, 0))
+}
+
+.menu_logo_background{
+    clip-path: polygon(1% 0%, 99% 0%, 90% 95%, 10% 95%)
+}
+.menu_logo_red_border{
+    clip-path: polygon(0% 0%, 100% 0%, 91% 99%, 9% 99%);
+    background-image: linear-gradient(to bottom,  rgba(52, 52, 52, 1), rgba(238, 0, 51, 1))
+}
+.menu_logo_left_white_border{
+    clip-path: polygon(6.75% 76%, 8.25% 74%, 10.25% 94%, 14% 94%, 14% 100%, 9.25% 100%);
+    background: white;
+}
+
+.menu_logo_right_white_border{
+    clip-path: polygon(91.75% 76%, 93.25% 78%, 91% 100%, 86% 100%, 86% 94%, 90% 94%);
+    background: white;
+}
+.menu_background{
+    background-image: linear-gradient(to bottom, rgba(14, 14, 14, 1), rgba(41, 41, 41, 0.92))
+}
+.menu_content{
+    background-image: linear-gradient(to bottom, rgba(138, 5, 34, 0.17), rgba(238, 0, 51, 0))
+}
+
+.menu_item_background{
+    background-image: linear-gradient(to left, rgba(29, 29, 29, 1), rgba(52, 52, 52, 1));
+    clip-path: polygon( 0% 0%, 50% 0%, 85% 2%, 98% 98%, 15% 99%)
+}
+.menu_item_border {
+    clip-path: polygon( 0% 0%, 86% 0%, 100% 100%, 15% 100%);
+    background-image: linear-gradient(to right, rgba(196, 83, 83, 0), rgba(224, 0, 54, 1));
+}
+.menu_item {
+    background-image: linear-gradient(to right,rgba(55, 55, 55, 0), rgba(226, 4, 57, 0.2))
+}
+
+.menu_item_right .menu_item_background{
+    background-image: linear-gradient(to right, rgba(29, 29, 29, 1), rgba(52, 52, 52, 1));
+    clip-path: polygon( 17% 2%, 50% 0%, 100% 0%, 85% 99%, 2% 98%)
+}
+.menu_item_right .menu_item_border{
+    clip-path: polygon( 15% 0%, 100% 0%, 85% 100%, 0% 100%);
+    background-image: linear-gradient(to left, rgba(196, 83, 83, 0), rgba(224, 0, 54, 1));
+}
+.menu_item_right .menu_item {
+    background-image: linear-gradient(to left,rgba(55, 55, 55, 0), rgba(226, 4, 57, 0.2))
+}

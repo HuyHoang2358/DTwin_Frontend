@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        magistral_b_i: "FS Magistral-BoldItalic",
+        magistral_bk_i: "FS Magistral-BookItalic",
+        magistral_l_i: "FS Magistral-LightItalic",
       },
       colors: {
         bodydark2: "#8A99AF",

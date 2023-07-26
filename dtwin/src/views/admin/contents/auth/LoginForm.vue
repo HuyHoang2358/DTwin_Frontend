@@ -9,9 +9,7 @@
         Digital Twin Platform
       </h1>
 
-      <h3 class="text-xl font-semibold text-center text-gray-600 font-bold">
-        Admin Account
-      </h3>
+      <h3 class="text-xl text-center text-gray-600 font-bold">Admin Account</h3>
       <form class="mt-6 text-left font-bold" @submit.prevent="submit">
         <div>
           <label for="email" class="block text-sm text-gray-800">Email</label>
@@ -20,7 +18,7 @@
             v-if="error.identity !== ''"
           ></text-error>
           <input
-            type="email"
+            type="text"
             v-model="form.identity"
             class="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
           />
@@ -54,6 +52,7 @@
       </form>
       <p class="mt-8 text-xs font-light text-center text-gray-700">
         Don't have an account?
+
         <a href="#" class="font-medium text-purple-600 hover:underline"
           >Sign up</a
         >
@@ -64,6 +63,7 @@
 
 <script>
 import TextError from "@/components/notifications/TextError";
+import { mapGetters } from "vuex";
 export default {
   components: { TextError },
   data() {
@@ -79,10 +79,19 @@ export default {
       },
     };
   },
+  computed: {
+    ...mapGetters(["AUTH/getToken"]),
+  },
   methods: {
-    submit() {
-      console.log(this.form.identity);
-      console.log(this.form.password);
+    async submit() {
+      try {
+        await this.$store.dispatch("AUTH/logout");
+        console.log("STORE TOKEN: ", this.$store.getters["AUTH/getToken"]);
+        await this.$store.dispatch("AUTH/login", this.form);
+        this.$router.push({ name: "admin.index" });
+      } catch (error) {
+        console.log("ERR", error);
+      }
     },
   },
 };

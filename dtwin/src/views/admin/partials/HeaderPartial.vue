@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 z-999 flex w-full bg-white drop-shadow-1">
+  <header class="sticky top-0 z-50 flex w-full bg-white drop-shadow-1">
     <div
       class="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11 border-b-[0.5px] border-gray-300"
     >
@@ -60,9 +60,9 @@
 
           <div
             v-show="dropdownOpen"
-            class="absolute w-56 right-0 z-20 mt-5 bg-white rounded-md shadow-xl text-gray-500 text-left gap-4 border-b"
+            class="absolute w-56 right-0 mt-5 bg-white rounded-md shadow-xl text-gray-500 text-left gap-4 border-b z-50"
           >
-            <div class="px-8 py-4 border-b-[1px] border-gray-400">
+            <div class="px-8 py-4 border-b-[1px] border-gray-400 z-50">
               <a
                 href="#"
                 class="block gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-blue-600 lg:text-base mt-4"
@@ -86,12 +86,12 @@
               </a>
             </div>
             <div class="px-8 py-4">
-              <a
-                href="#"
+              <button
+                @click="logout()"
                 class="block gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-blue-600 lg:text-base"
               >
                 <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -111,6 +111,11 @@ export default {
       isOpen: true,
     };
   },
-  methods: {},
+  methods: {
+    async logout() {
+      await this.$store.dispatch("AUTH/logout");
+      this.$router.push({ name: "admin.login" });
+    },
+  },
 };
 </script>

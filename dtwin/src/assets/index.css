@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: FS Magistral-BoldItalic;
+    src: url("./fonts/FS Magistral/FS Magistral-BoldItalic.ttf")
+}
+@font-face {
+    font-family: FS Magistral-BookItalic;
+    src: url("./fonts/FS Magistral/FS Magistral-BookItalic.ttf")
+}
+@font-face {
+    font-family: FS Magistral-LightItalic;
+    src: url("./fonts/FS Magistral/FS Magistral-LightItalic.ttf")
+}
