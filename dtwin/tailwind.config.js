@@ -10,6 +10,8 @@ module.exports = {
         magistral_b_i: "FS Magistral-BoldItalic",
         magistral_bk_i: "FS Magistral-BookItalic",
         magistral_l_i: "FS Magistral-LightItalic",
+        magistral: "FS Magistral-Book",
+        magistral_l: "FS Magistral-Light",
       },
       colors: {
         bodydark2: "#8A99AF",
@@ -19,6 +21,7 @@ module.exports = {
         stroke: "#E2E8F0",
         meta3: "#10B981",
         primary: "#3C50E0",
+        main_color: "#EE0033",
       },
     },
   },

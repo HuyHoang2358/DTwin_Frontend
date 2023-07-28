@@ -14,3 +14,13 @@
     font-family: FS Magistral-LightItalic;
     src: url("./fonts/FS Magistral/FS Magistral-LightItalic.ttf")
 }
+
+@font-face {
+    font-family: FS Magistral-Book;
+    src: url("./fonts/FS Magistral/FS Magistral-Book.ttf")
+}
+
+@font-face {
+    font-family: FS Magistral-Light;
+    src: url("./fonts/FS Magistral/FS Magistral-Light.ttf")
+}

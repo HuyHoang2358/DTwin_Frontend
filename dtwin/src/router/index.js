@@ -16,6 +16,7 @@ import RightIndex from "@/views/admin/contents/right/RightIndex";
 import RoleEditForm from "@/views/admin/contents/role/RoleEditForm";
 import ListUserInRole from "@/views/admin/contents/role/ListUserInRole";
 import HomePage from "@/views/front/contents/homepage/HomePage.vue";
+import LoginPage from "@/views/auth/LoginPage.vue";
 
 const routes = [
   // admin auth
@@ -130,6 +131,12 @@ const routes = [
     name: "homepage",
     component: HomePage,
     meta: { requiresAuth: true },
+  },
+  {
+    path: "/auth",
+    name: "auth",
+    component: LoginPage,
+    meta: { guest: true },
   },
 ];
 

@@ -88,7 +88,7 @@ export default {
         await this.$store.dispatch("AUTH/logout");
         console.log("STORE TOKEN: ", this.$store.getters["AUTH/getToken"]);
         await this.$store.dispatch("AUTH/login", this.form);
-        this.$router.push({ name: "admin.index" });
+        this.$router.push({ name: "homepage" });
       } catch (error) {
         console.log("ERR", error);
       }

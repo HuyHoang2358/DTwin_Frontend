@@ -117,7 +117,7 @@
                   </div>
 
                   <div class="border-r-2 border-white px-4">
-                    <button>
+                    <button @click="goToAdmin()">
                       <svg
                         width="18"
                         height="18"
@@ -180,6 +180,10 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    goToAdmin() {
+      this.$router.push({ name: "admin.index" });
+    },
+  },
 };
 </script>
