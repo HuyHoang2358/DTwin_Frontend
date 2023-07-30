@@ -1,16 +1,16 @@
 <template>
-  <MainLayout>
+  <NewMainLayout>
     <div>
       <h1>Dash board</h1>
     </div>
-  </MainLayout>
+  </NewMainLayout>
 </template>
 
 <script>
-import MainLayout from "@/views/admin/layouts/MainLayout";
+import NewMainLayout from "@/views/admin/layouts/NewMainLayout.vue";
 export default {
   props: [""],
-  components: { MainLayout },
+  components: { NewMainLayout },
   data() {
     return {};
   },

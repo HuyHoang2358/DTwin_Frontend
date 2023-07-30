@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-import store from "../store";
+/*import store from "../store";*/
 import HomeView from "../views/HomeView.vue";
 import LoginForm from "../views/admin/contents/auth/LoginForm.vue";
 import DashBoard from "@/views/admin/contents/homepage/DashBoard";
-import UserIndex from "@/views/admin/contents/user/UserIndex";
+/*import UserIndex from "@/views/admin/contents/user/UserIndex";*/
 import UserAddForm from "@/views/admin/contents/user/UserAddForm";
 import UserDetail from "@/views/admin/contents/user/UserDetail";
 import UserEditForm from "@/views/admin/contents/user/UserEditForm";
@@ -17,6 +17,7 @@ import RoleEditForm from "@/views/admin/contents/role/RoleEditForm";
 import ListUserInRole from "@/views/admin/contents/role/ListUserInRole";
 import HomePage from "@/views/front/contents/homepage/HomePage.vue";
 import LoginPage from "@/views/auth/LoginPage.vue";
+import UserPage from "@/views/admin/contents/user/UserPage.vue";
 
 const routes = [
   // admin auth
@@ -38,14 +39,14 @@ const routes = [
     path: "/admin/",
     name: "admin.index",
     component: DashBoard,
-    meta: { requiresAuth: true },
+    /*meta: { requiresAuth: true },*/
   },
 
   // admin.user
   {
     path: "/admin/user",
     name: "admin.user.index",
-    component: UserIndex,
+    component: UserPage,
     meta: { requiresAuth: true },
   },
   {
@@ -145,17 +146,17 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
+/*router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   const isLoggedIn = store.getters["AUTH/isLoggedIn"];
-  /*console.log(
+  /!*console.log(
     `route info || requiresAuth- ${requiresAuth}; isLoggedIn: ${isLoggedIn}`
-  );*/
+  );*!/
   if (requiresAuth && !isLoggedIn) {
     next({ name: "admin.login" });
   } else {
     next();
   }
-});
+});*/
 
 export default router;
