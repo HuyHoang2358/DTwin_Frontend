@@ -14,11 +14,11 @@
           </h4>
         </div>
         <!--Form login-->
-        <div class="mt-8">
+        <div class="mt-16">
           <div class="auth_login_border rounded">
             <div class="auth_login_border_1 rounded">
               <div
-                class="auth_login_form p-8 2xl:p-16 text-lg 2xl:text-xl font-magistral text-white bg-white/[.05]"
+                class="auth_login_form p-16 2xl:p-16 text-lg 2xl:text-xl font-magistral text-white bg-white/[.05]"
               >
                 <form @submit.prevent="submit">
                   <div>
@@ -34,7 +34,7 @@
                       required
                       v-model="form.identity"
                       @input="inputIdentity()"
-                      class="bg-white/50 w-full rounded mt-2 pl-4 2xl:px-8 py-3 border-0"
+                      class="bg-white/50 w-full rounded mt-2 pl-4 2xl:px-8 py-3 border border-[#DDDDDD] focus:ring-0 focus:border-[#FF1F4F]"
                     />
                   </div>
                   <div class="mt-4">
@@ -51,18 +51,26 @@
                         required
                         v-model="form.password"
                         @input="inputPassword()"
-                        class="bg-white/50 w-full rounded pl-4 2xl:px-8 py-3 border-0"
+                        class="bg-white/50 w-full rounded pl-4 2xl:px-8 py-3 border border-[#DDDDDD] focus:ring-0 focus:border-[#FF1F4F]"
                       />
                       <button
                         type="button"
                         class="absolute top-0 right-0 w-6 h-full mr-4"
                         @click="showPassword = !showPassword"
                       >
-                        <icon-tag :name="'show-password'"></icon-tag>
+                        <icon-tag
+                          :name="'show-password'"
+                          v-if="!showPassword"
+                        ></icon-tag>
+                        <icon-tag :name="'hidden-password'" v-else></icon-tag>
                       </button>
                     </div>
                   </div>
-                  <div class="mt-4 text-right mr-2">
+                  <div class="text-[#EE0033] text-sm text-left mt-2">
+                    <p v-if="this.error.identity">{{ this.error.identity }}</p>
+                    <p v-if="this.error.password">{{ this.error.password }}</p>
+                  </div>
+                  <div class="text-right mr-2">
                     <router-link to="#" class="text-right hover:text-main_color"
                       >Quên mật khẩu?</router-link
                     >
@@ -70,7 +78,7 @@
 
                   <button
                     type="submit"
-                    class="mt-4 2xl:mt-8 bg-main_color rounded py-4 w-full border border-main_color hover:bg-white/0 hover:text-main_color"
+                    class="mt-4 2xl:mt-8 bg-main_color rounded py-2 w-full border border-main_color hover:bg-[#E00433]"
                   >
                     Login
                   </button>
@@ -124,7 +132,12 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["AUTH/getToken"]),
+    ...mapGetters(["AUTH/getToken", "AUTH/isLoggedIn"]),
+  },
+  created() {
+    if (this["AUTH/isLoggedIn"]) {
+      this.$router.push({ name: "homepage" }); // redirect to home page
+    }
   },
   methods: {
     inputIdentity() {
@@ -149,7 +162,11 @@ export default {
           await this.$store.dispatch("AUTH/login", this.form);
           this.$router.push({ name: "homepage" }); // redirect to home page
         } catch (error) {
-          console.log("ERR", error);
+          this.form.password = "";
+          if (error.response.data.msg === "User not found") {
+            this.form.identity = "";
+            this.error.identity = error.response.data.msg;
+          } else this.error.password = error.response.data.msg;
         }
       }
     },

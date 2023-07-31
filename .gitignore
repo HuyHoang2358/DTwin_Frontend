@@ -1,0 +1,23 @@
+.DS_Store
+/dtwin/node_modules/
+/dtwin/dist
+
+
+# local env files
+/dtwin/.env.local
+/dtwin/.env.*.local
+
+# Log files
+/dtwin/npm-debug.log*
+/dtwin/yarn-debug.log*
+/dtwinyarn-error.log*
+/dtwinpnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

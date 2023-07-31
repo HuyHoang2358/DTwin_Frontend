@@ -2,7 +2,7 @@
   <div>
     <div
       class="absolute w-full h-screen bg-[#201C1D]/70 top-0 left-0 z-50"
-      v-if="show_opacity_layer"
+      v-if="add_role_form"
     >
       <div class="flex justify-center items-center h-full">
         <div class="w-3/5 h-3/4 relative">
@@ -111,12 +111,13 @@
         </div>
       </div>
     </div>
+
     <new-main-layout>
       <!-- Table name -->
       <div class="text-[#333333]">
         <div class="flex justify-between items-center">
           <div>
-            <p class="text-3xl">User List</p>
+            <p class="text-3xl">Role List</p>
           </div>
           <div>
             <div class="flex justify-end gap-4">
@@ -145,9 +146,9 @@
                     <input
                       type="search"
                       class="block w-full p-2 pl-10 text-sm text-[#C7C7C7] border border-[#E9EDF4] rounded-xl bg-[##E9EDF4]"
-                      placeholder="Type user name or userID ..."
-                      @input="searchUser()"
-                      v-model="searchValue"
+                      placeholder="Type role name or roleID ..."
+                      @input="searchRole()"
+                      v-model="searchRoleValue"
                     />
                   </div>
                 </form>
@@ -165,7 +166,7 @@
 
               <button
                 class="px-6 py-1 border border-[#908E99] text-base rounded-xl hover:bg-[#908E99]"
-                @click="show_opacity_layer = true"
+                @click="add_role_form = true"
               >
                 <div class="flex justify-center gap-2 items-center">
                   <p>Add new</p>
@@ -184,28 +185,28 @@
           <thead>
             <tr class="bg-[#F3F5F8] text-center">
               <th class="py-2">#</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Phone</th>
+              <th>Role ID</th>
+              <th>Role Name</th>
+              <th>Parent Id</th>
+              <th>App Id</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             <tr
               class="text-left text-base"
-              v-for="(user, index) in users"
-              :key="`user-list-${user.userId}`"
+              v-for="(role, index) in roles"
+              :key="`role-list-${role.roleId}`"
             >
               <td class="py-4 px-2 text-center">
-                {{ this.page * this.pageSize + index + 1 }}
+                {{ index + 1 }}
               </td>
-              <td>{{ user.name }}</td>
-              <td>{{ user.email }}</td>
+              <td>{{ role.roleId }}</td>
+              <td>{{ role.roleName }}</td>
               <td>
-                {{ user.address }}
+                {{ role.parentId }}
               </td>
-              <td>{{ user.phone }}</td>
+              <td>{{ role.appId }}</td>
               <td>
                 <div class="flex justify-center items-center gap-4">
                   <button class="p-2 bg-[#F1F1F2] rounded">
@@ -224,36 +225,6 @@
           </tbody>
         </table>
       </div>
-      <!-- Table end note -->
-      <div class="w-full flex justify-end items-center gap-8 mt-2 text-sm">
-        <div>
-          <div class="flex justify-center items-center">
-            <p class="text-sm">Số dòng trên trang:</p>
-            <select
-              class="border-0 focus:ring-0"
-              v-model="pageSize"
-              @change="changePageSize()"
-            >
-              <option value="4">4</option>
-              <option value="8">8</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-        </div>
-        <div>
-          <p class="text-sm">{{ index_page }}</p>
-        </div>
-        <div>
-          <button class="w-2 h-4" @click="previousPage()">
-            <icon-tag :name="'chevron-left'"></icon-tag>
-          </button>
-        </div>
-        <div>
-          <button class="w-2 h-4" @click="nextPage()">
-            <icon-tag :name="'chevron-right'"></icon-tag>
-          </button>
-        </div>
-      </div>
     </new-main-layout>
   </div>
 </template>
@@ -261,85 +232,34 @@
 <script>
 import NewMainLayout from "@/views/admin/layouts/NewMainLayout.vue";
 import IconTag from "@/components/IconTag.vue";
-import USER_API from "@/apis/modules/user";
+import ROLE_API from "@/apis/modules/role";
 
 export default {
   props: [""],
   components: { IconTag, NewMainLayout },
   data() {
     return {
-      show_opacity_layer: false,
-      users: [],
-      totalPage: 0,
-      pageSize: 10,
-      page: 0,
-      totalUser: 0,
-      searchValue: "",
-      form: {
-        name: "",
-        email: "",
-        phone: "",
-        site: "",
-        address: "",
-        password: "",
-        passwordConfirm: "",
-        userId: "",
-      },
+      add_role_form: false,
+      searchRoleValue: "",
+      roles: [
+        {
+          roleId: "default",
+          roleName: "default",
+          parentId: "default",
+          appId: "default",
+        },
+      ],
     };
   },
-  computed: {
-    index_page() {
-      let start_index = Math.min(this.page * this.pageSize + 1, this.totalUser);
-      let end_index = Math.min(this.page * this.pageSize, this.totalUser);
-      return `${start_index} - ${end_index} của tổng số ${this.totalUser}`;
-    },
-  },
+  computed: {},
   created() {
-    this.getAllUsers();
+    this.get_all_roles();
   },
   methods: {
-    async getAllUsers() {
-      let response = await USER_API.get_users(this.page, this.pageSize);
-      let data = response.data.data;
-      this.totalPage = data.totalPage;
-      this.page = data.page;
-      this.totalUser = data.total;
-      this.users = data.items;
-    },
-    async changePageSize() {
-      this.page = 0;
-      await this.getAllUsers();
-    },
-    async previousPage() {
-      this.page = Math.max(0, this.page - 1);
-      await this.getAllUsers();
-    },
-    async nextPage() {
-      this.page = Math.min(this.totalPage - 1, this.page + 1);
-      await this.getAllUsers();
-    },
-    async searchUser() {
-      this.page = 0;
-      if (this.searchValue === "") {
-        await this.getAllUsers();
-      } else {
-        let response = await USER_API.search_user(
-          this.searchValue,
-          this.page,
-          this.pageSize
-        );
-        let data = response.data.data;
-        this.totalPage = data.totalPage;
-        this.page = data.page;
-        this.totalUser = data.total;
-        this.users = data.items;
-      }
-    },
-    async addUser() {
-      console.log(this.form);
-      let response = await USER_API.add_user(this.form);
+    async get_all_roles() {
+      let response = await ROLE_API.get_roles();
       console.log(response);
-      await this.getAllUsers();
+      this.roles = response.data.data;
     },
   },
 };

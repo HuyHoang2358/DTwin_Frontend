@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 /*import store from "../store";*/
 import HomeView from "../views/HomeView.vue";
-import LoginForm from "../views/admin/contents/auth/LoginForm.vue";
 import DashBoard from "@/views/admin/contents/homepage/DashBoard";
 /*import UserIndex from "@/views/admin/contents/user/UserIndex";*/
 import UserAddForm from "@/views/admin/contents/user/UserAddForm";
@@ -11,23 +10,15 @@ import MenuIndex from "@/views/admin/contents/menu/MenuIndex";
 import MenuAddForm from "@/views/admin/contents/menu/MenuAddForm";
 import MenuEditForm from "@/views/admin/contents/menu/MenuEditForm";
 import RoleAddForm from "@/views/admin/contents/role/RoleAddForm";
-import RoleIndex from "@/views/admin/contents/role/RoleIndex";
 import RightIndex from "@/views/admin/contents/right/RightIndex";
 import RoleEditForm from "@/views/admin/contents/role/RoleEditForm";
 import ListUserInRole from "@/views/admin/contents/role/ListUserInRole";
 import HomePage from "@/views/front/contents/homepage/HomePage.vue";
 import LoginPage from "@/views/auth/LoginPage.vue";
 import UserPage from "@/views/admin/contents/user/UserPage.vue";
+import RolePage from "@/views/admin/contents/role/RolePage.vue";
 
 const routes = [
-  // admin auth
-  {
-    path: "/admin/login",
-    name: "admin.login",
-    component: LoginForm,
-    meta: { guest: true },
-  },
-
   //home
   {
     path: "/",
@@ -106,7 +97,7 @@ const routes = [
   {
     path: "/admin/role",
     name: "admin.role.index",
-    component: RoleIndex,
+    component: RolePage,
     meta: { requiresAuth: true },
   },
   {
@@ -134,8 +125,8 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
-    path: "/auth",
-    name: "auth",
+    path: "/auth/login",
+    name: "auth.login",
     component: LoginPage,
     meta: { guest: true },
   },
@@ -153,7 +144,7 @@ const router = createRouter({
     `route info || requiresAuth- ${requiresAuth}; isLoggedIn: ${isLoggedIn}`
   );*!/
   if (requiresAuth && !isLoggedIn) {
-    next({ name: "admin.login" });
+    next({ name: "auth.login" });
   } else {
     next();
   }
