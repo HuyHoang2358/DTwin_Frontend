@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-screen font-roboto">
     <!-- Side bar -->
-    <new-side-bar></new-side-bar>
+    <new-side-bar :is_page="is_page"></new-side-bar>
     <!-- Content -->
     <div class="flex-1 flex-col">
       <!-- Head menu -->
@@ -23,7 +23,7 @@ import NewSideBar from "@/views/admin/partials/NewSideBar.vue";
 import NewHeaderPartial from "@/views/admin/partials/NewHeaderPartial.vue";
 
 export default {
-  props: [""],
+  props: ["is_page"],
   components: { NewHeaderPartial, NewSideBar },
   data() {
     return {};

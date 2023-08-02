@@ -1,5 +1,5 @@
 <template>
-  <div class="menu bg-gray-500 w-full pb-2 relative">
+  <div class="menu bg-gray-500 w-full relative">
     <div class="menu_background">
       <div class="menu_content border-b-[3px] border-[#EE0033] p-4">
         <div class="grid grid-cols-8 gap-8 h-full">
@@ -164,19 +164,19 @@
     </div>
 
     <div class="h-full w-1/4 absolute top-0 menu_logo_area">
-      <logo-viettel></logo-viettel>
+      <logo-digital-twin :name="'center-page'"></logo-digital-twin>
     </div>
   </div>
 </template>
 
 <script>
-import LogoViettel from "@/views/front/partials/LogoViettel.vue";
 import LeftMenuItemButton from "@/components/buttons/LeftMenuItemButton.vue";
 import RightMenuItemButton from "@/components/buttons/RightMenuItemButton.vue";
+import LogoDigitalTwin from "@/components/LogoDigitalTwin.vue";
 
 export default {
   props: [""],
-  components: { RightMenuItemButton, LeftMenuItemButton, LogoViettel },
+  components: { LogoDigitalTwin, RightMenuItemButton, LeftMenuItemButton },
   data() {
     return {};
   },

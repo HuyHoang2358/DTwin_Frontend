@@ -2,15 +2,11 @@ import { createRouter, createWebHistory } from "vue-router";
 /*import store from "../store";*/
 import HomeView from "../views/HomeView.vue";
 import DashBoard from "@/views/admin/contents/homepage/DashBoard";
-/*import UserIndex from "@/views/admin/contents/user/UserIndex";*/
-import UserAddForm from "@/views/admin/contents/user/UserAddForm";
-import UserDetail from "@/views/admin/contents/user/UserDetail";
-import UserEditForm from "@/views/admin/contents/user/UserEditForm";
 import MenuIndex from "@/views/admin/contents/menu/MenuIndex";
 import MenuAddForm from "@/views/admin/contents/menu/MenuAddForm";
 import MenuEditForm from "@/views/admin/contents/menu/MenuEditForm";
 import RoleAddForm from "@/views/admin/contents/role/RoleAddForm";
-import RightIndex from "@/views/admin/contents/right/RightIndex";
+import RightPage from "@/views/admin/contents/right/RightPage.vue";
 import RoleEditForm from "@/views/admin/contents/role/RoleEditForm";
 import ListUserInRole from "@/views/admin/contents/role/ListUserInRole";
 import HomePage from "@/views/front/contents/homepage/HomePage.vue";
@@ -40,25 +36,6 @@ const routes = [
     component: UserPage,
     meta: { requiresAuth: true },
   },
-  {
-    path: "/admin/user/add",
-    name: "admin.user.add",
-    component: UserAddForm,
-    meta: { requiresAuth: true },
-  },
-  {
-    path: "/admin/user/detail/:userId",
-    name: "admin.user.detail",
-    component: UserDetail,
-    meta: { requiresAuth: true },
-  },
-  {
-    path: "/admin/user/edit/:userId",
-    name: "admin.user.edit",
-    component: UserEditForm,
-    meta: { requiresAuth: true },
-  },
-
   // admin.menu
   {
     path: "/admin/menu",
@@ -89,7 +66,7 @@ const routes = [
   {
     path: "/admin/right",
     name: "admin.right.index",
-    component: RightIndex,
+    component: RightPage,
     meta: { requiresAuth: true },
   },
 

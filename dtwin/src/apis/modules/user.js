@@ -1,6 +1,12 @@
 import Api from "../../apis";
 import store from "../../store";
-import { API_CREATE_USER, API_GET_USERS, API_SEARCH_USER } from "@/config";
+import {
+  API_CREATE_USER,
+  API_DELETE_USER,
+  API_EDIT_USER,
+  API_GET_USERS,
+  API_SEARCH_USER,
+} from "@/config";
 
 export const headers = {
   Authorization: `Bearer ${store.getters["AUTH/getToken"]}`,
@@ -19,7 +25,14 @@ export default {
   },
 
   add_user(data) {
-    const endpoint = `${API_CREATE_USER}`;
-    return Api().post(endpoint, data, { headers });
+    return Api().post(API_CREATE_USER, data, { headers });
+  },
+
+  update_user(data) {
+    return Api().post(API_EDIT_USER, data, { headers });
+  },
+
+  delete_user(data) {
+    return Api().post(API_DELETE_USER, data, { headers });
   },
 };

@@ -8,6 +8,7 @@
         <!-- message btn -->
         <div class="relative">
           <button
+            @click="drop_down = 'chat'"
             class="flex mx-2 items-center justify-center rounded-full bg-[#F1F1F2] p-3"
           >
             <div class="w-6 h-6">
@@ -26,6 +27,7 @@
         <!-- notifications btn -->
         <div class="relative">
           <button
+            @click="drop_down = 'notification'"
             class="flex mx-2 items-center justify-center rounded-full bg-[#F1F1F2] p-3"
           >
             <div class="w-6 h-6">
@@ -44,7 +46,7 @@
         <!-- User information btn-->
         <div class="relative mx-2">
           <button
-            @click="dropdownOpen = !dropdownOpen"
+            @click="drop_down = 'user-info'"
             class="relative z-10 w-12 h-12 block overflow-hidden rounded-full shadow focus:outline-none bg-gray-200"
           >
             <img
@@ -53,65 +55,40 @@
               alt="Your avatar"
             />
           </button>
-
-          <div
-            v-show="dropdownOpen"
-            @click="dropdownOpen = false"
-            class="fixed inset-0 z-10 w-full h-full"
-          ></div>
-
-          <div
-            v-show="dropdownOpen"
-            class="absolute w-56 right-0 mt-5 bg-white rounded-md shadow-xl text-gray-500 text-left gap-4 border-b z-50"
-          >
-            <div class="px-8 py-4 border-b-[1px] border-gray-400 z-50">
-              <a
-                href="#"
-                class="block gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-blue-600 lg:text-base mt-4"
-              >
-                <i class="fa-regular fa-user mr-2"></i>
-                My Profile
-              </a>
-              <a
-                href="#"
-                class="block gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-blue-600 lg:text-base mt-4"
-              >
-                <i class="fa-regular fa-id-badge mr-2"></i>
-                My Contacts
-              </a>
-              <a
-                href="#"
-                class="block gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-blue-600 lg:text-base mt-4"
-              >
-                <i class="fa-solid fa-gear mr-2"></i>
-                Account Settings
-              </a>
-            </div>
-            <div class="px-8 py-4">
-              <button
-                @click="logout()"
-                class="block gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-blue-600 lg:text-base"
-              >
-                <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
+    <chat-drop-down
+      v-if="drop_down === 'chat'"
+      v-on:mouseleave="drop_down = ''"
+    ></chat-drop-down>
+    <notification-drop-down
+      v-if="drop_down === 'notification'"
+      v-on:mouseleave="drop_down = ''"
+    ></notification-drop-down>
+    <user-information-drop-down
+      v-if="drop_down === 'user-info'"
+      v-on:mouseleave="drop_down = ''"
+    ></user-information-drop-down>
   </header>
 </template>
 
 <script>
-import { ref } from "vue";
 import IconTag from "@/components/IconTag.vue";
+import ChatDropDown from "@/views/admin/partials/ChatDropDown.vue";
+import NotificationDropDown from "@/views/admin/partials/NotificationDropDown.vue";
+import UserInformationDropDown from "@/views/admin/partials/UserInformationDropDown.vue";
 export default {
   props: [""],
-  components: { IconTag },
+  components: {
+    UserInformationDropDown,
+    NotificationDropDown,
+    ChatDropDown,
+    IconTag,
+  },
   data() {
     return {
-      dropdownOpen: ref(false),
-      isOpen: true,
+      drop_down: "",
     };
   },
   methods: {

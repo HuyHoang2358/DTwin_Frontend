@@ -12,22 +12,31 @@
             class="relative"
           >
             <router-link
-              class="flex justify-start gap-4 w-full pl-8 mt-4 py-4"
+              class="w-full"
               :to="{ name: sidebarMenuItem.route_name }"
             >
-              <div class="w-6 h-6">
-                <icon-tag :name="sidebarMenuItem.icon_name"></icon-tag>
-              </div>
+              <div
+                class="flex justify-start gap-4 w-full pl-8 mt-4 py-4"
+                v-bind:class="
+                  sidebarMenuItem.name === is_page
+                    ? 'text-[#EE0033]'
+                    : 'text-white'
+                "
+              >
+                <div class="w-6 h-6">
+                  <icon-tag :name="sidebarMenuItem.icon_name"></icon-tag>
+                </div>
 
-              <p class="text-white text-lg font-normal">
-                {{ sidebarMenuItem.name }}
-              </p>
+                <p class="text-lg font-normal">
+                  {{ sidebarMenuItem.name }}
+                </p>
+              </div>
             </router-link>
 
             <!--  Button active -->
             <div
               class="absolute w-full h-full top-0 left-0"
-              v-if="sidebarMenuItem.is_active"
+              v-if="sidebarMenuItem.name === is_page"
             >
               <svg
                 class="w-full h-full"
@@ -147,7 +156,7 @@ import LogoDigitalTwin from "@/components/LogoDigitalTwin.vue";
 import IconTag from "@/components/IconTag.vue";
 
 export default {
-  props: [""],
+  props: ["is_page"],
   components: { IconTag, LogoDigitalTwin },
   data() {
     return {
@@ -156,25 +165,21 @@ export default {
           name: "Dashboard",
           route_name: "admin.index",
           icon_name: "sidebar-dashboard",
-          is_active: false,
         },
         {
           name: "User",
           route_name: "admin.user.index",
           icon_name: "sidebar-user",
-          is_active: false,
         },
         {
           name: "Role",
           route_name: "admin.role.index",
           icon_name: "sidebar-role",
-          is_active: false,
         },
         {
           name: "Right",
           route_name: "admin.right.index",
           icon_name: "sidebar-right",
-          is_active: true,
         },
       ],
     };

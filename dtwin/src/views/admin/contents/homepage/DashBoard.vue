@@ -1,5 +1,5 @@
 <template>
-  <NewMainLayout>
+  <NewMainLayout :is_page="is_page">
     <div>
       <h1>Dash board</h1>
     </div>
@@ -12,7 +12,9 @@ export default {
   props: [""],
   components: { NewMainLayout },
   data() {
-    return {};
+    return {
+      is_page: "Dashboard",
+    };
   },
   methods: {},
 };

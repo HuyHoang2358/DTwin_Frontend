@@ -1,5 +1,5 @@
 .DS_Store
-/dtwin/node_modules/
+/dtwin/node_modules/*
 /dtwin/dist
 
 
