@@ -1,5 +1,14 @@
 <template>
   <div>
+    <RoleForm
+      v-if="role_form"
+      :is-editing="is_edit_form"
+      :form-data="role_form_data"
+      @close_form="close_role_form"
+      @submit_form="submit_role_form"
+    >
+    </RoleForm>
+
     <new-main-layout :is_page="is_page">
       <!-- Table name -->
       <div class="text-[#333333]">
@@ -17,7 +26,7 @@
               </div>
               <FilterButton @click-button="filter_form = true"></FilterButton>
 
-              <AddNewButton @click-button="add_role_form = true"></AddNewButton>
+              <AddNewButton @click-button="open_add_role_form"></AddNewButton>
             </div>
           </div>
         </div>
@@ -75,10 +84,12 @@ import ROLE_API from "@/apis/modules/role";
 import AddNewButton from "@/components/buttons/AddNewButton.vue";
 import FilterButton from "@/components/buttons/FilterButton.vue";
 import SearchForm from "@/components/forms/SearchForm.vue";
+import RoleForm from "@/views/admin/contents/role/RoleForm.vue";
 
 export default {
   props: [""],
   components: {
+    RoleForm,
     SearchForm,
     FilterButton,
     AddNewButton,
@@ -88,8 +99,10 @@ export default {
   data() {
     return {
       is_page: "Role",
-      add_role_form: false,
+      role_form: true,
+      is_edit_form: false,
       filter_form: false,
+      role_form_data: {},
       roles: [
         {
           roleId: "default",
@@ -105,6 +118,26 @@ export default {
     this.get_all_roles();
   },
   methods: {
+    open_add_role_form() {
+      this.role_form = true;
+      this.is_edit_form = false;
+      this.role_form_data = {
+        roleId: "",
+        roleName: "",
+        appId: "",
+        parentId: "",
+        menuInRole: "",
+        rightInRole: "",
+        userInRole: "",
+      };
+    },
+    close_role_form() {
+      this.role_form = false;
+      this.is_edit_form = false;
+    },
+    submit_role_form() {
+      console.log("ACC");
+    },
     async get_all_roles() {
       try {
         let response = await ROLE_API.get_roles();

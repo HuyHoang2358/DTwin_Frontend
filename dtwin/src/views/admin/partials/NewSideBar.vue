@@ -172,6 +172,11 @@ export default {
           icon_name: "sidebar-user",
         },
         {
+          name: "Menu",
+          route_name: "admin.menu.index",
+          icon_name: "sidebar-menu",
+        },
+        {
           name: "Role",
           route_name: "admin.role.index",
           icon_name: "sidebar-role",

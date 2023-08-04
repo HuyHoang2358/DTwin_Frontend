@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 /*import store from "../store";*/
 import HomeView from "../views/HomeView.vue";
 import DashBoard from "@/views/admin/contents/homepage/DashBoard";
-import MenuIndex from "@/views/admin/contents/menu/MenuIndex";
 import MenuAddForm from "@/views/admin/contents/menu/MenuAddForm";
 import MenuEditForm from "@/views/admin/contents/menu/MenuEditForm";
 import RoleAddForm from "@/views/admin/contents/role/RoleAddForm";
@@ -13,6 +12,7 @@ import HomePage from "@/views/front/contents/homepage/HomePage.vue";
 import LoginPage from "@/views/auth/LoginPage.vue";
 import UserPage from "@/views/admin/contents/user/UserPage.vue";
 import RolePage from "@/views/admin/contents/role/RolePage.vue";
+import MenuPage from "@/views/admin/contents/menu/MenuPage.vue";
 
 const routes = [
   //home
@@ -40,7 +40,7 @@ const routes = [
   {
     path: "/admin/menu",
     name: "admin.menu.index",
-    component: MenuIndex,
+    component: MenuPage,
     meta: { requiresAuth: true },
   },
   {

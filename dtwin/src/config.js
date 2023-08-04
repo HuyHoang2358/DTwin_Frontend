@@ -22,6 +22,7 @@ export const API_ADD_NEW_MENU = "menu/create-menu";
 export const API_UPDATE_NEW_MENU = "menu/update-menu";
 export const API_DELETE_MENU = "menu/delete-menu";
 export const API_GET_MENU_BY_APPID = "menu/get-menu-by-app-id";
+export const API_GET_CHILDS_MENUS = "menu/get-menu-by-url-parent-menu";
 
 export const API_GET_ROLES = "role/get-all-role";
 export const API_GET_ROLE = "role/get-role-detail";
