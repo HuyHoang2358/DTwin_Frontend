@@ -57,12 +57,20 @@
               <td>{{ role.appId }}</td>
               <td>
                 <div class="flex justify-center items-center gap-4">
-                  <button class="p-2 bg-[#F1F1F2] rounded">
+                  <button
+                    type="button"
+                    class="p-2 bg-[#F1F1F2] rounded"
+                    @click="editRole(role.roleId)"
+                  >
                     <div class="w-4 h-4">
                       <icon-tag :name="'edit-square'"></icon-tag>
                     </div>
                   </button>
-                  <button class="p-2 bg-[#F1F1F2] rounded">
+                  <button
+                    type="button"
+                    class="p-2 bg-[#F1F1F2] rounded"
+                    @click="deleteRole(role)"
+                  >
                     <div class="w-4 h-4">
                       <icon-tag :name="'red-delete'"></icon-tag>
                     </div>
@@ -99,7 +107,7 @@ export default {
   data() {
     return {
       is_page: "Role",
-      role_form: true,
+      role_form: false,
       is_edit_form: false,
       filter_form: false,
       role_form_data: {},
@@ -126,18 +134,35 @@ export default {
         roleName: "",
         appId: "",
         parentId: "",
-        menuInRole: "",
-        rightInRole: "",
-        userInRole: "",
+        menuInRole: [],
+        rightInRole: [],
+        userInRole: [],
+        rightInRoleDetail: [],
+        userInRoleDetail: [],
       };
+    },
+    async editRole(roleID) {
+      this.role_form_data = await ROLE_API.getRoleDetail(roleID);
+      this.role_form = true;
+      this.is_edit_form = true;
+
+      console.log(this.role_form_data);
     },
     close_role_form() {
       this.role_form = false;
       this.is_edit_form = false;
     },
-    submit_role_form() {
-      console.log("ACC");
+    async submit_role_form(data) {
+      if (!this.is_edit_form) {
+        //console.log(data);
+        await ROLE_API.addRole(data);
+      } else {
+        await ROLE_API.updateRole(data);
+      }
+      this.close_role_form();
+      await this.get_all_roles();
     },
+
     async get_all_roles() {
       try {
         let response = await ROLE_API.get_roles();
@@ -152,8 +177,15 @@ export default {
         });
       }
     },
+
     searchRole(text) {
       console.log(text);
+    },
+    async deleteRole(role) {
+      if (window.confirm(`Bạn muốn xóa Role: ${role.roleName} ?`)) {
+        await ROLE_API.deleteRole([role.roleId]);
+        await this.get_all_roles();
+      }
     },
   },
 };

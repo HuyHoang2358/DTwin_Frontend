@@ -33,3 +33,4 @@ export const API_EDIT_ROLE = "role/update-role";
 export const API_DELETE_ROLE = "role/delete-role";
 
 export const API_GET_RIGHTS = "right/get-rights";
+export const API_GET_APPS = "app/get-all-app";

@@ -28,11 +28,35 @@
                       />
                     </div>
                     <div class="w-full mt-4">
+                      <p>Thêm thành viên</p>
+                      <div class="mt-1">
+                        <search-check-box-form
+                          :search_form="search_user_form"
+                          @update_data="update_user_data"
+                        >
+                        </search-check-box-form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-span-1">
+                    <div class="w-full mt-4" v-if="!isEditing">
+                      <p>Role ID</p>
+                      <input
+                        type="text"
+                        class="bg-[#F6F6F6] pl-4 rounded p-2 w-full border-0 focus:ring-[#E7E7E7] mt-1 caret-[#FF1F4F]"
+                        placeholder="Nhập tên quyền"
+                        v-model="form.roleId"
+                        required
+                      />
+                    </div>
+
+                    <div class="w-full mt-4">
                       <p>App Id</p>
                       <select
                         class="bg-[#F6F6F6] pl-4 rounded p-2 w-full border-0 focus:ring-[#E7E7E7] mt-1 caret-[#FF1F4F]"
                         v-model="form.appId"
                       >
+                        <option value="">Null</option>
                         <option
                           :value="app.appId"
                           v-for="(app, index) in apps"
@@ -55,47 +79,30 @@
                   </div>
                   <div class="col-span-1">
                     <div class="w-full mt-4">
-                      <p>Role ID</p>
-                      <input
-                        type="text"
-                        class="bg-[#F6F6F6] pl-4 rounded p-2 w-full border-0 focus:ring-[#E7E7E7] mt-1 caret-[#FF1F4F]"
-                        placeholder="Nhập tên quyền"
-                        v-model="form.roleId"
-                        required
-                      />
-                    </div>
-
-                    <div class="w-full mt-4">
-                      <p>Thêm thành viên</p>
-                      <div class="mt-1">
-                        <search-check-box-form
-                          :search_form="search_user_form"
-                          @update_data="update_right_data"
-                        >
-                        </search-check-box-form>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-span-1">
-                    <div class="w-full mt-4">
                       <p>Thuộc nhóm quyền</p>
                       <select
                         class="bg-[#F6F6F6] pl-4 rounded p-2 w-full border-0 focus:ring-[#E7E7E7] mt-1 caret-[#FF1F4F]"
                         v-model="form.parentId"
                       >
-                        <option
-                          :value="role.roleId"
-                          v-for="(role, index) in roles"
-                          :key="`select-form-role-${index}`"
-                        >
-                          {{ role.roleName }}
-                        </option>
+                        <option value="">Null</option>
+                        <!--
+                          <option
+                            :value="role.roleId"
+                            v-for="(role, index) in roles"
+                            :key="`select-form-role-${index}`"
+                          >
+                            {{ role.roleName }}
+                          </option>
+                        -->
                       </select>
                     </div>
                     <div class="w-full mt-4">
                       <p>Thêm menu</p>
                       <div class="w-full mt-1">
-                        <menu-tree-checkbox-form></menu-tree-checkbox-form>
+                        <menu-tree-checkbox-form
+                          @update_data="update_menu_data"
+                          :menu_collection="formData.menuInRole"
+                        ></menu-tree-checkbox-form>
                       </div>
                     </div>
                   </div>
@@ -141,7 +148,8 @@
 import IconTag from "@/components/IconTag.vue";
 import SearchCheckBoxForm from "@/components/forms/SearchCheckBoxForm.vue";
 import MenuTreeCheckboxForm from "@/components/forms/MenuTreeCheckboxForm.vue";
-
+import APP_API from "@/apis/modules/app";
+import Role_API from "@/apis/modules/role";
 export default {
   props: {
     isEditing: {
@@ -152,14 +160,15 @@ export default {
     formData: {
       type: Object,
       default: () => ({
-        name: "",
-        email: "",
-        phone: "",
-        site: "",
-        address: "",
-        password: "",
-        userId: "",
+        roleName: "",
         roleId: "",
+        parentId: "",
+        appId: "",
+        userInRole: [],
+        rightInRole: [],
+        menuInRole: [],
+        rightInRoleDetail: [],
+        userInRoleDetail: [],
       }),
     },
   },
@@ -176,48 +185,49 @@ export default {
         collection_table_name: "Danh sách quyền được gán",
         main_column_name: "Quyền",
         type_search: "right",
+        search_results: [],
+        collection: this.formData.rightInRoleDetail,
       },
-
       search_user_form: {
         placeholder: "Chọn thành viên",
         collection_table_name: "Danh sách thành viên được chọn",
         main_column_name: "Tên thành viên",
         type_search: "user",
+        search_results: [],
+        collection: this.formData.userInRoleDetail,
       },
-
-      roles: [
-        {
-          roleId: 1,
-          roleName: "ANCACa",
-        },
-        {
-          roleId: 2,
-          roleName: "ANCACa 2",
-        },
-      ],
-      apps: [
-        {
-          appId: 1,
-          appName: "KTTV",
-        },
-        {
-          appId: 0,
-          appName: "No App",
-        },
-      ],
+      roles: [],
+      apps: [],
     };
   },
   computed: {},
-  created() {},
+  created() {
+    this.fetchAppList();
+    //this.fetchRoleList();
+  },
   methods: {
+    async fetchAppList() {
+      this.apps = await APP_API.getAppList();
+    },
+    async fetchRoleList() {
+      this.roles = await Role_API.getRoleList();
+    },
+
     submitForm() {
       this.$emit("submit_form", this.form);
     },
     close_form() {
       this.$emit("close_form");
     },
+
+    update_menu_data(menu_ids) {
+      this.form.menuInRole = menu_ids;
+    },
     update_right_data(right_ids) {
-      console.log(right_ids);
+      this.form.rightInRole = right_ids;
+    },
+    update_user_data(user_ids) {
+      this.form.userInRole = user_ids;
     },
   },
 };

@@ -443,6 +443,30 @@
         d="m10.336.952-4.518 4.8a.787.787 0 0 1-1.146 0L.155.953A.565.565 0 0 1 .566 0h9.358c.495 0 .751.592.412.952Z"
       />
     </svg>
+    <svg
+      v-else-if="name === 'thin-down'"
+      class="fill-current w-full h-full"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 12 7"
+    >
+      <path
+        fill="#727272"
+        d="m6.428 6.628 5.395-5.396a.608.608 0 0 0 0-.858.605.605 0 0 0-.856 0L6 5.342 1.034.375a.605.605 0 1 0-.857.857L5.572 6.63a.611.611 0 0 0 .856 0Z"
+      />
+    </svg>
+    <svg
+      v-else-if="name === 'thin-right'"
+      class="fill-current w-full h-full"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 8 13"
+    >
+      <path
+        fill="#727272"
+        d="M7.128 6.072 1.732.677a.608.608 0 0 0-.858 0 .605.605 0 0 0 0 .856L5.842 6.5.875 11.466a.605.605 0 1 0 .858.857l5.396-5.395a.611.611 0 0 0 0-.856Z"
+      />
+    </svg>
   </p>
 </template>
 <script>

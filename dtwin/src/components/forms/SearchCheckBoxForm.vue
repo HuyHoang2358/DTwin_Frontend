@@ -102,21 +102,8 @@ export default {
       searchText: "",
       search_result_checkboxes: false,
       collection_table: true,
-      search_results: [
-        {
-          id: 1,
-          name: "System view permission 1",
-        },
-        {
-          id: 5,
-          name: "System view permission 5",
-        },
-        {
-          id: 9,
-          name: "System view permission 9",
-        },
-      ],
-      collection: [],
+      search_results: this.search_form.search_results,
+      collection: this.search_form.collection,
     };
   },
   methods: {

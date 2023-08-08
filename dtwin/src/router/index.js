@@ -2,8 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 /*import store from "../store";*/
 import HomeView from "../views/HomeView.vue";
 import DashBoard from "@/views/admin/contents/homepage/DashBoard";
-import MenuAddForm from "@/views/admin/contents/menu/MenuAddForm";
-import MenuEditForm from "@/views/admin/contents/menu/MenuEditForm";
 import RoleAddForm from "@/views/admin/contents/role/RoleAddForm";
 import RightPage from "@/views/admin/contents/right/RightPage.vue";
 import RoleEditForm from "@/views/admin/contents/role/RoleEditForm";
@@ -41,24 +39,6 @@ const routes = [
     path: "/admin/menu",
     name: "admin.menu.index",
     component: MenuPage,
-    meta: { requiresAuth: true },
-  },
-  {
-    path: "/admin/menu/add",
-    name: "admin.menu.add",
-    component: MenuAddForm,
-    meta: { requiresAuth: true },
-  },
-  {
-    path: "/admin/menu/edit/:menuId",
-    name: "admin.menu.edit",
-    component: MenuEditForm,
-    meta: { requiresAuth: true },
-  },
-  {
-    path: "/admin/menu/edit/:menuId",
-    name: "admin.menu.edit",
-    component: MenuEditForm,
     meta: { requiresAuth: true },
   },
 
