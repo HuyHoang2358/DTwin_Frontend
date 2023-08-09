@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import "./assets/index.css";
 import "./assets/menu.css";
+import "stream-browserify";
 //import axios from "axios";
 
 let app = createApp(App);

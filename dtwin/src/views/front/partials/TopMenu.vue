@@ -1,6 +1,6 @@
 <template>
-  <div class="menu bg-gray-500 w-full relative">
-    <div class="menu_background">
+  <div class="menu bg-gray-500 w-full relative z-40">
+    <div class="menu_background z-40">
       <div class="menu_content border-b-[3px] border-[#EE0033] p-4">
         <div class="grid grid-cols-8 gap-8 h-full">
           <div class="col-span-3 h-full">
@@ -163,7 +163,7 @@
       </div>
     </div>
 
-    <div class="h-full w-1/4 absolute top-0 menu_logo_area">
+    <div class="h-full w-1/4 absolute top-0 menu_logo_area z-50">
       <logo-digital-twin :name="'center-page'"></logo-digital-twin>
     </div>
   </div>

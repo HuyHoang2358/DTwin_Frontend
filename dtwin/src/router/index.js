@@ -1,30 +1,22 @@
 import { createRouter, createWebHistory } from "vue-router";
-/*import store from "../store";*/
-import HomeView from "../views/HomeView.vue";
+import store from "../store";
 import DashBoard from "@/views/admin/contents/homepage/DashBoard";
-import RoleAddForm from "@/views/admin/contents/role/RoleAddForm";
 import RightPage from "@/views/admin/contents/right/RightPage.vue";
-import RoleEditForm from "@/views/admin/contents/role/RoleEditForm";
-import ListUserInRole from "@/views/admin/contents/role/ListUserInRole";
 import HomePage from "@/views/front/contents/homepage/HomePage.vue";
 import LoginPage from "@/views/auth/LoginPage.vue";
 import UserPage from "@/views/admin/contents/user/UserPage.vue";
 import RolePage from "@/views/admin/contents/role/RolePage.vue";
 import MenuPage from "@/views/admin/contents/menu/MenuPage.vue";
+import MapIndex from "@/views/map/MapIndex.vue";
+import BuildingPage from "@/views/front/contents/map/BuildingPage.vue";
 
 const routes = [
   //home
   {
-    path: "/",
-    name: "home",
-    component: HomeView,
-    meta: { requiresAuth: true },
-  },
-  {
     path: "/admin/",
     name: "admin.index",
     component: DashBoard,
-    /*meta: { requiresAuth: true },*/
+    meta: { requiresAuth: true },
   },
 
   // admin.user
@@ -57,34 +49,29 @@ const routes = [
     component: RolePage,
     meta: { requiresAuth: true },
   },
+
   {
-    path: "/admin/role/add",
-    name: "admin.role.add",
-    component: RoleAddForm,
-    meta: { requiresAuth: true },
-  },
-  {
-    path: "/admin/role/edit/:roleId",
-    name: "admin.role.edit",
-    component: RoleEditForm,
-    meta: { requiresAuth: true },
-  },
-  {
-    path: "/admin/role/list-user/:roleId",
-    name: "admin.role.list_users",
-    component: ListUserInRole,
-    meta: { requiresAuth: true },
-  },
-  {
-    path: "/homepage",
+    path: "/",
     name: "homepage",
     component: HomePage,
-    meta: { requiresAuth: true },
+    meta: { requiresAuth: false },
   },
   {
     path: "/auth/login",
     name: "auth.login",
     component: LoginPage,
+    meta: { guest: true },
+  },
+  {
+    path: "/map",
+    name: "map",
+    component: MapIndex,
+    meta: { guest: true },
+  },
+  {
+    path: "/map/building",
+    name: "map.building",
+    component: BuildingPage,
     meta: { guest: true },
   },
 ];
@@ -94,17 +81,15 @@ const router = createRouter({
   routes,
 });
 
-/*router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   const isLoggedIn = store.getters["AUTH/isLoggedIn"];
-  /!*console.log(
-    `route info || requiresAuth- ${requiresAuth}; isLoggedIn: ${isLoggedIn}`
-  );*!/
+
   if (requiresAuth && !isLoggedIn) {
     next({ name: "auth.login" });
   } else {
     next();
   }
-});*/
+});
 
 export default router;
