@@ -9,6 +9,7 @@ import RolePage from "@/views/admin/contents/role/RolePage.vue";
 import MenuPage from "@/views/admin/contents/menu/MenuPage.vue";
 import MapIndex from "@/views/map/MapIndex.vue";
 import BuildingPage from "@/views/front/contents/map/BuildingPage.vue";
+import MapEditPage from "@/views/map/MapEditPage.vue";
 
 const routes = [
   //home
@@ -72,6 +73,12 @@ const routes = [
     path: "/map/building",
     name: "map.building",
     component: BuildingPage,
+    meta: { guest: true },
+  },
+  {
+    path: "/map/edit",
+    name: "map.edit",
+    component: MapEditPage,
     meta: { guest: true },
   },
 ];

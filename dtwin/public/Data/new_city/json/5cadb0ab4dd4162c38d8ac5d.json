@@ -1,0 +1,98 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "5cadb0ab4dd4162c38d8ac5d",
+        "name": "Kho b\u1ea1c Nh\u00e0 n\u01b0\u1edbc \u0110\u00e0 N\u1eb5ng",
+        "places": null,
+        "placeDetails": [],
+        "location": {
+            "lng": 108.2237878961011,
+            "lat": 16.064011588997772
+        },
+        "scale": 1,
+        "bearing": 85,
+        "elevation": 0,
+        "heightScale": 0.81,
+        "camera": {
+            "zoom": 20,
+            "bearing": 55.69798741004411,
+            "tilt": 78,
+            "target": null
+        },
+        "model": {
+            "id": null,
+            "name": null,
+            "objName": "5cadb0f0ec6cdaac805cb937",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/5cadb0f0ec6cdaac805cb937",
+            "color": "FFFFFF",
+            "type": "Object",
+            "coordinates": [
+                {
+                    "lng": 108.223585,
+                    "lat": 16.064294
+                },
+                {
+                    "lng": 108.223926,
+                    "lat": 16.064265
+                },
+                {
+                    "lng": 108.223548,
+                    "lat": 16.063892
+                },
+                {
+                    "lng": 108.22389,
+                    "lat": 16.063864
+                }
+            ],
+            "height": 1,
+            "textureName": "5cadb0f0ec6cdaac805cb938.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/5cadb0f0ec6cdaac805cb938.jpg"
+        },
+        "types": [
+            "bank"
+        ],
+        "minZoom": 17,
+        "maxZoom": 19,
+        "addressComponents": [
+            {
+                "types": [
+                    "street"
+                ],
+                "name": "L\u00ea H\u1ed3ng Phong"
+            },
+            {
+                "types": [
+                    "admin_level_4"
+                ],
+                "name": "Ph\u01b0\u1eddng Ph\u01b0\u1edbc Ninh"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "Qu\u1eadn H\u1ea3i Ch\u00e2u"
+            },
+            {
+                "types": [
+                    "city",
+                    "admin_level_2"
+                ],
+                "name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+            },
+            {
+                "types": [
+                    "admin_level_1"
+                ],
+                "name": "Vi\u1ec7t Nam"
+            }
+        ],
+        "startDate": 954547200000,
+        "endDate": 2534889600000,
+        "source": null,
+        "typeInfos": {
+            "bank": "Ng\u00e2n h\u00e0ng"
+        },
+        "metadata": null,
+        "address": "L\u00ea H\u1ed3ng Phong, Ph\u01b0\u1eddng Ph\u01b0\u1edbc Ninh, Qu\u1eadn H\u1ea3i Ch\u00e2u, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, Vi\u1ec7t Nam"
+    }
+}

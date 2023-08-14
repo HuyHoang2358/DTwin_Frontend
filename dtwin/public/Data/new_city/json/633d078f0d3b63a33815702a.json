@@ -1,0 +1,86 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "633d078f0d3b63a33815702a",
+        "name": "T\u00e0u c\u00e1",
+        "places": null,
+        "placeDetails": [],
+        "location": {
+            "lng": 108.21769218324135,
+            "lat": 16.11578023741592
+        },
+        "scale": 0.5,
+        "bearing": 0,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": null,
+        "model": {
+            "id": "61923d18e0900160fadb6763",
+            "name": "T\u00e0u c\u00e1",
+            "objName": "61923d17e0900160fadb675f.obj",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/61923d17e0900160fadb675f.obj",
+            "color": null,
+            "type": "Object",
+            "coordinates": [
+                {
+                    "lng": 108.2177389362821,
+                    "lat": 16.115825153175038
+                },
+                {
+                    "lng": 108.21773893626093,
+                    "lat": 16.11573532164663
+                },
+                {
+                    "lng": 108.2176454302218,
+                    "lat": 16.11573532164663
+                },
+                {
+                    "lng": 108.2176454302006,
+                    "lat": 16.115825153175038
+                },
+                {
+                    "lng": 108.2177389362821,
+                    "lat": 16.115825153175038
+                }
+            ],
+            "height": 0,
+            "textureName": "61923d17e0900160fadb675d.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/61923d17e0900160fadb675d.jpg"
+        },
+        "types": [
+            "decoration"
+        ],
+        "minZoom": 17,
+        "maxZoom": 19,
+        "addressComponents": [
+            {
+                "types": [
+                    "admin_level_2"
+                ],
+                "name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "Qu\u1eadn S\u01a1n Tr\u00e0"
+            },
+            {
+                "types": [
+                    "admin_level_4"
+                ],
+                "name": "Ph\u01b0\u1eddng Th\u1ecd Quang"
+            }
+        ],
+        "startDate": null,
+        "endDate": null,
+        "source": {
+            "name": "vmp"
+        },
+        "typeInfos": {
+            "decoration": "C\u00e1c \u0111\u1ed1i t\u01b0\u1ee3ng 3D \u0111\u1ec3 trang tr\u00ed"
+        },
+        "metadata": null,
+        "address": null
+    }
+}

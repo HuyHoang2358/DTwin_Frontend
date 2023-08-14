@@ -1,0 +1,81 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "5d66438a311c0d157ce132b3",
+        "name": "Navy Hotel Danang",
+        "places": null,
+        "placeDetails": [],
+        "location": {
+            "lng": 108.221797979579,
+            "lat": 16.1240167462113
+        },
+        "scale": 1,
+        "bearing": -125,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": {
+            "zoom": 20,
+            "bearing": 23.42814626982194,
+            "tilt": 71.5,
+            "target": null
+        },
+        "model": {
+            "id": null,
+            "name": null,
+            "objName": "5d66438a311c0d157ce132b1.jpg",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/5d66438a311c0d157ce132b1.jpg",
+            "color": null,
+            "type": "Object",
+            "coordinates": null,
+            "height": 1,
+            "textureName": "5d664389311c0d157ce132af.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/5d664389311c0d157ce132af.jpg"
+        },
+        "types": [
+            "hotel"
+        ],
+        "minZoom": 17,
+        "maxZoom": 19,
+        "addressComponents": [
+            {
+                "types": [
+                    "street"
+                ],
+                "name": "Y\u1ebft Ki\u00eau"
+            },
+            {
+                "types": [
+                    "admin_level_4"
+                ],
+                "name": "Ph\u01b0\u1eddng Th\u1ecd Quang"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "Qu\u1eadn S\u01a1n Tr\u00e0"
+            },
+            {
+                "types": [
+                    "city",
+                    "admin_level_2"
+                ],
+                "name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+            },
+            {
+                "types": [
+                    "admin_level_1"
+                ],
+                "name": "Vi\u1ec7t Nam"
+            }
+        ],
+        "startDate": null,
+        "endDate": null,
+        "source": null,
+        "typeInfos": {
+            "hotel": "Kh\u00e1ch s\u1ea1n"
+        },
+        "metadata": null,
+        "address": null
+    }
+}

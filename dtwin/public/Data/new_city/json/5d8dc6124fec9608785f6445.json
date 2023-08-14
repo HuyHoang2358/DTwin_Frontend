@@ -1,0 +1,279 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "5d8dc6124fec9608785f6445",
+        "name": "Kho b\u1ea1c Nh\u00e0 n\u01b0\u1edbc \u0110\u00e0 N\u1eb5ng New",
+        "places": null,
+        "placeDetails": [
+            {
+                "id": "5c9845e9814a9df9d67e6057",
+                "location": {
+                    "lng": 108.223786,
+                    "lat": 16.064151
+                },
+                "address": "236 Tr\u1ea7n Ph\u00fa, Ph\u01b0\u1eddng Ph\u01b0\u1edbc Ninh, Qu\u1eadn H\u1ea3i Ch\u00e2u, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, Vi\u1ec7t Nam",
+                "name": "Kho b\u1ea1c Nh\u00e0 n\u01b0\u1edbc \u0110\u00e0 N\u1eb5ng",
+                "objectId": "5d8dc6124fec9608785f6445",
+                "description": " &nbsp; ",
+                "types": [
+                    "point",
+                    "other"
+                ],
+                "typeInfos": [
+                    {
+                        "id": "point",
+                        "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                        "group": "other"
+                    }
+                ],
+                "mainType": "point",
+                "mainTypeInfos": {
+                    "id": "point",
+                    "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                    "group": "other"
+                },
+                "auxiliaryTypes": [
+                    "other"
+                ],
+                "auxiliaryTypesInfos": [],
+                "addressComponents": [
+                    {
+                        "types": [
+                            "housenumber"
+                        ],
+                        "name": "236"
+                    },
+                    {
+                        "types": [
+                            "street"
+                        ],
+                        "name": "Tr\u1ea7n Ph\u00fa"
+                    },
+                    {
+                        "types": [
+                            "admin_level_4"
+                        ],
+                        "name": "Ph\u01b0\u1eddng Ph\u01b0\u1edbc Ninh"
+                    },
+                    {
+                        "types": [
+                            "admin_level_3"
+                        ],
+                        "name": "Qu\u1eadn H\u1ea3i Ch\u00e2u"
+                    },
+                    {
+                        "types": [
+                            "admin_level_2"
+                        ],
+                        "name": "Th\u00e0nh Ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+                    },
+                    {
+                        "types": [
+                            "admin_level_1"
+                        ],
+                        "name": "Vi\u1ec7t Nam"
+                    }
+                ],
+                "photos": [],
+                "startDate": 1138726800000,
+                "endDate": 4073562000000,
+                "placeTypes": [
+                    {
+                        "id": "point",
+                        "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                        "description": "",
+                        "minZoom": 15,
+                        "group": "other",
+                        "minRank": 0,
+                        "maxRank": 1000000,
+                        "icon": null,
+                        "createdBy": {
+                            "userId": "admin",
+                            "displayName": "admin"
+                        },
+                        "updatedBy": {
+                            "userId": "admin",
+                            "displayName": "admin"
+                        },
+                        "createdDate": 1658828342882,
+                        "updatedDate": 1658828342882
+                    }
+                ],
+                "otherPlaceInObjects": [],
+                "object": {
+                    "id": "5d8dc6124fec9608785f6445",
+                    "name": "Kho b\u1ea1c Nh\u00e0 n\u01b0\u1edbc \u0110\u00e0 N\u1eb5ng New",
+                    "location": {
+                        "lng": 108.22369137618551,
+                        "lat": 16.064243465424184
+                    },
+                    "scale": 1,
+                    "bearing": 85,
+                    "elevation": 0,
+                    "heightScale": 1,
+                    "camera": {
+                        "zoom": 21,
+                        "bearing": 77.88732030880696,
+                        "tilt": 51.5,
+                        "target": null
+                    },
+                    "model": {
+                        "id": null,
+                        "objName": "5d8dc6124fec9608785f6443.jpg",
+                        "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/5d8dc6124fec9608785f6443.jpg",
+                        "color": null,
+                        "type": "Object",
+                        "coordinates": null,
+                        "height": 1,
+                        "textureName": "5d8dc6124fec9608785f6441.jpg",
+                        "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/5d8dc6124fec9608785f6441.jpg"
+                    },
+                    "types": [],
+                    "minZoom": 17,
+                    "maxZoom": 19,
+                    "startDate": null,
+                    "endDate": null,
+                    "isVerified": false,
+                    "isDeleted": false,
+                    "source": {
+                        "name": "vmp"
+                    },
+                    "addressComponents": [
+                        {
+                            "types": [
+                                "city",
+                                "admin_level_2"
+                            ],
+                            "name": "\u0110\u00e0 N\u1eb5ng",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_3"
+                            ],
+                            "name": "H\u1ea3i Ch\u00e2u",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_4"
+                            ],
+                            "name": "Ph\u01b0\u1edbc Ninh",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "street"
+                            ],
+                            "name": "Tr\u1ea7n Ph\u00fa",
+                            "searchName": null
+                        }
+                    ],
+                    "typeInfos": null,
+                    "metadata": null,
+                    "address": "Tr\u1ea7n Ph\u00fa, Ph\u01b0\u1edbc Ninh, H\u1ea3i Ch\u00e2u, \u0110\u00e0 N\u1eb5ng",
+                    "createdBy": {
+                        "userId": "d9842deb-64ba-4331-afa4-a4313a3631a5",
+                        "displayName": ""
+                    },
+                    "updatedBy": {
+                        "userId": "7a1a72c5-abbe-406b-a464-a7b31c39eaf8",
+                        "displayName": "Th\u00e0nh Nguy\u1ec5n"
+                    },
+                    "createdDate": 1569572370893,
+                    "updatedDate": 1623224220190
+                },
+                "tags": null,
+                "phoneNumber": null,
+                "website": null,
+                "businessHours": null,
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.223786,
+                        16.064151
+                    ]
+                },
+                "rank": {
+                    "value": 1000006.5
+                },
+                "metadata": null,
+                "mediaFiles": [],
+                "isDeleted": false,
+                "reviewsSummary": {
+                    "ratingAverage": 0,
+                    "totalRating": 0,
+                    "numberOfRatingOneStar": 0,
+                    "numberOfRatingTwoStar": 0,
+                    "numberOfRatingThreeStar": 0,
+                    "numberOfRatingFourStar": 0,
+                    "numberOfRatingFiveStar": 0
+                }
+            }
+        ],
+        "location": {
+            "lng": 108.22369137618551,
+            "lat": 16.064243465424184
+        },
+        "scale": 1,
+        "bearing": 85,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": {
+            "zoom": 21,
+            "bearing": 77.88732030880696,
+            "tilt": 51.5,
+            "target": null
+        },
+        "model": {
+            "id": null,
+            "name": null,
+            "objName": "5d8dc6124fec9608785f6443.jpg",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/5d8dc6124fec9608785f6443.jpg",
+            "color": null,
+            "type": "Object",
+            "coordinates": null,
+            "height": 1,
+            "textureName": "5d8dc6124fec9608785f6441.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/5d8dc6124fec9608785f6441.jpg"
+        },
+        "types": [],
+        "minZoom": 17,
+        "maxZoom": 19,
+        "addressComponents": [
+            {
+                "types": [
+                    "city",
+                    "admin_level_2"
+                ],
+                "name": "\u0110\u00e0 N\u1eb5ng"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "H\u1ea3i Ch\u00e2u"
+            },
+            {
+                "types": [
+                    "admin_level_4"
+                ],
+                "name": "Ph\u01b0\u1edbc Ninh"
+            },
+            {
+                "types": [
+                    "street"
+                ],
+                "name": "Tr\u1ea7n Ph\u00fa"
+            }
+        ],
+        "startDate": null,
+        "endDate": null,
+        "source": {
+            "name": "vmp"
+        },
+        "typeInfos": {},
+        "metadata": null,
+        "address": "Tr\u1ea7n Ph\u00fa, Ph\u01b0\u1edbc Ninh, H\u1ea3i Ch\u00e2u, \u0110\u00e0 N\u1eb5ng"
+    }
+}

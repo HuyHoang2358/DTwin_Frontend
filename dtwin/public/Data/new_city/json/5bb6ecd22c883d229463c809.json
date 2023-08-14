@@ -1,0 +1,328 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "5bb6ecd22c883d229463c809",
+        "name": "Hanoitourist Building",
+        "places": null,
+        "placeDetails": [
+            {
+                "id": "5c9845ea814a9df9d67e62c7",
+                "location": {
+                    "lng": 108.219767,
+                    "lat": 16.072691
+                },
+                "address": "10 H\u1ea3i Ph\u00f2ng, Ph\u01b0\u1eddng H\u1ea3i Ch\u00e2u 1, Qu\u1eadn H\u1ea3i Ch\u00e2u, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, Vi\u1ec7t Nam",
+                "name": "Hanoitourist Building",
+                "objectId": "5bb6ecd22c883d229463c809",
+                "description": " &nbsp; ",
+                "types": [
+                    "point",
+                    "other"
+                ],
+                "typeInfos": [
+                    {
+                        "id": "point",
+                        "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                        "group": "other"
+                    }
+                ],
+                "mainType": "point",
+                "mainTypeInfos": {
+                    "id": "point",
+                    "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                    "group": "other"
+                },
+                "auxiliaryTypes": [
+                    "other"
+                ],
+                "auxiliaryTypesInfos": [],
+                "addressComponents": [
+                    {
+                        "types": [
+                            "housenumber"
+                        ],
+                        "name": "10"
+                    },
+                    {
+                        "types": [
+                            "street"
+                        ],
+                        "name": "H\u1ea3i Ph\u00f2ng"
+                    },
+                    {
+                        "types": [
+                            "admin_level_4"
+                        ],
+                        "name": "Ph\u01b0\u1eddng H\u1ea3i Ch\u00e2u I"
+                    },
+                    {
+                        "types": [
+                            "admin_level_3"
+                        ],
+                        "name": "Qu\u1eadn H\u1ea3i Ch\u00e2u"
+                    },
+                    {
+                        "types": [
+                            "admin_level_2"
+                        ],
+                        "name": "Th\u00e0nh Ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+                    },
+                    {
+                        "types": [
+                            "admin_level_1"
+                        ],
+                        "name": "Vi\u1ec7t Nam"
+                    }
+                ],
+                "photos": [],
+                "startDate": 975060000000,
+                "endDate": 4099629600000,
+                "placeTypes": [
+                    {
+                        "id": "point",
+                        "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                        "description": "",
+                        "minZoom": 15,
+                        "group": "other",
+                        "minRank": 0,
+                        "maxRank": 1000000,
+                        "icon": null,
+                        "createdBy": {
+                            "userId": "admin",
+                            "displayName": "admin"
+                        },
+                        "updatedBy": {
+                            "userId": "admin",
+                            "displayName": "admin"
+                        },
+                        "createdDate": 1658828342882,
+                        "updatedDate": 1658828342882
+                    }
+                ],
+                "otherPlaceInObjects": [],
+                "object": {
+                    "id": "5bb6ecd22c883d229463c809",
+                    "name": "Hanoitourist Building",
+                    "location": {
+                        "lng": 108.219767,
+                        "lat": 16.072691
+                    },
+                    "scale": 1,
+                    "bearing": 8,
+                    "elevation": 0,
+                    "heightScale": 1,
+                    "camera": {
+                        "zoom": 21,
+                        "bearing": 27.969401691331917,
+                        "tilt": 66.94054669703873,
+                        "target": null
+                    },
+                    "model": {
+                        "id": null,
+                        "objName": "5bb6ecd22c883d229463c809",
+                        "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/5bb6ecd22c883d229463c809",
+                        "color": "FFFFFF",
+                        "type": "Object",
+                        "coordinates": [
+                            {
+                                "lng": 108.219901,
+                                "lat": 16.072819
+                            },
+                            {
+                                "lng": 108.219931,
+                                "lat": 16.072637
+                            },
+                            {
+                                "lng": 108.219679,
+                                "lat": 16.072785
+                            },
+                            {
+                                "lng": 108.219709,
+                                "lat": 16.072603
+                            }
+                        ],
+                        "height": 0,
+                        "textureName": "d23f1aa26b31450495c75ca355ce6117.jpg",
+                        "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/d23f1aa26b31450495c75ca355ce6117.jpg"
+                    },
+                    "types": [
+                        "point"
+                    ],
+                    "minZoom": null,
+                    "maxZoom": null,
+                    "startDate": 975060000000,
+                    "endDate": 4099629600000,
+                    "isVerified": false,
+                    "isDeleted": false,
+                    "source": null,
+                    "addressComponents": [
+                        {
+                            "types": [
+                                "street"
+                            ],
+                            "name": "H\u1ea3i Ph\u00f2ng",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_4"
+                            ],
+                            "name": "Ph\u01b0\u1eddng H\u1ea3i Ch\u00e2u 1",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_3"
+                            ],
+                            "name": "Qu\u1eadn H\u1ea3i Ch\u00e2u",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "city",
+                                "admin_level_2"
+                            ],
+                            "name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_1"
+                            ],
+                            "name": "Vi\u1ec7t Nam",
+                            "searchName": null
+                        }
+                    ],
+                    "typeInfos": null,
+                    "metadata": null,
+                    "address": "H\u1ea3i Ph\u00f2ng, Ph\u01b0\u1eddng H\u1ea3i Ch\u00e2u 1, Qu\u1eadn H\u1ea3i Ch\u00e2u, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, Vi\u1ec7t Nam",
+                    "createdBy": {
+                        "userId": "5a56dc17d34a2e0efc97c4f6",
+                        "displayName": "admin"
+                    },
+                    "updatedBy": {
+                        "userId": "5a56dc17d34a2e0efc97c4f6",
+                        "displayName": "admin"
+                    },
+                    "createdDate": 1538714834223,
+                    "updatedDate": 1623224198324
+                },
+                "tags": null,
+                "phoneNumber": null,
+                "website": null,
+                "businessHours": null,
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.219767,
+                        16.072691
+                    ]
+                },
+                "rank": {
+                    "value": 1000035.5
+                },
+                "metadata": null,
+                "mediaFiles": [],
+                "isDeleted": false,
+                "reviewsSummary": {
+                    "ratingAverage": 0,
+                    "totalRating": 0,
+                    "numberOfRatingOneStar": 0,
+                    "numberOfRatingTwoStar": 0,
+                    "numberOfRatingThreeStar": 0,
+                    "numberOfRatingFourStar": 0,
+                    "numberOfRatingFiveStar": 0
+                }
+            }
+        ],
+        "location": {
+            "lng": 108.219767,
+            "lat": 16.072691
+        },
+        "scale": 1,
+        "bearing": 8,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": {
+            "zoom": 21,
+            "bearing": 27.969401691331917,
+            "tilt": 66.94054669703873,
+            "target": null
+        },
+        "model": {
+            "id": null,
+            "name": null,
+            "objName": "5bb6ecd22c883d229463c809",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/5bb6ecd22c883d229463c809",
+            "color": "FFFFFF",
+            "type": "Object",
+            "coordinates": [
+                {
+                    "lng": 108.219901,
+                    "lat": 16.072819
+                },
+                {
+                    "lng": 108.219931,
+                    "lat": 16.072637
+                },
+                {
+                    "lng": 108.219679,
+                    "lat": 16.072785
+                },
+                {
+                    "lng": 108.219709,
+                    "lat": 16.072603
+                }
+            ],
+            "height": 0,
+            "textureName": "d23f1aa26b31450495c75ca355ce6117.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/d23f1aa26b31450495c75ca355ce6117.jpg"
+        },
+        "types": [
+            "point"
+        ],
+        "minZoom": null,
+        "maxZoom": null,
+        "addressComponents": [
+            {
+                "types": [
+                    "street"
+                ],
+                "name": "H\u1ea3i Ph\u00f2ng"
+            },
+            {
+                "types": [
+                    "admin_level_4"
+                ],
+                "name": "Ph\u01b0\u1eddng H\u1ea3i Ch\u00e2u 1"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "Qu\u1eadn H\u1ea3i Ch\u00e2u"
+            },
+            {
+                "types": [
+                    "city",
+                    "admin_level_2"
+                ],
+                "name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+            },
+            {
+                "types": [
+                    "admin_level_1"
+                ],
+                "name": "Vi\u1ec7t Nam"
+            }
+        ],
+        "startDate": 975060000000,
+        "endDate": 4099629600000,
+        "source": null,
+        "typeInfos": {
+            "point": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung"
+        },
+        "metadata": null,
+        "address": "H\u1ea3i Ph\u00f2ng, Ph\u01b0\u1eddng H\u1ea3i Ch\u00e2u 1, Qu\u1eadn H\u1ea3i Ch\u00e2u, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, Vi\u1ec7t Nam"
+    }
+}

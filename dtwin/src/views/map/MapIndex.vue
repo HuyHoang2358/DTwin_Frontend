@@ -9,11 +9,22 @@
 </template>
 <script>
 import Init from "@/DtwinJs/Init.js";
-
+import NewCityInitMap from "@/new_city/init_map";
+import HandleAction from "@/DtwinJs/handle_action";
 export default {
-  mounted() {
-    let viewer = Init.initCesium();
-    console.log(viewer);
+  props: ["vi"],
+  data() {
+    return {
+      viewer: null,
+    };
+  },
+  async mounted() {
+    this.viewer = await Init.initCesium();
+    await NewCityInitMap.init_new_city_map(this.viewer);
+    HandleAction.handle_click_object(this.viewer);
+    await this.$emit("child-data", this.viewer);
+    let models = NewCityInitMap.visualize_models(this.viewer);
+    console.log(models);
   },
   methods: {},
 };

@@ -1,0 +1,88 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "6086768113454c447c4a6fa9",
+        "name": "C\u00e2y Xanh C\u00f4ng Vi\u00ean 18m - 1619424420009",
+        "places": null,
+        "placeDetails": [],
+        "location": {
+            "lng": 108.22637075297916,
+            "lat": 16.092290929941953
+        },
+        "scale": 1,
+        "bearing": 0,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": {
+            "zoom": 21,
+            "bearing": 63.70199727500345,
+            "tilt": 0,
+            "target": {
+                "lng": 108.22637075297916,
+                "lat": 16.092290929941953
+            }
+        },
+        "model": {
+            "id": "58c2bf51132a211b50e0987a",
+            "name": "C\u00e2y Xanh C\u00f4ng Vi\u00ean 18m",
+            "objName": "5eafe60355dbd3228052fdff.obj",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/5eafe60355dbd3228052fdff.obj",
+            "color": null,
+            "type": "Object",
+            "coordinates": [
+                {
+                    "lng": 108.22641750048645,
+                    "lat": 16.09233584570108
+                },
+                {
+                    "lng": 108.2264175004653,
+                    "lat": 16.09224601417267
+                },
+                {
+                    "lng": 108.22632400549303,
+                    "lat": 16.09224601417267
+                },
+                {
+                    "lng": 108.22632400547188,
+                    "lat": 16.09233584570108
+                },
+                {
+                    "lng": 108.22641750048645,
+                    "lat": 16.09233584570108
+                }
+            ],
+            "height": 1,
+            "textureName": "5eafe60455dbd3228052fe01.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/5eafe60455dbd3228052fe01.jpg"
+        },
+        "types": [
+            "decoration"
+        ],
+        "minZoom": 17,
+        "maxZoom": 19,
+        "addressComponents": [
+            {
+                "types": [
+                    "street"
+                ],
+                "name": "L\u00ea V\u0103n Duy\u1ec7t"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "Qu\u1eadn S\u01a1n Tr\u00e0"
+            }
+        ],
+        "startDate": null,
+        "endDate": null,
+        "source": {
+            "name": "vmp"
+        },
+        "typeInfos": {
+            "decoration": "C\u00e1c \u0111\u1ed1i t\u01b0\u1ee3ng 3D \u0111\u1ec3 trang tr\u00ed"
+        },
+        "metadata": null,
+        "address": "L\u00ea V\u0103n Duy\u1ec7t, Qu\u1eadn S\u01a1n Tr\u00e0"
+    }
+}

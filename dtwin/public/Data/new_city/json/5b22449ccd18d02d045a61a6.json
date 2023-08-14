@@ -1,0 +1,77 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "5b22449ccd18d02d045a61a6",
+        "name": "C\u00e2y Cau Vua",
+        "places": null,
+        "placeDetails": [],
+        "location": {
+            "lng": 108.22530422123924,
+            "lat": 16.094051244061063
+        },
+        "scale": 1,
+        "bearing": 0,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": {
+            "zoom": 21,
+            "bearing": 20.999999999999996,
+            "tilt": 38.5,
+            "target": null
+        },
+        "model": {
+            "id": "58c0c40763309a81f47c6402",
+            "name": "C\u00e2y Cau Vua",
+            "objName": "58c0c40763309a81f47c6402",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/58c0c40763309a81f47c6402",
+            "color": null,
+            "type": "Object",
+            "coordinates": null,
+            "height": 1,
+            "textureName": "08e6e6b5bd684788ba85704b3bfb988d.png",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/08e6e6b5bd684788ba85704b3bfb988d.png"
+        },
+        "types": [
+            "atm"
+        ],
+        "minZoom": null,
+        "maxZoom": null,
+        "addressComponents": [
+            {
+                "types": [
+                    "city",
+                    "admin_level_2"
+                ],
+                "name": "\u0110\u00e0 N\u1eb5ng"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "S\u01a1n Tr\u00e0"
+            },
+            {
+                "types": [
+                    "admin_level_4"
+                ],
+                "name": "N\u1ea1i Hi\u00ean \u0110\u00f4ng"
+            },
+            {
+                "types": [
+                    "street"
+                ],
+                "name": "\u0110\u01b0\u1eddng 7m5"
+            }
+        ],
+        "startDate": 973036800000,
+        "endDate": 4099680000000,
+        "source": {
+            "name": "vmp"
+        },
+        "typeInfos": {
+            "atm": "ATM"
+        },
+        "metadata": null,
+        "address": "\u0110\u01b0\u1eddng 7m5, N\u1ea1i Hi\u00ean \u0110\u00f4ng, S\u01a1n Tr\u00e0, \u0110\u00e0 N\u1eb5ng"
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "633d2abe0d3b63a338157088",
+        "name": "ship2",
+        "places": null,
+        "placeDetails": [],
+        "location": {
+            "lng": 108.21992467901856,
+            "lat": 16.114165166913395
+        },
+        "scale": 1,
+        "bearing": -37,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": null,
+        "model": {
+            "id": "5b21ecd4cd18d02d045a5f8e",
+            "name": "ship2",
+            "objName": "5e7d865523bf5b16acfd1c56.obj",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/5e7d865523bf5b16acfd1c56.obj",
+            "color": null,
+            "type": "Object",
+            "coordinates": [
+                {
+                    "lng": 108.21997143167856,
+                    "lat": 16.114210082672514
+                },
+                {
+                    "lng": 108.21997143165738,
+                    "lat": 16.114120251144104
+                },
+                {
+                    "lng": 108.21987792637975,
+                    "lat": 16.114120251144104
+                },
+                {
+                    "lng": 108.21987792635858,
+                    "lat": 16.114210082672514
+                },
+                {
+                    "lng": 108.21997143167856,
+                    "lat": 16.114210082672514
+                }
+            ],
+            "height": 1,
+            "textureName": "5e7d865523bf5b16acfd1c58.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/5e7d865523bf5b16acfd1c58.jpg"
+        },
+        "types": [
+            "decoration"
+        ],
+        "minZoom": 17,
+        "maxZoom": 19,
+        "addressComponents": [],
+        "startDate": null,
+        "endDate": null,
+        "source": {
+            "name": "vmp"
+        },
+        "typeInfos": {
+            "decoration": "C\u00e1c \u0111\u1ed1i t\u01b0\u1ee3ng 3D \u0111\u1ec3 trang tr\u00ed"
+        },
+        "metadata": null,
+        "address": null
+    }
+}

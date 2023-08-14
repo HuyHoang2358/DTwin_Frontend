@@ -1,0 +1,94 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "601b81955a42ad7373ce6a98",
+        "name": "Marina Complex_05 - 1612415311654",
+        "places": null,
+        "placeDetails": [],
+        "location": {
+            "lng": 108.22516740963647,
+            "lat": 16.094052003047764
+        },
+        "scale": 1,
+        "bearing": 290,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": {
+            "zoom": 22,
+            "bearing": -95.06597872249911,
+            "tilt": 11.5,
+            "target": {
+                "lng": 108.22516740963647,
+                "lat": 16.094052003047764
+            }
+        },
+        "model": {
+            "id": "5bef8a1573eb0522f8df89d4",
+            "name": "Marina Complex_05",
+            "objName": "5e7877c1c17b6c0a38b1657c.obj",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/5e7877c1c17b6c0a38b1657c.obj",
+            "color": null,
+            "type": "Object",
+            "coordinates": [
+                {
+                    "lng": 108.22521415755831,
+                    "lat": 16.094096918806894
+                },
+                {
+                    "lng": 108.22521415753715,
+                    "lat": 16.094007087278477
+                },
+                {
+                    "lng": 108.22512066173579,
+                    "lat": 16.094007087278477
+                },
+                {
+                    "lng": 108.22512066171463,
+                    "lat": 16.094096918806894
+                },
+                {
+                    "lng": 108.22521415755831,
+                    "lat": 16.094096918806894
+                }
+            ],
+            "height": 1,
+            "textureName": "5e7877c1c17b6c0a38b1657e.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/5e7877c1c17b6c0a38b1657e.jpg"
+        },
+        "types": [
+            "decoration"
+        ],
+        "minZoom": 17,
+        "maxZoom": 19,
+        "addressComponents": [
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "S\u01a1n Tr\u00e0"
+            },
+            {
+                "types": [
+                    "street"
+                ],
+                "name": "L\u00ea V\u0103n Duy\u1ec7t"
+            },
+            {
+                "types": [
+                    "housenumber"
+                ],
+                "name": "31"
+            }
+        ],
+        "startDate": null,
+        "endDate": null,
+        "source": {
+            "name": "vmp"
+        },
+        "typeInfos": {
+            "decoration": "C\u00e1c \u0111\u1ed1i t\u01b0\u1ee3ng 3D \u0111\u1ec3 trang tr\u00ed"
+        },
+        "metadata": null,
+        "address": "31 L\u00ea V\u0103n Duy\u1ec7t, S\u01a1n Tr\u00e0"
+    }
+}

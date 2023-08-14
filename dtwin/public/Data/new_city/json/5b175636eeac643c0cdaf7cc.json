@@ -1,0 +1,326 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "5b175636eeac643c0cdaf7cc",
+        "name": "Khu chung c\u01b0 1C",
+        "places": null,
+        "placeDetails": [
+            {
+                "id": "5c9845e7814a9df9d67e5da0",
+                "location": {
+                    "lng": 108.228521,
+                    "lat": 16.095957
+                },
+                "address": "14 L\u00fd Nh\u1eadt Quang, Ph\u01b0\u1eddng N\u1ea1i Hi\u00ean \u0110\u00f4ng, Qu\u1eadn S\u01a1n Tr\u00e0, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, Vi\u1ec7t Nam",
+                "name": "Khu chung c\u01b0 1C",
+                "objectId": "5b175636eeac643c0cdaf7cc",
+                "description": " &nbsp; ",
+                "types": [
+                    "point",
+                    "other"
+                ],
+                "typeInfos": [
+                    {
+                        "id": "point",
+                        "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                        "group": "other"
+                    }
+                ],
+                "mainType": "point",
+                "mainTypeInfos": {
+                    "id": "point",
+                    "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                    "group": "other"
+                },
+                "auxiliaryTypes": [
+                    "other"
+                ],
+                "auxiliaryTypesInfos": [],
+                "addressComponents": [
+                    {
+                        "types": [
+                            "housenumber"
+                        ],
+                        "name": "14"
+                    },
+                    {
+                        "types": [
+                            "street"
+                        ],
+                        "name": "L\u00fd Nh\u1eadt Quang"
+                    },
+                    {
+                        "types": [
+                            "admin_level_4"
+                        ],
+                        "name": "Ph\u01b0\u1eddng N\u1ea1i Hi\u00ean \u0110\u00f4ng"
+                    },
+                    {
+                        "types": [
+                            "admin_level_3"
+                        ],
+                        "name": "Qu\u1eadn S\u01a1n Tr\u00e0"
+                    },
+                    {
+                        "types": [
+                            "admin_level_2"
+                        ],
+                        "name": "Th\u00e0nh Ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+                    },
+                    {
+                        "types": [
+                            "admin_level_1"
+                        ],
+                        "name": "Vi\u1ec7t Nam"
+                    }
+                ],
+                "photos": [],
+                "startDate": 975060000000,
+                "endDate": 4099629600000,
+                "placeTypes": [
+                    {
+                        "id": "point",
+                        "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                        "description": "",
+                        "minZoom": 15,
+                        "group": "other",
+                        "minRank": 0,
+                        "maxRank": 1000000,
+                        "icon": null,
+                        "createdBy": {
+                            "userId": "admin",
+                            "displayName": "admin"
+                        },
+                        "updatedBy": {
+                            "userId": "admin",
+                            "displayName": "admin"
+                        },
+                        "createdDate": 1658828342882,
+                        "updatedDate": 1658828342882
+                    }
+                ],
+                "otherPlaceInObjects": [],
+                "object": {
+                    "id": "5b175636eeac643c0cdaf7cc",
+                    "name": "Khu chung c\u01b0 1C",
+                    "location": {
+                        "lng": 108.228521,
+                        "lat": 16.095957
+                    },
+                    "scale": 0.8,
+                    "bearing": 34,
+                    "elevation": 0,
+                    "heightScale": 1.15,
+                    "camera": {
+                        "zoom": 19,
+                        "bearing": 245.11764705882325,
+                        "tilt": 60,
+                        "target": null
+                    },
+                    "model": {
+                        "id": "58259dcdafaa6a101c47fd29",
+                        "objName": "58259dcdafaa6a101c47fd29",
+                        "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/58259dcdafaa6a101c47fd29",
+                        "color": null,
+                        "type": "Object",
+                        "coordinates": [
+                            {
+                                "lng": 108.22868,
+                                "lat": 16.096239
+                            },
+                            {
+                                "lng": 108.228853,
+                                "lat": 16.095994
+                            },
+                            {
+                                "lng": 108.228189,
+                                "lat": 16.095921
+                            },
+                            {
+                                "lng": 108.228361,
+                                "lat": 16.095675
+                            }
+                        ],
+                        "height": 1,
+                        "textureName": "b2ca27a871d844ab8d5c4389ba05a65c.jpg",
+                        "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/b2ca27a871d844ab8d5c4389ba05a65c.jpg"
+                    },
+                    "types": [
+                        "apartments"
+                    ],
+                    "minZoom": null,
+                    "maxZoom": null,
+                    "startDate": 975060000000,
+                    "endDate": 4099629600000,
+                    "isVerified": false,
+                    "isDeleted": false,
+                    "source": null,
+                    "addressComponents": [
+                        {
+                            "types": [
+                                "street"
+                            ],
+                            "name": "L\u00fd Nh\u1eadt Quang",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_4"
+                            ],
+                            "name": "Ph\u01b0\u1eddng N\u1ea1i Hi\u00ean \u0110\u00f4ng",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_3"
+                            ],
+                            "name": "Qu\u1eadn S\u01a1n Tr\u00e0",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "city",
+                                "admin_level_2"
+                            ],
+                            "name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_1"
+                            ],
+                            "name": "Vi\u1ec7t Nam",
+                            "searchName": null
+                        }
+                    ],
+                    "typeInfos": null,
+                    "metadata": null,
+                    "address": "L\u00fd Nh\u1eadt Quang, Ph\u01b0\u1eddng N\u1ea1i Hi\u00ean \u0110\u00f4ng, Qu\u1eadn S\u01a1n Tr\u00e0, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, Vi\u1ec7t Nam",
+                    "createdBy": {
+                        "userId": "5a56dbc7d34a2e0efc97c4f5",
+                        "displayName": "admin"
+                    },
+                    "updatedBy": {
+                        "userId": "5a56dbc7d34a2e0efc97c4f5",
+                        "displayName": "admin"
+                    },
+                    "createdDate": 1528256054245,
+                    "updatedDate": 1623224189615
+                },
+                "tags": null,
+                "phoneNumber": null,
+                "website": null,
+                "businessHours": null,
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.228521,
+                        16.095957
+                    ]
+                },
+                "rank": {
+                    "value": 1000060
+                },
+                "metadata": null,
+                "mediaFiles": [],
+                "isDeleted": false,
+                "reviewsSummary": {
+                    "ratingAverage": 0,
+                    "totalRating": 0,
+                    "numberOfRatingOneStar": 0,
+                    "numberOfRatingTwoStar": 0,
+                    "numberOfRatingThreeStar": 0,
+                    "numberOfRatingFourStar": 0,
+                    "numberOfRatingFiveStar": 0
+                }
+            }
+        ],
+        "location": {
+            "lng": 108.228521,
+            "lat": 16.095957
+        },
+        "scale": 0.8,
+        "bearing": 34,
+        "elevation": 0,
+        "heightScale": 1.15,
+        "camera": {
+            "zoom": 19,
+            "bearing": 245.11764705882325,
+            "tilt": 60,
+            "target": null
+        },
+        "model": {
+            "id": "58259dcdafaa6a101c47fd29",
+            "name": "Chung C\u01b0 12 T\u1ea7ng",
+            "objName": "58259dcdafaa6a101c47fd29",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/58259dcdafaa6a101c47fd29",
+            "color": null,
+            "type": "Object",
+            "coordinates": [
+                {
+                    "lng": 108.22868,
+                    "lat": 16.096239
+                },
+                {
+                    "lng": 108.228853,
+                    "lat": 16.095994
+                },
+                {
+                    "lng": 108.228189,
+                    "lat": 16.095921
+                },
+                {
+                    "lng": 108.228361,
+                    "lat": 16.095675
+                }
+            ],
+            "height": 1,
+            "textureName": "b2ca27a871d844ab8d5c4389ba05a65c.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/b2ca27a871d844ab8d5c4389ba05a65c.jpg"
+        },
+        "types": [
+            "apartments"
+        ],
+        "minZoom": null,
+        "maxZoom": null,
+        "addressComponents": [
+            {
+                "types": [
+                    "street"
+                ],
+                "name": "L\u00fd Nh\u1eadt Quang"
+            },
+            {
+                "types": [
+                    "admin_level_4"
+                ],
+                "name": "Ph\u01b0\u1eddng N\u1ea1i Hi\u00ean \u0110\u00f4ng"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "Qu\u1eadn S\u01a1n Tr\u00e0"
+            },
+            {
+                "types": [
+                    "city",
+                    "admin_level_2"
+                ],
+                "name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+            },
+            {
+                "types": [
+                    "admin_level_1"
+                ],
+                "name": "Vi\u1ec7t Nam"
+            }
+        ],
+        "startDate": 975060000000,
+        "endDate": 4099629600000,
+        "source": null,
+        "typeInfos": {},
+        "metadata": null,
+        "address": "L\u00fd Nh\u1eadt Quang, Ph\u01b0\u1eddng N\u1ea1i Hi\u00ean \u0110\u00f4ng, Qu\u1eadn S\u01a1n Tr\u00e0, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, Vi\u1ec7t Nam"
+    }
+}

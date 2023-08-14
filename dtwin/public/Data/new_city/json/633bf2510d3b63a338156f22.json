@@ -1,0 +1,299 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "633bf2510d3b63a338156f22",
+        "name": "Danang Port",
+        "places": null,
+        "placeDetails": [
+            {
+                "id": "6093dfc259a2b25f54e42d28",
+                "location": {
+                    "lng": 108.2191458,
+                    "lat": 16.1208871
+                },
+                "address": "QL14B, Ph\u01b0\u1eddng Th\u1ecd Quang, Qu\u1eadn S\u01a1n Tr\u00e0, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng",
+                "name": "Danang Port",
+                "objectId": "633bf2510d3b63a338156f22",
+                "description": null,
+                "types": [
+                    "point"
+                ],
+                "typeInfos": [
+                    {
+                        "id": "point",
+                        "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                        "group": "other"
+                    }
+                ],
+                "mainType": "point",
+                "mainTypeInfos": {
+                    "id": "point",
+                    "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                    "group": "other"
+                },
+                "addressComponents": [
+                    {
+                        "types": [
+                            "street"
+                        ],
+                        "name": "ql14b"
+                    },
+                    {
+                        "types": [
+                            "admin_level_4"
+                        ],
+                        "name": "ph\u01b0\u1eddng th\u1ecd quang"
+                    },
+                    {
+                        "types": [
+                            "admin_level_3"
+                        ],
+                        "name": "qu\u1eadn s\u01a1n tr\u00e0"
+                    },
+                    {
+                        "types": [
+                            "admin_level_2"
+                        ],
+                        "name": "th\u00e0nh ph\u1ed1 \u0111\u00e0 n\u1eb5ng"
+                    }
+                ],
+                "photos": null,
+                "startDate": null,
+                "endDate": null,
+                "placeTypes": [
+                    {
+                        "id": "point",
+                        "name": "\u0110\u1ecba \u0111i\u1ec3m n\u00f3i chung",
+                        "description": "",
+                        "minZoom": 15,
+                        "group": "other",
+                        "minRank": 0,
+                        "maxRank": 1000000,
+                        "icon": null,
+                        "createdBy": {
+                            "userId": "admin",
+                            "displayName": "admin"
+                        },
+                        "updatedBy": {
+                            "userId": "admin",
+                            "displayName": "admin"
+                        },
+                        "createdDate": 1658828342882,
+                        "updatedDate": 1658828342882
+                    }
+                ],
+                "otherPlaceInObjects": [],
+                "object": {
+                    "id": "633bf2510d3b63a338156f22",
+                    "name": "Danang Port",
+                    "location": {
+                        "lng": 108.21916320507552,
+                        "lat": 16.120876613339902
+                    },
+                    "scale": 1,
+                    "bearing": 129,
+                    "elevation": 0,
+                    "heightScale": 1,
+                    "camera": {
+                        "zoom": 19.2478,
+                        "bearing": 32.28241123125729,
+                        "tilt": 65,
+                        "target": {
+                            "lng": 108.2191397623994,
+                            "lat": 16.121244236500395
+                        }
+                    },
+                    "model": {
+                        "id": null,
+                        "objName": "633bf1e60d3b63a338156f1d.obj",
+                        "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/633bf1e60d3b63a338156f1d.obj",
+                        "color": null,
+                        "type": "Object",
+                        "coordinates": [
+                            {
+                                "lng": 108.21920995931806,
+                                "lat": 16.12092152909902
+                            },
+                            {
+                                "lng": 108.21920995929686,
+                                "lat": 16.12083169757061
+                            },
+                            {
+                                "lng": 108.21911645085417,
+                                "lat": 16.12083169757061
+                            },
+                            {
+                                "lng": 108.21911645083298,
+                                "lat": 16.12092152909902
+                            },
+                            {
+                                "lng": 108.21920995931806,
+                                "lat": 16.12092152909902
+                            }
+                        ],
+                        "height": null,
+                        "textureName": "633bf1e60d3b63a338156f1f.jpg",
+                        "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/633bf1e60d3b63a338156f1f.jpg"
+                    },
+                    "types": [
+                        "habour"
+                    ],
+                    "minZoom": 17,
+                    "maxZoom": 19,
+                    "startDate": null,
+                    "endDate": null,
+                    "isVerified": false,
+                    "isDeleted": false,
+                    "source": {
+                        "name": "vmp"
+                    },
+                    "addressComponents": [
+                        {
+                            "types": [
+                                "admin_level_2"
+                            ],
+                            "name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_3"
+                            ],
+                            "name": "Qu\u1eadn S\u01a1n Tr\u00e0",
+                            "searchName": null
+                        },
+                        {
+                            "types": [
+                                "admin_level_4"
+                            ],
+                            "name": "Ph\u01b0\u1eddng Th\u1ecd Quang",
+                            "searchName": null
+                        }
+                    ],
+                    "typeInfos": null,
+                    "metadata": null,
+                    "address": "Ph\u01b0\u1eddng Th\u1ecd Quang, Qu\u1eadn S\u01a1n Tr\u00e0, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng",
+                    "createdBy": {
+                        "userId": "b4e22d30-feb2-442c-aea8-814ed6e5e8e7",
+                        "displayName": "Th\u00e0nh Nguy\u1ec5n"
+                    },
+                    "updatedBy": {
+                        "userId": "b4e22d30-feb2-442c-aea8-814ed6e5e8e7",
+                        "displayName": "Th\u00e0nh Nguy\u1ec5n"
+                    },
+                    "createdDate": 1664873041902,
+                    "updatedDate": 1664873041902
+                },
+                "tags": [],
+                "phoneNumber": null,
+                "website": null,
+                "businessHours": null,
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.2191458,
+                        16.1208871
+                    ]
+                },
+                "rank": {
+                    "value": 12345
+                },
+                "metadata": null,
+                "mediaFiles": [],
+                "isDeleted": false,
+                "reviewsSummary": {
+                    "ratingAverage": 0,
+                    "totalRating": 0,
+                    "numberOfRatingOneStar": 0,
+                    "numberOfRatingTwoStar": 0,
+                    "numberOfRatingThreeStar": 0,
+                    "numberOfRatingFourStar": 0,
+                    "numberOfRatingFiveStar": 0
+                }
+            }
+        ],
+        "location": {
+            "lng": 108.21916320507552,
+            "lat": 16.120876613339902
+        },
+        "scale": 1,
+        "bearing": 129,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": {
+            "zoom": 19.2478,
+            "bearing": 32.28241123125729,
+            "tilt": 65,
+            "target": {
+                "lng": 108.2191397623994,
+                "lat": 16.121244236500395
+            }
+        },
+        "model": {
+            "id": null,
+            "name": null,
+            "objName": "633bf1e60d3b63a338156f1d.obj",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/633bf1e60d3b63a338156f1d.obj",
+            "color": null,
+            "type": "Object",
+            "coordinates": [
+                {
+                    "lng": 108.21920995931806,
+                    "lat": 16.12092152909902
+                },
+                {
+                    "lng": 108.21920995929686,
+                    "lat": 16.12083169757061
+                },
+                {
+                    "lng": 108.21911645085417,
+                    "lat": 16.12083169757061
+                },
+                {
+                    "lng": 108.21911645083298,
+                    "lat": 16.12092152909902
+                },
+                {
+                    "lng": 108.21920995931806,
+                    "lat": 16.12092152909902
+                }
+            ],
+            "height": null,
+            "textureName": "633bf1e60d3b63a338156f1f.jpg",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/633bf1e60d3b63a338156f1f.jpg"
+        },
+        "types": [
+            "habour"
+        ],
+        "minZoom": 17,
+        "maxZoom": 19,
+        "addressComponents": [
+            {
+                "types": [
+                    "admin_level_2"
+                ],
+                "name": "Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "Qu\u1eadn S\u01a1n Tr\u00e0"
+            },
+            {
+                "types": [
+                    "admin_level_4"
+                ],
+                "name": "Ph\u01b0\u1eddng Th\u1ecd Quang"
+            }
+        ],
+        "startDate": null,
+        "endDate": null,
+        "source": {
+            "name": "vmp"
+        },
+        "typeInfos": {},
+        "metadata": null,
+        "address": "Ph\u01b0\u1eddng Th\u1ecd Quang, Qu\u1eadn S\u01a1n Tr\u00e0, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng"
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "code": "ok",
+    "result": {
+        "id": "5b2365f0c4f5601100e58b5d",
+        "name": "\u0110\u00e8n Chi\u1ebfu S\u00e1ng Ph\u1ea3i",
+        "places": null,
+        "placeDetails": [],
+        "location": {
+            "lng": 108.22559879889496,
+            "lat": 16.093698336513967
+        },
+        "scale": 1,
+        "bearing": 41,
+        "elevation": 0,
+        "heightScale": 1,
+        "camera": {
+            "zoom": 21,
+            "bearing": -8.200000000000001,
+            "tilt": 22,
+            "target": null
+        },
+        "model": {
+            "id": "58f71e090c753b7260d722f8",
+            "name": "\u0110\u00e8n Chi\u1ebfu S\u00e1ng Ph\u1ea3i",
+            "objName": "58f71e090c753b7260d722f8",
+            "objUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/models/58f71e090c753b7260d722f8",
+            "color": null,
+            "type": "Object",
+            "coordinates": null,
+            "height": 1,
+            "textureName": "e705a43bc0f2427a866ecd27ba7b2a6c.png",
+            "textureUrl": "https://hcm01.vstorage.vngcloud.vn/v1/AUTH_4486f66f671c41bab0d3dea1904626d4/sdk/textures/e705a43bc0f2427a866ecd27ba7b2a6c.png"
+        },
+        "types": [
+            "atm"
+        ],
+        "minZoom": null,
+        "maxZoom": null,
+        "addressComponents": [
+            {
+                "types": [
+                    "city",
+                    "admin_level_2"
+                ],
+                "name": "\u0110\u00e0 N\u1eb5ng"
+            },
+            {
+                "types": [
+                    "admin_level_3"
+                ],
+                "name": "S\u01a1n Tr\u00e0"
+            },
+            {
+                "types": [
+                    "admin_level_4"
+                ],
+                "name": "N\u1ea1i Hi\u00ean \u0110\u00f4ng"
+            },
+            {
+                "types": [
+                    "street"
+                ],
+                "name": "\u0110\u01b0\u1eddng 7m5"
+            }
+        ],
+        "startDate": 973036800000,
+        "endDate": 4099680000000,
+        "source": {
+            "name": "vmp"
+        },
+        "typeInfos": {
+            "atm": "ATM"
+        },
+        "metadata": null,
+        "address": "\u0110\u01b0\u1eddng 7m5, N\u1ea1i Hi\u00ean \u0110\u00f4ng, S\u01a1n Tr\u00e0, \u0110\u00e0 N\u1eb5ng"
+    }
+}

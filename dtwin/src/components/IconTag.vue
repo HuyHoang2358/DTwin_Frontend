@@ -339,6 +339,16 @@
       />
     </svg>
     <svg
+      v-else-if="name === 'double-chevron-right'"
+      class="fill-current w-full h-full"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 13 18"
+    >
+      <path d="M5 15.5 12 9 5 2.5" />
+      <path d="M10 9 0 0v18l10-9Z" />
+    </svg>
+    <svg
       v-else-if="name === 'chevron-left'"
       class="fill-current w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
@@ -451,7 +461,6 @@
       viewBox="0 0 12 7"
     >
       <path
-        fill="#727272"
         d="m6.428 6.628 5.395-5.396a.608.608 0 0 0 0-.858.605.605 0 0 0-.856 0L6 5.342 1.034.375a.605.605 0 1 0-.857.857L5.572 6.63a.611.611 0 0 0 .856 0Z"
       />
     </svg>
