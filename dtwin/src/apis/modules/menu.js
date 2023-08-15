@@ -15,19 +15,21 @@ export const headers = {
 };
 export default {
   getAllMenus() {
-    return Api().get(API_GET_MENUS, { headers });
+    return Api.systemApi().get(API_GET_MENUS, { headers });
   },
   getChildMenus(url) {
-    return Api().get(`${API_GET_CHILDS_MENUS}?url=${url}`, { headers });
+    return Api.systemApi().get(`${API_GET_CHILDS_MENUS}?url=${url}`, {
+      headers,
+    });
   },
   addMenu(data) {
-    return Api().post(API_ADD_NEW_MENU, data, { headers });
+    return Api.systemApi().post(API_ADD_NEW_MENU, data, { headers });
   },
   updateMenu(data) {
-    return Api().post(API_UPDATE_NEW_MENU, data, { headers });
+    return Api.systemApi().post(API_UPDATE_NEW_MENU, data, { headers });
   },
   deleteMenu(menuId) {
-    return Api().post(
+    return Api.systemApi().post(
       API_DELETE_MENU,
       {
         menuList: [menuId],

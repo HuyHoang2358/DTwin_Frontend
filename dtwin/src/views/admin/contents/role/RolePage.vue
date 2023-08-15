@@ -14,13 +14,13 @@
       <div class="text-[#333333]">
         <div class="flex justify-between items-center">
           <div>
-            <p class="text-3xl">Role List</p>
+            <p class="text-3xl">Danh sách vai trò</p>
           </div>
           <div>
             <div class="flex justify-end gap-4">
               <div class="w-96">
                 <search-form
-                  :placeholder="'Type role name or roleID ...'"
+                  :placeholder="'Tìm kiếm'"
                   @searching="searchRole"
                 ></search-form>
               </div>
@@ -36,11 +36,11 @@
         <table class="w-full table-auto">
           <thead>
             <tr class="bg-[#F3F5F8] text-left">
-              <th class="py-2 text-center">#</th>
-              <th>Role ID</th>
-              <th>Role Name</th>
-              <th>App Id</th>
-              <th class="text-center">Actions</th>
+              <th class="py-2 text-center">STT</th>
+              <th>ID</th>
+              <th>Tên vai trò</th>
+              <th>Tên ứng dụng</th>
+              <th class="text-center">Thao tác</th>
             </tr>
           </thead>
           <tbody>

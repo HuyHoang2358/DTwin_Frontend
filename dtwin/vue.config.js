@@ -7,7 +7,7 @@ const cesiumWorkers = "../Build/Cesium/Workers";
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  /* devServer: {
+  /*devServer: {
     proxy: "http://172.16.30.214",
   },*/
   configureWebpack: {

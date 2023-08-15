@@ -13,22 +13,22 @@
                 v-on:submit.prevent="submitForm"
               >
                 <p class="text-3xl font-semibold text-[#333333]">
-                  {{ isEditing ? "Edit Role" : "Add New Role" }}
+                  {{ isEditing ? "Chỉnh sửa" : "Thêm vai trò mới" }}
                 </p>
                 <div class="grid grid-cols-3 gap-4">
                   <div class="col-span-1">
                     <div class="w-full mt-4">
-                      <p>Tên nhóm quyền</p>
+                      <p>Tên vai trò</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-2 w-full border-0 focus:ring-[#E7E7E7] mt-1 caret-[#FF1F4F]"
-                        placeholder="Nhập tên quyền"
+                        placeholder="Nhập tên vai trò"
                         v-model="form.roleName"
                         required
                       />
                     </div>
                     <div class="w-full mt-4">
-                      <p>Thêm thành viên</p>
+                      <p>Thêm người dùng</p>
                       <div class="mt-1">
                         <search-check-box-form
                           :search_form="search_user_form"
@@ -40,23 +40,23 @@
                   </div>
                   <div class="col-span-1">
                     <div class="w-full mt-4" v-if="!isEditing">
-                      <p>Role ID</p>
+                      <p>ID</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-2 w-full border-0 focus:ring-[#E7E7E7] mt-1 caret-[#FF1F4F]"
-                        placeholder="Nhập tên quyền"
+                        placeholder="Nhập ID"
                         v-model="form.roleId"
                         required
                       />
                     </div>
 
                     <div class="w-full mt-4">
-                      <p>App Id</p>
+                      <p>Tên ứng dụng</p>
                       <select
                         class="bg-[#F6F6F6] pl-4 rounded p-2 w-full border-0 focus:ring-[#E7E7E7] mt-1 caret-[#FF1F4F]"
                         v-model="form.appId"
                       >
-                        <option value="">Null</option>
+                        <option value="">Không</option>
                         <option
                           :value="app.appId"
                           v-for="(app, index) in apps"
@@ -79,7 +79,7 @@
                   </div>
                   <div class="col-span-1">
                     <div class="w-full mt-4">
-                      <p>Thuộc nhóm quyền</p>
+                      <p>Vai trò cấp trên</p>
                       <select
                         class="bg-[#F6F6F6] pl-4 rounded p-2 w-full border-0 focus:ring-[#E7E7E7] mt-1 caret-[#FF1F4F]"
                         v-model="form.parentId"
@@ -118,13 +118,21 @@
                         class="col-span-1 py-2 bg-[#E2E2E2] rounded-lg"
                         @click="close_form()"
                       >
-                        Cancel
+                        Hủy
                       </button>
                       <button
                         type="submit"
                         class="col-span-1 py-2 bg-main_color rounded-lg text-white"
+                        v-if="!isEditing"
                       >
-                        Submit
+                        Thêm mới
+                      </button>
+                      <button
+                        type="submit"
+                        class="col-span-1 py-2 bg-main_color rounded-lg text-white"
+                        v-if="isEditing"
+                      >
+                        Cập nhật
                       </button>
                     </div>
                   </div>

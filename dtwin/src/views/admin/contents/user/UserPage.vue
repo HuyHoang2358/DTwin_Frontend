@@ -19,13 +19,13 @@
       <div class="text-[#333333]">
         <div class="flex justify-between items-center">
           <div>
-            <p class="text-3xl">User List</p>
+            <p class="text-3xl">Danh sách người dùng</p>
           </div>
           <div>
             <div class="flex justify-end gap-4">
               <div class="w-96">
                 <search-form
-                  :placeholder="'Search'"
+                  :placeholder="'Tìm kiếm'"
                   @searching="searchUser"
                 ></search-form>
               </div>
@@ -40,12 +40,12 @@
         <table class="w-full table-auto">
           <thead>
             <tr class="bg-[#F3F5F8] text-left">
-              <th class="py-2 text-center">#</th>
-              <th>Name</th>
+              <th class="py-2 text-center">STT</th>
+              <th>Tên</th>
               <th>Email</th>
-              <th>Address</th>
-              <th>Phone</th>
-              <th class="text-center">Actions</th>
+              <th>Địa chỉ</th>
+              <th>Số điện thoại</th>
+              <th class="text-center">Thao tác</th>
             </tr>
           </thead>
           <tbody>
@@ -265,8 +265,10 @@ export default {
     },
     async delete_user(userId) {
       try {
-        await USER_API.delete_user({ userId: userId });
-        await this.getAllUsers();
+        if (window.confirm(`Bạn muốn xóa người dùng ?`)) {
+          await USER_API.delete_user({ userId: userId });
+          await this.getAllUsers();
+        }
       } catch (e) {
         let log = {
           Type: "Err",

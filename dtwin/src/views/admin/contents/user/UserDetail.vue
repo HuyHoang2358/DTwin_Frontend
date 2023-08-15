@@ -9,12 +9,12 @@
             >
               <form class="w-full h-full text-[#201C1D] text-lg text-left">
                 <p class="text-3xl font-semibold text-[#333333]">
-                  Thông tin User
+                  Thông tin người dùng
                 </p>
                 <div class="grid grid-cols-2 gap-16">
                   <div class="col-span-1">
                     <div class="w-full mt-4">
-                      <p>Name</p>
+                      <p>Tên</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="w-full mt-4">
-                      <p>Username</p>
+                      <p>Tài khoản</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
@@ -45,7 +45,7 @@
                       />
                     </div>
                     <div class="w-full mt-4">
-                      <p>Password</p>
+                      <p>Mật khẩu</p>
                       <input
                         type="password"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
@@ -56,7 +56,7 @@
                   </div>
                   <div class="col-span-1">
                     <div class="w-full mt-4">
-                      <p>Role ID</p>
+                      <p>Vai trò</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
@@ -66,7 +66,7 @@
                       />
                     </div>
                     <div class="w-full mt-4">
-                      <p>Phone</p>
+                      <p>Số điện thoại</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
@@ -76,7 +76,7 @@
                       />
                     </div>
                     <div class="w-full mt-4">
-                      <p>Site</p>
+                      <p>Website</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
@@ -87,7 +87,7 @@
                     </div>
 
                     <div class="w-full mt-4">
-                      <p>Address</p>
+                      <p>Địa chỉ</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
@@ -97,7 +97,7 @@
                       />
                     </div>
 
-                    <div
+                    <!--                    <div
                       class="w-full mt-12 grid grid-cols-2 gap-8 text-center"
                     >
                       <button
@@ -114,7 +114,7 @@
                       >
                         Edit
                       </button>
-                    </div>
+                    </div>-->
                   </div>
                 </div>
               </form>

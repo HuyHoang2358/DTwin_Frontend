@@ -1,7 +1,14 @@
 import request from "axios";
 
-export default () => {
-  return request.create({
-    baseURL: process.env.VUE_APP_API,
-  });
+export default {
+  systemApi() {
+    return request.create({
+      baseURL: "http://172.16.30.214:9999/api/",
+    });
+  },
+  webApi() {
+    return request.create({
+      baseURL: "http://172.16.30.214:8888/api/",
+    });
+  },
 };

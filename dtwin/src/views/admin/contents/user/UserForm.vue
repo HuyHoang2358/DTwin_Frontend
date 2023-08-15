@@ -12,27 +12,27 @@
                 v-on:submit.prevent="submitForm"
               >
                 <p class="text-3xl font-semibold text-[#333333]">
-                  {{ isEditing ? "Edit User" : "Add new user" }}
+                  {{ isEditing ? "Chỉnh sửa" : "Thêm mới" }}
                 </p>
                 <div class="grid grid-cols-2 gap-16">
                   <div class="col-span-1">
                     <div class="w-full mt-4">
-                      <p>Name</p>
+                      <p>Tên</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter your name"
+                        placeholder="Nhập tên"
                         v-model="form.name"
                         required
                       />
                     </div>
 
                     <div class="w-full mt-4" v-if="!isEditing">
-                      <p>Username</p>
+                      <p>Tài khoản</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter your username"
+                        placeholder="Nhập tài khoản"
                         v-model="form.userId"
                         required
                       />
@@ -42,16 +42,16 @@
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter your email"
+                        placeholder="Nhập email"
                         v-model="form.email"
                       />
                     </div>
                     <div class="w-full mt-4" v-if="!isEditing">
-                      <p>Password</p>
+                      <p>Mật khẩu</p>
                       <input
                         type="password"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter your password"
+                        placeholder="Nhập mật khẩu"
                         v-model="form.password"
                         required
                       />
@@ -59,7 +59,7 @@
                   </div>
                   <div class="col-span-1">
                     <div class="w-full mt-4" v-if="!isEditing">
-                      <p>Role ID</p>
+                      <p>Vai trò</p>
                       <select
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
                         v-model="form.roleId"
@@ -74,30 +74,30 @@
                       </select>
                     </div>
                     <div class="w-full mt-4">
-                      <p>Phone</p>
+                      <p>Số điện thoại</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter your phone"
+                        placeholder="Nhập số điện thoại"
                         v-model="form.phone"
                       />
                     </div>
                     <div class="w-full mt-4" v-if="!isEditing">
-                      <p>Site</p>
+                      <p>Website</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter your site"
+                        placeholder="Nhập đường dẫn"
                         v-model="form.site"
                       />
                     </div>
 
                     <div class="w-full mt-4">
-                      <p>Address</p>
+                      <p>Địa chỉ</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter your address"
+                        placeholder="Nhập địa chỉ"
                         v-model="form.address"
                       />
                     </div>
@@ -110,13 +110,21 @@
                         class="col-span-1 py-2 bg-[#E2E2E2] rounded-lg"
                         @click="close_form()"
                       >
-                        Cancel
+                        Hủy
                       </button>
                       <button
                         type="submit"
                         class="col-span-1 py-2 bg-main_color rounded-lg text-white"
+                        v-if="!isEditing"
                       >
-                        Submit
+                        Thêm mới
+                      </button>
+                      <button
+                        type="submit"
+                        class="col-span-1 py-2 bg-main_color rounded-lg text-white"
+                        v-if="isEditing"
+                      >
+                        Cập nhật
                       </button>
                     </div>
                   </div>
@@ -189,6 +197,7 @@ export default {
       }
     },
     submitForm() {
+      //console.log(this.form);
       this.$emit("submit_form", this.form);
       this.form = {
         name: "",

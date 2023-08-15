@@ -13,13 +13,13 @@
       <div class="text-[#333333]">
         <div class="flex justify-between items-center">
           <div>
-            <p class="text-3xl">Menu List</p>
+            <p class="text-3xl">Danh mục</p>
           </div>
           <div>
             <div class="flex justify-end gap-4">
               <div class="w-96">
                 <search-form
-                  :placeholder="'Search'"
+                  :placeholder="'Tìm kiếm'"
                   @searching="search_menu"
                 ></search-form>
               </div>
@@ -34,13 +34,13 @@
         <table class="w-full table-auto">
           <thead>
             <tr class="bg-[#F3F5F8] text-left">
-              <th class="py-2 text-center">#</th>
-              <th>Menu</th>
-              <th>Url</th>
-              <th>Description</th>
-              <th>Sort Order</th>
-              <th>App Id</th>
-              <th class="text-center">Actions</th>
+              <th class="py-2 text-center px-4">STT</th>
+              <th>Danh mục</th>
+              <th>Đường dẫn</th>
+              <th>Mô tả</th>
+              <th>Thứ tự</th>
+              <th>Tên App</th>
+              <th class="text-center">Thao tác</th>
             </tr>
           </thead>
           <tbody>
@@ -129,9 +129,10 @@ export default {
         } else {
           await MENU_API.addMenu(data);
         }
-        this.$router.go();
-        //await this.getAllMenus();
-        //this.close_form();
+
+        //this.$router.go();
+        await this.getAllMenus();
+        this.close_form();
       } catch (e) {
         let log = {
           Type: "Err",
@@ -149,8 +150,10 @@ export default {
       console.log(this.menu_form_data);
     },
     async delete_menu_item(menuId) {
-      await MENU_API.deleteMenu(menuId);
-      await this.getAllMenus();
+      if (window.confirm(`Bạn muốn xóa người dùng ?`)) {
+        await MENU_API.deleteMenu(menuId);
+        await this.getAllMenus();
+      }
     },
   },
 };

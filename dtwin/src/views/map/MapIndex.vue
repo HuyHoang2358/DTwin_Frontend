@@ -12,7 +12,7 @@ import Init from "@/DtwinJs/Init.js";
 import NewCityInitMap from "@/new_city/init_map";
 import HandleAction from "@/DtwinJs/handle_action";
 export default {
-  props: ["vi"],
+  props: [],
   data() {
     return {
       viewer: null,
@@ -22,9 +22,8 @@ export default {
     this.viewer = await Init.initCesium();
     await NewCityInitMap.init_new_city_map(this.viewer);
     HandleAction.handle_click_object(this.viewer);
-    await this.$emit("child-data", this.viewer);
-    let models = NewCityInitMap.visualize_models(this.viewer);
-    console.log(models);
+    let models = await NewCityInitMap.visualize_models(this.viewer);
+    this.$emit("child-data", { viewer: this.viewer, models: models });
   },
   methods: {},
 };

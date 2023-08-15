@@ -1,7 +1,8 @@
 import { createApp } from "vue";
+import emitter from "./mitt";
+
 import App from "./App.vue";
-import mitt from "mitt";
-const emitter = mitt();
+
 import router from "./router";
 import store from "./store";
 import "./assets/index.css";
@@ -10,7 +11,8 @@ import "stream-browserify";
 //import axios from "axios";
 
 let app = createApp(App);
-app.config.globalProperties.emitter = emitter;
+window.emitter = emitter;
+app.config.globalProperties.$mitt = emitter;
 
 app.use(router);
 app.use(store);

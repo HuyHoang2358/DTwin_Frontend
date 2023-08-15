@@ -15,13 +15,16 @@ export const headers = {
 };
 export default {
   get_roles() {
-    return Api().get(API_GET_ROLES, { headers });
+    return Api.systemApi().get(API_GET_ROLES, { headers });
   },
   async getRoleDetail(roleId) {
     try {
-      let response = await Api().get(`${API_GET_ROLE}?roleId=${roleId}`, {
-        headers,
-      });
+      let response = await Api.systemApi().get(
+        `${API_GET_ROLE}?roleId=${roleId}`,
+        {
+          headers,
+        }
+      );
       console.log(response.data.data);
 
       return {
@@ -61,17 +64,21 @@ export default {
   },
 
   addRole(data) {
-    return Api().post(API_ADD_NEW_ROLE, data, { headers });
+    return Api.systemApi().post(API_ADD_NEW_ROLE, data, { headers });
   },
   updateRole(data) {
-    return Api().post(API_EDIT_ROLE, data, { headers });
+    return Api.systemApi().post(API_EDIT_ROLE, data, { headers });
   },
   deleteRole(listRoleId) {
-    return Api().post(API_DELETE_ROLE, { roleList: listRoleId }, { headers });
+    return Api.systemApi().post(
+      API_DELETE_ROLE,
+      { roleList: listRoleId },
+      { headers }
+    );
   },
   async getRoleList() {
     try {
-      let response = await Api().get(API_GET_ROLES, { headers });
+      let response = await Api.systemApi().get(API_GET_ROLES, { headers });
       console.log(response);
       return response.data.data.map((item) => {
         return {

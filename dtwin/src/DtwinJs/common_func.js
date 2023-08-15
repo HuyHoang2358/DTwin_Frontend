@@ -30,9 +30,9 @@ export default {
     );
     // Convert radians to degrees
     return {
-      pitch: Cesium.Math.toDegrees(pitch),
-      roll: Cesium.Math.toDegrees(roll),
-      heading: Cesium.Math.toDegrees(heading),
+      pitch: Math.floor(Cesium.Math.toDegrees(pitch)),
+      roll: Math.floor(Cesium.Math.toDegrees(roll)),
+      heading: Math.floor(Cesium.Math.toDegrees(heading)),
     };
   },
 };

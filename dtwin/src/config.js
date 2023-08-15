@@ -34,3 +34,6 @@ export const API_DELETE_ROLE = "role/delete-role";
 
 export const API_GET_RIGHTS = "right/get-rights";
 export const API_GET_APPS = "app/get-all-app";
+
+export const API_ADD_ENTITY = "entities";
+export const API_GET_ENTITIES = "entities/types/basicModel?type=";

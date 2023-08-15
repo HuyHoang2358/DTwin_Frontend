@@ -16,23 +16,23 @@ export const headers = {
 export default {
   get_users(page, pageSize) {
     const endpoint = API_GET_USERS + "?page=" + page + "&size=" + pageSize;
-    return Api().get(endpoint, { headers });
+    return Api.systemApi().get(endpoint, { headers });
   },
 
   search_user(searchValue, page, pageSize) {
     const endpoint = `${API_SEARCH_USER}?page=${page}&searchValue=${searchValue}&size=${pageSize}`;
-    return Api().get(endpoint, { headers });
+    return Api.systemApi().get(endpoint, { headers });
   },
 
   add_user(data) {
-    return Api().post(API_CREATE_USER, data, { headers });
+    return Api.systemApi().post(API_CREATE_USER, data, { headers });
   },
 
   update_user(data) {
-    return Api().post(API_EDIT_USER, data, { headers });
+    return Api.systemApi().post(API_EDIT_USER, data, { headers });
   },
 
   delete_user(data) {
-    return Api().post(API_DELETE_USER, data, { headers });
+    return Api.systemApi().post(API_DELETE_USER, data, { headers });
   },
 };

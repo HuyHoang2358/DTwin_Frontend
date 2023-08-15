@@ -1,5 +1,5 @@
 <template>
-  <drop-down :title="'User'">
+  <drop-down :title="'Thông tin cá nhân'">
     <div class="w-full">
       <div
         class="mt-4"

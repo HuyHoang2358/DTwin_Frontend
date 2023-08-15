@@ -9,11 +9,11 @@ export const headers = {
 };
 export default {
   getAllApps() {
-    return Api().get(API_GET_APPS, { headers });
+    return Api.systemApi().get(API_GET_APPS, { headers });
   },
   async getAppList() {
     try {
-      let response = await Api().get(API_GET_APPS, { headers });
+      let response = await Api.systemApi().get(API_GET_APPS, { headers });
       return response.data.data.map((item) => {
         return {
           appId: item.appId,

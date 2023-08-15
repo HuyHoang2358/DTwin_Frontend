@@ -5,7 +5,7 @@
       <div class="text-[#333333]">
         <div class="flex justify-between items-center">
           <div>
-            <p class="text-3xl">Right List</p>
+            <p class="text-3xl">Danh sách phân quyền</p>
           </div>
         </div>
       </div>
@@ -14,10 +14,10 @@
         <table class="w-full table-auto">
           <thead>
             <tr class="bg-[#F3F5F8] text-left">
-              <th class="py-2 text-center">#</th>
-              <th>Right ID</th>
-              <th>Right Name</th>
-              <th>Sort Order</th>
+              <th class="py-2 text-center">STT</th>
+              <th>ID</th>
+              <th>Tên quyền</th>
+              <!--              <th>Thứ tự</th>-->
             </tr>
           </thead>
           <tbody>
@@ -31,9 +31,9 @@
               </td>
               <td>{{ right.rightId }}</td>
               <td>{{ right.rightName }}</td>
-              <td>
+              <!--              <td>
                 {{ right.sortOrder }}
-              </td>
+              </td>-->
             </tr>
           </tbody>
         </table>

@@ -4,7 +4,7 @@
     @click="click_event()"
   >
     <div class="flex justify-center gap-2 items-center">
-      <p>Filters</p>
+      <p>Lọc</p>
       <div class="w-4 h-4">
         <icon-tag :name="'filter'"></icon-tag>
       </div>

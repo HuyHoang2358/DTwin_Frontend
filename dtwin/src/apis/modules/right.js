@@ -9,6 +9,6 @@ export const headers = {
 };
 export default {
   get_rights() {
-    return Api().get(API_GET_RIGHTS, { headers });
+    return Api.systemApi().get(API_GET_RIGHTS, { headers });
   },
 };

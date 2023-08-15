@@ -210,6 +210,7 @@
 </style>
 <script>
 import IconTag from "@/components/IconTag.vue";
+import emitter from "@/mitt";
 
 export default {
   props: ["model"],
@@ -218,6 +219,18 @@ export default {
     return {
       form: { ...this.model },
     };
+  },
+  mounted() {
+    // Listen for the 'cesiumClick' event on the event bus
+    emitter.on("edit-model-position", (eventData) => {
+      this.form = eventData["entity_info"];
+    });
+    emitter.on("edit-model-lat-lon", (eventData) => {
+      console.log("dit-model-lat-lon", eventData);
+      this.form.latitude = eventData["latitude"];
+      this.form.longitude = eventData["longitude"];
+      this.changePosition("pos");
+    });
   },
   methods: {
     submitForm() {

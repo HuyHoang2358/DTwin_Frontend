@@ -23,7 +23,7 @@
                 <form @submit.prevent="submit">
                   <div>
                     <div class="flex justify-between">
-                      <p class="text-left">Nhập Email</p>
+                      <p class="text-left">Tài khoản</p>
                       <p class="text-right text-base">
                         {{ error.identity }}
                       </p>
@@ -35,11 +35,12 @@
                       v-model="form.identity"
                       @input="inputIdentity()"
                       class="bg-white/50 w-full rounded mt-2 pl-4 2xl:px-8 py-3 border border-[#DDDDDD] focus:ring-0 focus:border-[#FF1F4F]"
+                      placeholder="Nhập tên tài khoản"
                     />
                   </div>
                   <div class="mt-4">
                     <div class="flex justify-between">
-                      <p class="text-left">Nhập mật khẩu</p>
+                      <p class="text-left">Mật khẩu</p>
                       <p class="text-right text-base">
                         {{ error.password }}
                       </p>
@@ -52,6 +53,7 @@
                         v-model="form.password"
                         @input="inputPassword()"
                         class="bg-white/50 w-full rounded pl-4 2xl:px-8 py-3 border border-[#DDDDDD] focus:ring-0 focus:border-[#FF1F4F]"
+                        placeholder="Nhập mật khẩu"
                       />
                       <button
                         type="button"
@@ -80,7 +82,7 @@
                     type="submit"
                     class="mt-4 2xl:mt-8 bg-main_color rounded py-2 w-full border border-main_color hover:bg-[#E00433]"
                   >
-                    Login
+                    Đăng nhập
                   </button>
 
                   <div class="mt-12 2xl:mt-24">
@@ -88,7 +90,7 @@
                       Bạn đã có tài khoản chưa?
                       <router-link
                         to="#"
-                        class="text-main_color underline underline-offset-4 hover:text-white"
+                        class="text-white underline underline-offset-4 hover:text-main_color"
                         >Đăng ký</router-link
                       >
                     </p>

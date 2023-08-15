@@ -12,16 +12,16 @@
                 v-on:submit.prevent="submitForm"
               >
                 <p class="text-3xl font-semibold text-[#333333]">
-                  {{ isEditing ? "Edit Menu" : "Add new menu" }}
+                  {{ isEditing ? "Chỉnh sửa danh mục" : "Thêm mới danh mục" }}
                 </p>
                 <div class="grid grid-cols-2 gap-16">
                   <div class="col-span-1">
                     <div class="w-full mt-4">
-                      <p>Name</p>
+                      <p>Tên danh mục</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter name of menu"
+                        placeholder="Nhập tên danh mục"
                         v-model="form.name"
                         required
                       />
@@ -32,38 +32,38 @@
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter link icon of menu"
+                        placeholder="Nhập link icon"
                         v-model="form.icon"
                       />
                     </div>
                     <div class="w-full mt-4">
-                      <p>Sort Order</p>
+                      <p>Thứ tự</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter sort order number "
+                        placeholder="Nhập số thứ tự"
                         v-model="form.sortOrder"
                       />
                     </div>
                   </div>
                   <div class="col-span-1">
                     <div class="w-full mt-4">
-                      <p>Url</p>
+                      <p>Đường dẫn</p>
                       <input
                         type="text"
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Enter url after domain of menu "
+                        placeholder="Nhập đường dẫn"
                         v-model="form.url"
                         required
                       />
                     </div>
                     <div class="w-full mt-4">
-                      <p>App ID</p>
+                      <p>Tên ứng dụng</p>
                       <select
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
                         v-model="form.appId"
                       >
-                        <option value="">Null</option>
+                        <option value="">Chọn</option>
                         <option
                           :value="app.appId"
                           v-for="(app, index) in apps"
@@ -75,12 +75,12 @@
                       </select>
                     </div>
                     <div class="w-full mt-4">
-                      <p>Parent ID</p>
+                      <p>Danh mục cấp trên</p>
                       <select
                         class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
                         v-model="form.parentId"
                       >
-                        <option value="">Null</option>
+                        <option value="">Không có</option>
                         <menu-option
                           :menu_item="menu"
                           v-for="(menu, index) in menu_tree"
@@ -96,13 +96,21 @@
                         class="col-span-1 py-2 bg-[#E2E2E2] rounded-lg"
                         @click="close_form()"
                       >
-                        Cancel
+                        Hủy
                       </button>
                       <button
                         type="submit"
                         class="col-span-1 py-2 bg-main_color rounded-lg text-white"
+                        v-if="!isEditing"
                       >
-                        Submit
+                        Thêm mới
+                      </button>
+                      <button
+                        type="submit"
+                        class="col-span-1 py-2 bg-main_color rounded-lg text-white"
+                        v-if="isEditing"
+                      >
+                        Cập nhật
                       </button>
                     </div>
                   </div>
@@ -146,6 +154,7 @@ export default {
         url: "",
         appId: "",
         parentId: "",
+        description: "",
       }),
     },
   },

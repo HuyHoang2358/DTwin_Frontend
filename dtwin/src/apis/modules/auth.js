@@ -13,10 +13,10 @@ export default {
     let headers = {
       Authorization: "Basic " + au,
     };
-
-    return Api().get(url, { headers });
+    console.log(Api.systemApi());
+    return Api.systemApi().get(url, { headers });
   },
   register() {
-    return Api().post("register");
+    return Api.systemApi().post("register");
   },
 };

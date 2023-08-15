@@ -46,10 +46,9 @@ export default {
                     pitch: 0,
                     roll: 0,
                     id: object_id,
-                    url: "/Data/new_city/glb_texture/" + object_id + ".glb",
+                    url: "/Data/new_city/glb/" + object_id + ".glb",
                   };
-                  let entity = ENTITY_MODEL.addModel(model, viewer);
-                  models.push(entity);
+                  models.push(ENTITY_MODEL.addModel(model, viewer));
                 });
             }
           } catch (e) {

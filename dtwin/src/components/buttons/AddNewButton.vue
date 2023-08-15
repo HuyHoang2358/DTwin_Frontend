@@ -4,7 +4,7 @@
     @click="click_event()"
   >
     <div class="flex justify-center gap-2 items-center">
-      <p>Add new</p>
+      <p>Thêm mới</p>
       <div class="w-4 h-4">
         <icon-tag :name="'add-circle'"></icon-tag>
       </div>

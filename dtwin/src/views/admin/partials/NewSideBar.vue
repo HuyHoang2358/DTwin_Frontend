@@ -162,27 +162,27 @@ export default {
     return {
       sidebar_menu: [
         {
-          name: "Dashboard",
+          name: "Thống kê",
           route_name: "admin.index",
           icon_name: "sidebar-dashboard",
         },
         {
-          name: "User",
+          name: "Người dùng",
           route_name: "admin.user.index",
           icon_name: "sidebar-user",
         },
         {
-          name: "Menu",
+          name: "Danh mục",
           route_name: "admin.menu.index",
           icon_name: "sidebar-menu",
         },
         {
-          name: "Role",
+          name: "Vai trò",
           route_name: "admin.role.index",
           icon_name: "sidebar-role",
         },
         {
-          name: "Right",
+          name: "Phân quyền",
           route_name: "admin.right.index",
           icon_name: "sidebar-right",
         },
