@@ -101,7 +101,7 @@ export default {
           description: item.description,
           sortOrder: item.sortOrder,
           appId: item.appId,
-          parentId: item.parentId,
+          parentId: item.parentId == null ? "" : item.parentId,
           childs: [],
         };
       });
@@ -129,7 +129,6 @@ export default {
         } else {
           await MENU_API.addMenu(data);
         }
-
         //this.$router.go();
         await this.getAllMenus();
         this.close_form();

@@ -10,6 +10,7 @@ import MenuPage from "@/views/admin/contents/menu/MenuPage.vue";
 import MapIndex from "@/views/map/MapIndex.vue";
 import BuildingPage from "@/views/front/contents/map/BuildingPage.vue";
 import MapEditPage from "@/views/map/MapEditPage.vue";
+import CityPage from "@/views/front/contents/general/cityPage.vue";
 
 const routes = [
   //home
@@ -79,6 +80,12 @@ const routes = [
     path: "/map/edit",
     name: "map.edit",
     component: MapEditPage,
+    meta: { guest: true },
+  },
+  {
+    path: "/tong-quan-do-thi",
+    name: "general.city",
+    component: CityPage,
     meta: { guest: true },
   },
 ];

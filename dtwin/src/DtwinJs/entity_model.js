@@ -1,83 +1,84 @@
 import * as Cesium from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
+import {
+  MINIO_GLB_TEXTURE_FOLDER_PATH,
+  MINIO_GLB_NO_TEXTURE_FOLDER_PATH,
+} from "@/config";
+function prepare_position(long, lat, height, heading, pitch, roll) {
+  // heading, pitch, roll is degrees
+  let position = Cesium.Cartesian3.fromDegrees(long, lat, height);
 
+  let orientation = Cesium.Transforms.headingPitchRollQuaternion(
+    position,
+    new Cesium.HeadingPitchRoll(
+      Cesium.Math.toRadians(heading),
+      Cesium.Math.toRadians(pitch),
+      Cesium.Math.toRadians(roll)
+    )
+  );
+  return { position: position, orientation: orientation };
+}
+function prepare_model_url(model_id, is_texture = false) {
+  let domain = is_texture
+    ? MINIO_GLB_TEXTURE_FOLDER_PATH
+    : MINIO_GLB_NO_TEXTURE_FOLDER_PATH;
+  return `${domain}${model_id}.glb`;
+}
 export default {
-  addModel1(model, viewer) {
-    let position = Cesium.Cartesian3.fromDegrees(
+  addModel(viewer, model) {
+    let position_info = prepare_position(
       model.longitude,
       model.latitude,
-      model.height
-    );
-    let heading = Cesium.Math.toRadians(model.heading);
-    let pitch = Cesium.Math.toRadians(model.pitch);
-    let roll = Cesium.Math.toRadians(model.roll);
-    let hpr = new Cesium.HeadingPitchRoll(heading, pitch, roll);
-    let orientation = Cesium.Transforms.headingPitchRollQuaternion(
-      position,
-      hpr
+      model.height,
+      model.heading,
+      model.pitch,
+      model.roll
     );
     return viewer.entities.add({
       name: model.id,
-      description: "",
-      position: position,
-      orientation: orientation,
+      description: model.type,
+      position: position_info.position,
+      orientation: position_info.orientation,
       model: {
-        uri:
-          "http://172.16.30.214:9000/model-3d-v2/building/glb/glb_texture/" +
-          model.modelUrl +
-          ".glb",
-        color: Cesium.Color.BLUE,
+        uri: prepare_model_url(model.modelUrl, true),
+        color: model.color ? null : null /*Cesium.Color.BLUE*/,
         scale: model.scale,
       },
     });
   },
-
-  addModel(model, viewer) {
-    let position = Cesium.Cartesian3.fromDegrees(
-      model.longitude,
-      model.latitude,
-      model.height
-    );
-    let heading = Cesium.Math.toRadians(model.heading);
-    let pitch = Cesium.Math.toRadians(model.pitch);
-    let roll = Cesium.Math.toRadians(model.roll);
-    let hpr = new Cesium.HeadingPitchRoll(heading, pitch, roll);
-    let orientation = Cesium.Transforms.headingPitchRollQuaternion(
-      position,
-      hpr
-    );
-    return viewer.entities.add({
-      name: model.id.trim(),
-      description: "",
-      position: position,
-      orientation: orientation,
-      model: {
-        uri: model.url,
-        scale: 0.7,
-      },
-    });
-  },
-  /*validate_params(params){
-    if
-  }*/
   tryParameterModel(entity, params) {
+    params["longitude"] === ""
+      ? (params["longitude"] = 0)
+      : parseFloat(params["longitude"]);
+
+    params["latitude"] === ""
+      ? (params["latitude"] = 0)
+      : parseFloat(params["latitude"]);
+
+    params["height"] === ""
+      ? (params["height"] = 0)
+      : parseFloat(params["height"]);
+
     let position = Cesium.Cartesian3.fromDegrees(
-      parseFloat(params["longitude"]),
-      parseFloat(params["latitude"]),
-      parseFloat(params["height"])
+      params["longitude"],
+      params["latitude"],
+      params["height"]
     );
     let hpr = new Cesium.HeadingPitchRoll(
-      Cesium.Math.toRadians(parseFloat(params["heading"])),
-      Cesium.Math.toRadians(parseFloat(params["pitch"])),
-      Cesium.Math.toRadians(parseFloat(params["roll"]))
+      Cesium.Math.toRadians(
+        parseFloat(params["heading"] === "" ? "0" : params["heading"])
+      ),
+      Cesium.Math.toRadians(
+        parseFloat(parseFloat(params["pitch"] === "" ? "0" : params["pitch"]))
+      ),
+      Cesium.Math.toRadians(
+        parseFloat(parseFloat(params["roll"] === "" ? "0" : params["roll"]))
+      )
     );
-    let orientation = Cesium.Transforms.headingPitchRollQuaternion(
+    entity.orientation = Cesium.Transforms.headingPitchRollQuaternion(
       position,
       hpr
     );
-    console.log(orientation);
-
-    entity.orientation = orientation;
     entity.position = position;
     entity.model.scale = parseFloat(params["scale"]) / 100;
   },

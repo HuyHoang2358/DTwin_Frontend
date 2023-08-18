@@ -26,6 +26,16 @@
                         required
                       />
                     </div>
+                    <div class="w-full mt-4">
+                      <p>Đường dẫn</p>
+                      <input
+                        type="text"
+                        class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
+                        placeholder="Nhập đường dẫn"
+                        v-model="form.url"
+                        required
+                      />
+                    </div>
 
                     <div class="w-full mt-4">
                       <p>Icon</p>
@@ -47,16 +57,6 @@
                     </div>
                   </div>
                   <div class="col-span-1">
-                    <div class="w-full mt-4">
-                      <p>Đường dẫn</p>
-                      <input
-                        type="text"
-                        class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F]"
-                        placeholder="Nhập đường dẫn"
-                        v-model="form.url"
-                        required
-                      />
-                    </div>
                     <div class="w-full mt-4">
                       <p>Tên ứng dụng</p>
                       <select
@@ -88,9 +88,16 @@
                         ></menu-option>
                       </select>
                     </div>
-                    <div
-                      class="w-full mt-12 grid grid-cols-2 gap-8 text-center"
-                    >
+
+                    <div class="w-full mt-4">
+                      <p>Mô tả</p>
+                      <textarea
+                        class="bg-[#F6F6F6] pl-4 rounded p-3 w-full border-0 focus:ring-[#E7E7E7] mt-2 caret-[#FF1F4F] h-36"
+                        v-model="form.description"
+                      ></textarea>
+                    </div>
+
+                    <div class="w-full mt-8 grid grid-cols-2 gap-8 text-center">
                       <button
                         type="button"
                         class="col-span-1 py-2 bg-[#E2E2E2] rounded-lg"
@@ -197,6 +204,7 @@ export default {
         url: "",
         appId: "",
         parentId: "",
+        description: "",
       };
     },
 

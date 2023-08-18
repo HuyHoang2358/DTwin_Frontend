@@ -11,48 +11,48 @@
             @click="drop_down = 'chat'"
             class="flex mx-2 items-center justify-center rounded-full bg-[#F1F1F2] p-3"
           >
-            <div class="w-6 h-6">
+            <div class="w-4 h-4">
               <icon-tag :name="'header-menu-message'"></icon-tag>
             </div>
           </button>
-          <div class="absolute top-0 right-0">
+          <!--          <div class="absolute top-0 right-0">
             <p
               class="bg-main_color text-white text-center items-center text-sm w-5 h-5 rounded-full"
             >
               3
             </p>
-          </div>
+          </div>-->
         </div>
 
         <!-- notifications btn -->
         <div class="relative">
           <button
             @click="drop_down = 'notification'"
-            class="flex mx-2 items-center justify-center rounded-full bg-[#F1F1F2] p-3"
+            class="flex mx-2 items-center justify-center rounded-full bg-[#F1F1F2] px-3 py-2"
           >
-            <div class="w-6 h-6">
+            <div class="w-4 h-6">
               <icon-tag :name="'header-menu-notification'"></icon-tag>
             </div>
           </button>
-          <div class="absolute top-0 right-0">
+          <!--          <div class="absolute top-0 right-0">
             <p
               class="bg-main_color text-white text-center items-center text-sm w-5 h-5 rounded-full"
             >
               5
             </p>
-          </div>
+          </div>-->
         </div>
 
         <!-- User information btn-->
         <div class="relative mx-2">
           <button
             @click="drop_down = 'user-info'"
-            class="relative z-10 w-12 h-12 block overflow-hidden rounded-full shadow focus:outline-none bg-gray-200"
+            class="relative z-10 w-10 h-10 block overflow-hidden rounded-full shadow focus:outline-none bg-gray-200"
           >
             <img
               class="object-cover w-full h-full"
-              src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80"
-              alt="Your avatar"
+              src="/images/avatar/admin.jpg"
+              alt="admin-img"
             />
           </button>
         </div>

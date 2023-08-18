@@ -1,5 +1,5 @@
 <template>
-  <drop-down :title="'Thông tin cá nhân'">
+  <drop-down :title="user.name">
     <div class="w-full">
       <div
         class="mt-4"
@@ -51,12 +51,15 @@
 import DropDown from "@/components/DropDown.vue";
 
 import IconTag from "@/components/IconTag.vue";
-
+import USER_API from "@/apis/modules/user";
 export default {
   props: [""],
   components: { IconTag, DropDown },
   data() {
     return {
+      user: {
+        name: "",
+      },
       menus: [
         {
           name: "Đổi mật khẩu",
@@ -71,10 +74,17 @@ export default {
       ],
     };
   },
+  created() {
+    this.get_profile();
+  },
   methods: {
     async logout() {
       await this.$store.dispatch("AUTH/logout");
       this.$router.push({ name: "auth.login" });
+    },
+    async get_profile() {
+      let response = await USER_API.get_profile();
+      this.user.name = response.data.data.name;
     },
   },
 };

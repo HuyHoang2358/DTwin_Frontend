@@ -4,6 +4,7 @@ import {
   API_CREATE_USER,
   API_DELETE_USER,
   API_EDIT_USER,
+  API_GET_PROFILE,
   API_GET_USERS,
   API_SEARCH_USER,
 } from "@/config";
@@ -34,5 +35,8 @@ export default {
 
   delete_user(data) {
     return Api.systemApi().post(API_DELETE_USER, data, { headers });
+  },
+  get_profile() {
+    return Api.systemApi().get(API_GET_PROFILE, { headers });
   },
 };

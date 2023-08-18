@@ -25,6 +25,38 @@
         </div>
         <div class="w-full grid grid-cols-3 gap-2 items-center mt-2">
           <div class="col-span-1">
+            <p class="text-left">Model URL</p>
+          </div>
+          <div class="col-span-2">
+            <input
+              id="model_position_form_id"
+              type="text"
+              v-model="form.modelUrl"
+              class="w-full form_input border-0 py-1 px-4"
+            />
+          </div>
+        </div>
+        <div class="w-full grid grid-cols-3 gap-2 items-center mt-2">
+          <div class="col-span-1">
+            <p class="text-left">Type</p>
+          </div>
+          <div class="col-span-2">
+            <select
+              class="w-full border-0 py-1 px-4 text-black"
+              v-model="form.type"
+            >
+              <option
+                :value="type_mode.id"
+                v-for="type_mode in object_types"
+                :key="type_mode.id"
+              >
+                {{ type_mode.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="w-full grid grid-cols-3 gap-2 items-center mt-2">
+          <div class="col-span-1">
             <p class="text-left">Latitude</p>
           </div>
           <div class="col-span-2">
@@ -173,7 +205,11 @@
         </div>
 
         <div class="w-full flex justify-end gap-2 mt-4">
-          <button type="button" class="px-8 py-2 bg-[#7A7A7A] border-0">
+          <button
+            type="button"
+            class="px-8 py-2 bg-[#7A7A7A] border-0"
+            @click="close_edit_form()"
+          >
             Hủy bỏ
           </button>
           <button type="submit" class="px-8 py-2 bg-[#C80F36] border-0">
@@ -211,6 +247,7 @@
 <script>
 import IconTag from "@/components/IconTag.vue";
 import emitter from "@/mitt";
+import ENTITY_API from "@/apis/modules/entity";
 
 export default {
   props: ["model"],
@@ -218,15 +255,78 @@ export default {
   data() {
     return {
       form: { ...this.model },
+      object_types: [
+        {
+          id: "building",
+          name: "tòa nhà",
+        },
+        {
+          id: "landUse",
+          name: "đất",
+        },
+        {
+          id: "streetLight",
+          name: "đèn giao thông",
+        },
+        {
+          id: "plant",
+          name: "cây cối",
+        },
+        {
+          id: "construction",
+          name: "công trình xây dựng",
+        },
+        {
+          id: "bridge",
+          name: "cầu",
+        },
+        {
+          id: "tunnel",
+          name: "hầm",
+        },
+        {
+          id: "waterPipe",
+          name: "Đường ống nước",
+        },
+        {
+          id: "road",
+          name: "đường đi",
+        },
+        {
+          id: "ship",
+          name: "tàu thuyền",
+        },
+        {
+          id: "goods",
+          name: "Hàng hóa",
+        },
+        {
+          id: "park",
+          name: "công viên",
+        },
+        {
+          id: "religion",
+          name: "Cơ sở tín ngưỡng",
+        },
+        {
+          id: "vehicle",
+          name: "phương tiện giao thông",
+        },
+        {
+          id: "carPark",
+          name: "bãi đỗ xe",
+        },
+      ],
     };
   },
   mounted() {
     // Listen for the 'cesiumClick' event on the event bus
-    emitter.on("edit-model-position", (eventData) => {
+    emitter.on("entity-form-info", async (eventData) => {
       this.form = eventData["entity_info"];
+      this.form = await ENTITY_API.getEntityInfo(eventData["entity_info"].id);
+      if (this.form === null) this.form = eventData["entity_info"];
     });
     emitter.on("edit-model-lat-lon", (eventData) => {
-      console.log("dit-model-lat-lon", eventData);
       this.form.latitude = eventData["latitude"];
       this.form.longitude = eventData["longitude"];
       this.changePosition("pos");
@@ -238,6 +338,9 @@ export default {
     },
     changePosition(change_type) {
       this.$emit("change-position", [this.form, change_type]);
+    },
+    close_edit_form() {
+      this.$emit("close-edit-form");
     },
   },
 };

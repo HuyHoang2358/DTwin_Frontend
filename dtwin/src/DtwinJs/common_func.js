@@ -5,9 +5,9 @@ export default {
   get_position_from_cartesian(cartesian) {
     let cartographic = Cesium.Cartographic.fromCartesian(cartesian);
     return {
-      longitude: Cesium.Math.toDegrees(cartographic.longitude),
-      latitude: Cesium.Math.toDegrees(cartographic.latitude),
-      height: Cesium.Math.toDegrees(cartographic.height),
+      longitude: Cesium.Math.toDegrees(cartographic.longitude).toFixed(7),
+      latitude: Cesium.Math.toDegrees(cartographic.latitude).toFixed(7),
+      height: Cesium.Math.toDegrees(cartographic.height).toFixed(7),
     };
   },
   get_hpr_from_quaternion(quaternion) {

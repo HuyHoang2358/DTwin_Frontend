@@ -345,9 +345,10 @@
       fill="none"
       viewBox="0 0 13 18"
     >
-      <path d="M5 15.5 12 9 5 2.5" />
+      <path stroke="#fff" d="M5 15.5 12 9 5 2.5" />
       <path d="M10 9 0 0v18l10-9Z" />
     </svg>
+
     <svg
       v-else-if="name === 'chevron-left'"
       class="fill-current w-full h-full"

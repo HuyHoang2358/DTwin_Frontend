@@ -1,15 +1,5 @@
-//import store from "./store";
-export const SYS_API_DOMAIN = "http://172.16.30.214:9000/api/";
-export const TOKEN =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2OTExNjA4NjQsInNjb3BlIjpbIlNZU1RFTS5WSUVXIiwiU1lTVEVNLkVESVQiXSwicm9sZSI6WyJTWVNURU1fQURNSU4iLCJTWVNURU1fUk9PVCJdLCJ1c2VyX25hbWUiOiJhZG1pbiIsImp0aSI6IjMzMjkzNDZjLTg2MGItNDk5Mi1hOWNiLTFjOGQ2Mzk4ZjVkMCJ9.JHYkBfvLAHNIv9nUsgkxM14uWm2WeZbIH6I-X-vF-hprUGGanyWvcDY5AkUQZ9E14Fr6IEgzu_Z5C3MAq7Wzr68g4mw4bbY1KAsEyUplZR4NNyHiuq3mxohI2uxJ36lP8Awm36gif60N_DELk0WFlBkrbIUSBpVfkkJ54QtmX6IygEVXTgdF3sTk8tlvcPeKEqnZtN8-TZyhjcrSpFoyUv6ROxdort55Puru91voMxkX0KLw8xnU5bwJ5fBcyaUu_3c_cw57Yww305ihSuzu9IBcxrUARGtwmFEz90-skHOzfpUcMRdqy4tw8cKriyeGUHGXLwMC4Hd6Liv_3trkjw";
-export const AUTHORIZATION = "Bearer " + TOKEN;
-export const headers = {
-  Authorization: AUTHORIZATION,
-  "Content-Type": "application/json",
-  "Access-Control-Allow-Origin": "*",
-};
-
 // API detail
+export const API_GET_PROFILE = "user/get-user-profile";
 export const API_GET_USERS = "user/get-users";
 export const API_CREATE_USER = "user/create-user";
 export const API_GET_USER_BY_USERID = "user/get-user-profile-by-user-id";
@@ -35,5 +25,13 @@ export const API_DELETE_ROLE = "role/delete-role";
 export const API_GET_RIGHTS = "right/get-rights";
 export const API_GET_APPS = "app/get-all-app";
 
-export const API_ADD_ENTITY = "entities";
+export const API_ADD_ENTITY = "/entities";
 export const API_GET_ENTITIES = "entities/types/basicModel?type=";
+export const API_GET_ENTITY = "entities/";
+
+export const MINIO_GLB_TEXTURE_FOLDER_PATH =
+  "http://172.16.30.214:9000/dtp-model-18-8/building/glb/glb_texture/";
+//"http://172.16.30.214:9000/model-3d-v2/building/glb/glb_texture/";
+export const MINIO_GLB_NO_TEXTURE_FOLDER_PATH =
+  "http://172.16.30.214:9000/dtp-model-18-8/building/glb/glb_no_texture/";
+//"http://172.16.30.214:9000/model-3d-v2/building/glb/glb_no_texture/";

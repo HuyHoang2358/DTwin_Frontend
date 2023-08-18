@@ -34,10 +34,10 @@ export default {
         const cartographic = Cesium.Cartographic.fromCartesian(cartesian);
         const longitudeString = Cesium.Math.toDegrees(
           cartographic.longitude
-        ).toFixed(8);
+        ).toFixed(7);
         const latitudeString = Cesium.Math.toDegrees(
           cartographic.latitude
-        ).toFixed(8);
+        ).toFixed(7);
         emitter.emit("edit-model-lat-lon", {
           longitude: parseFloat(longitudeString),
           latitude: parseFloat(latitudeString),
@@ -50,7 +50,7 @@ export default {
     }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
   },
 
-  handle_click_object(viewer) {
+  /*handle_click_object(viewer) {
     viewer.screenSpaceEventHandler.setInputAction(function onLeftClick(
       movement
     ) {
@@ -83,5 +83,44 @@ export default {
       });
     },
     Cesium.ScreenSpaceEventType.LEFT_CLICK);
+  },*/
+
+  start_left_click_object_handle(viewer) {
+    let left_click_object_handle = new Cesium.ScreenSpaceEventHandler(
+      viewer.scene.canvas
+    );
+
+    left_click_object_handle.setInputAction(function (movement) {
+      const pickedFeature = viewer.scene.pick(movement.position);
+      if (!Cesium.defined(pickedFeature)) {
+        return;
+      }
+      console.log("click_object_handle:pickedFeature", pickedFeature);
+      let entity = pickedFeature.id;
+      let position = COMMON_FUNC.get_position_from_cartesian(
+        entity.position._value
+      );
+      //let hpr = COMMON_FUNC.get_hpr_from_quaternion(entity.orientation._value);
+
+      let entity_info = {
+        longitude: position.longitude,
+        latitude: position.latitude,
+        height: 0,
+        pitch: 0,
+        roll: 0,
+        heading: 0,
+        modelUrl: pickedFeature.id.name,
+        id: pickedFeature.id.name,
+        type: "building",
+        scale: Math.floor(parseFloat(pickedFeature.detail.model.scale) * 100),
+      };
+      emitter.emit("show-edit-form", {
+        entity: entity,
+      });
+      emitter.emit("entity-form-info", {
+        entity: entity,
+        entity_info: entity_info,
+      });
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
   },
 };
