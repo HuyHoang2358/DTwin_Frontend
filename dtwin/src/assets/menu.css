@@ -38,9 +38,17 @@
     background-image: linear-gradient(to left, rgba(29, 29, 29, 1), rgba(52, 52, 52, 1));
     clip-path: polygon( 0% 0%, 50% 0%, 85% 2%, 98% 98%, 15% 99%)
 }
+.menu_item_background1{
+    background-image: linear-gradient(to left, rgba(29, 29, 29, 1), rgba(52, 52, 52, 1));
+    clip-path: polygon( 2% 3%, 84% 3%, 98% 97%, 16% 97%)
+}
 .menu_item_border {
     clip-path: polygon( 0% 0%, 86% 0%, 100% 100%, 15% 100%);
     background-image: linear-gradient(to right, rgba(196, 83, 83, 0), rgba(224, 0, 54, 1));
+}
+.menu_item_border1 {
+    clip-path: polygon( 0% 0%, 86% 0%, 100% 100%, 14% 100%);
+    background: #E00036FF;
 }
 .menu_item {
     background-image: linear-gradient(to right,rgba(55, 55, 55, 0), rgba(226, 4, 57, 0.2))

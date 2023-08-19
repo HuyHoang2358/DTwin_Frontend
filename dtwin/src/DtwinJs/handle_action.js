@@ -108,7 +108,7 @@ export default {
         height: 0,
         pitch: 0,
         roll: 0,
-        heading: 0,
+        heading: 43,
         modelUrl: pickedFeature.id.name,
         id: pickedFeature.id.name,
         type: "building",

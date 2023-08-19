@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import store from "../store";
+//import store from "../store";
 import DashBoard from "@/views/admin/contents/homepage/DashBoard";
 import RightPage from "@/views/admin/contents/right/RightPage.vue";
 import HomePage from "@/views/front/contents/homepage/HomePage.vue";
@@ -10,7 +10,8 @@ import MenuPage from "@/views/admin/contents/menu/MenuPage.vue";
 import MapIndex from "@/views/map/MapIndex.vue";
 import BuildingPage from "@/views/front/contents/map/BuildingPage.vue";
 import MapEditPage from "@/views/map/MapEditPage.vue";
-import CityPage from "@/views/front/contents/general/cityPage.vue";
+import TongQuanDoThi from "@/views/front/contents/tongquandothi/TongQuanDoThi.vue";
+import QuyHoachTongThe from "@/views/front/contents/quyhoachtongthe/QuyHoachTongThe.vue";
 
 const routes = [
   //home
@@ -84,8 +85,26 @@ const routes = [
   },
   {
     path: "/tong-quan-do-thi",
-    name: "general.city",
-    component: CityPage,
+    name: "tongquandothi.index",
+    component: TongQuanDoThi,
+    meta: { guest: true },
+  },
+  {
+    path: "/quy-hoach-tong-the",
+    name: "quyhoachtongthe.index",
+    component: QuyHoachTongThe,
+    meta: { guest: true },
+  },
+  {
+    path: "/quan-ly-ha-tang-do-thi",
+    name: "quanlyhatangdothi.index",
+    component: QuyHoachTongThe,
+    meta: { guest: true },
+  },
+  {
+    path: "/quan-ly-giao-thong",
+    name: "quanlygiaothong.index",
+    component: QuyHoachTongThe,
     meta: { guest: true },
   },
 ];
@@ -95,7 +114,7 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
+/*router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   const isLoggedIn = store.getters["AUTH/isLoggedIn"];
 
@@ -104,6 +123,6 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
-});
+});*/
 
 export default router;

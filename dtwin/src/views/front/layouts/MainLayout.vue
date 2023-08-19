@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col h-screen w-full">
-    <top-menu></top-menu>
+    <top-menu :page="page"></top-menu>
     <div class="content-body flex-1 w-full relative">
       <slot />
     </div>
@@ -10,7 +10,7 @@
 <script>
 import TopMenu from "@/views/front/partials/TopMenu.vue";
 export default {
-  props: [""],
+  props: ["page"],
   components: { TopMenu },
   data() {
     return {};

@@ -44,6 +44,7 @@ export default {
       let construction_entities = await ENTITY_API.getAllEntities(
         "construction"
       );
+      let ship_entities = await ENTITY_API.getAllEntities("ship");
       let good_entities = await ENTITY_API.getAllEntities("goods");
       let vehicle_entities = await ENTITY_API.getAllEntities("vehicle");
 
@@ -74,38 +75,35 @@ export default {
       good_entities.forEach((e) => {
         this.entities.push(ENTITY_MODEL.addModel(this.viewer, e));
       });
+      ship_entities.forEach((e) => {
+        this.entities.push(ENTITY_MODEL.addModel(this.viewer, e));
+      });
     },
     async visualize_IOTLink_model() {
-      fetch("/Data/new_city/new_city_id.txt")
+      fetch("/Data/downloaded_ids.txt")
         .then((response) => response.text())
         .then((text) => {
           let arr = text.split("\n");
+          arr = arr.slice(851, 900);
           arr.forEach((e) => {
             let id = e.trim();
             if (
               !this.entities.some((entity) => entity.name === id) &&
               id !== ""
             ) {
-              let url = "/Data/new_city/json/" + id + ".json";
-              fetch(url)
-                .then((response) => {
-                  return response.json();
-                })
-                .then((data) => {
-                  let model = {
-                    longitude: data["result"]["location"]["lng"],
-                    latitude: data["result"]["location"]["lat"],
-                    height: 0,
-                    heading: 0,
-                    pitch: 0,
-                    roll: 0,
-                    id: id,
-                    modelUrl: id,
-                    scale: 0.8,
-                    color: 1,
-                  };
-                  this.entities.push(ENTITY_MODEL.addModel(this.viewer, model));
-                });
+              let model = {
+                longitude: 108.2316918,
+                latitude: 16.0929782,
+                height: 0,
+                heading: 43,
+                pitch: 0,
+                roll: 0,
+                id: id,
+                modelUrl: id,
+                scale: 0.8,
+                color: 1,
+              };
+              this.entities.push(ENTITY_MODEL.addModel(this.viewer, model));
             }
           });
         });

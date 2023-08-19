@@ -71,16 +71,13 @@
               </div>
               <div class="col-span-1">
                 <div class="grid grid-cols-2 gap-8 h-full">
-                  <div class="col-span-1">
+                  <div
+                    class="col-span-1"
+                    v-for="left_menu in filter_menu_by_position('left')"
+                    :key="`menu_item_${left_menu.id}`"
+                  >
                     <left-menu-item-button
-                      :title1="'Tổng quan'"
-                      :title2="'Đô thị'"
-                    ></left-menu-item-button>
-                  </div>
-                  <div class="col-span-1">
-                    <left-menu-item-button
-                      :title1="'Quy hoạch'"
-                      :title2="'Tổng thể'"
+                      :menu_item="left_menu"
                     ></left-menu-item-button>
                   </div>
                 </div>
@@ -92,19 +89,15 @@
             <div class="grid grid-cols-2 gap-4 h-full">
               <div class="col-span-1">
                 <div class="grid grid-cols-2 gap-8 h-full">
-                  <div class="col-span-1">
+                  <div
+                    class="col-span-1"
+                    v-for="left_menu in filter_menu_by_position('right')"
+                    :key="`menu_item_${left_menu.id}`"
+                  >
                     <right-menu-item-button
-                      :title1="'Quản lý'"
-                      :title2="'Hạ tầng Đô thị'"
-                    >
-                    </right-menu-item-button>
-                  </div>
-                  <div class="col-span-1">
-                    <right-menu-item-button
-                      :title1="'Quản lý'"
-                      :title2="'Giao thông'"
-                    >
-                    </right-menu-item-button>
+                      :title1="left_menu.title1"
+                      :title2="left_menu.title2"
+                    ></right-menu-item-button>
                   </div>
                 </div>
               </div>
@@ -166,6 +159,20 @@
     <div class="h-full w-1/4 absolute top-0 menu_logo_area z-50">
       <logo-digital-twin :name="'center-page'"></logo-digital-twin>
     </div>
+
+    <div class="w-1/2 absolute top-0 z-50 mt-28 ml-[25%]">
+      <div class="flex justify-center">
+        <div>
+          <div class="flex justify-start gap-12">
+            <menu-item-button
+              :menu_item="menu_item"
+              v-for="menu_item in sub_menu"
+              :key="`sub-menu-item-${menu_item.id}`"
+            ></menu-item-button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -173,14 +180,151 @@
 import LeftMenuItemButton from "@/components/buttons/LeftMenuItemButton.vue";
 import RightMenuItemButton from "@/components/buttons/RightMenuItemButton.vue";
 import LogoDigitalTwin from "@/components/LogoDigitalTwin.vue";
+import MenuItemButton from "@/components/buttons/MenuItemButton.vue";
 
 export default {
-  props: [""],
-  components: { LogoDigitalTwin, RightMenuItemButton, LeftMenuItemButton },
+  props: ["page"],
+  components: {
+    MenuItemButton,
+    LogoDigitalTwin,
+    RightMenuItemButton,
+    LeftMenuItemButton,
+  },
   data() {
-    return {};
+    return {
+      choosing_menu_id: null,
+      menu: [
+        {
+          id: "1",
+          title1: "Tổng quan",
+          title2: "Đô thị",
+          routeName: "tongquandothi.index",
+          position: "left",
+          active: false,
+          childs: [
+            {
+              id: "12",
+              name: "Tổng quan 01",
+              routeName: "#",
+            },
+            {
+              id: "13",
+              name: "Tổng quan 02",
+              routeName: "#",
+            },
+            {
+              id: "14",
+              name: "Tổng quan 03",
+              routeName: "#",
+            },
+            {
+              id: "15",
+              name: "Tổng quan 04",
+              routeName: "#",
+            },
+          ],
+        },
+        {
+          id: "2",
+          title1: "Quy hoạch",
+          title2: "Tổng thể",
+          routeName: "quyhoachtongthe.index",
+          position: "left",
+          active: false,
+          childs: [
+            {
+              id: "22",
+              name: "Tổng quan 01",
+              routeName: "#",
+            },
+            {
+              id: "23",
+              name: "Tổng quan 02",
+              routeName: "#",
+            },
+            {
+              id: "24",
+              name: "Tổng quan 03",
+              routeName: "#",
+            },
+          ],
+        },
+        {
+          id: "3",
+          title1: "Quản lý",
+          title2: "Hạ tầng Đô thị",
+          routeName: "quanlyhatangdothi.index",
+          position: "right",
+          active: false,
+          childs: [
+            {
+              id: "32",
+              name: "Tổng quan 01",
+              routeName: "#",
+            },
+            {
+              id: "33",
+              name: "Tổng quan 02",
+              routeName: "#",
+            },
+            {
+              id: "34",
+              name: "Tổng quan 03",
+              routeName: "#",
+            },
+          ],
+        },
+        {
+          id: "4",
+          title1: "Quản lý",
+          title2: "Giao thông",
+          routeName: "quanlygiaothong.index",
+          position: "right",
+          active: false,
+          childs: [
+            {
+              id: "42",
+              name: "Tổng quan 01",
+              routeName: "#",
+            },
+            {
+              id: "43",
+              name: "Tổng quan 02",
+              routeName: "#",
+            },
+            {
+              id: "44",
+              name: "Tổng quan 03",
+              routeName: "#",
+            },
+          ],
+        },
+      ],
+    };
+  },
+  created() {
+    if (this.page === "tongquandothi") this.choosing_menu_id = "1";
+    else if (this.page === "quyhoachtongthe") this.choosing_menu_id === "2";
+  },
+  computed: {
+    sub_menu() {
+      if (this.choosing_menu_id !== null) {
+        let choosing_menu = this.menu.filter(
+          (e) => e.id === this.choosing_menu_id
+        )[0];
+        this.menu.forEach((e) => {
+          e.id === this.choosing_menu_id
+            ? (e.active = true)
+            : (e.active = false);
+        });
+        return choosing_menu.childs;
+      } else return [];
+    },
   },
   methods: {
+    filter_menu_by_position(position) {
+      return this.menu.filter((e) => e.position === position);
+    },
     goToAdmin() {
       this.$router.push({ name: "admin.index" });
     },
