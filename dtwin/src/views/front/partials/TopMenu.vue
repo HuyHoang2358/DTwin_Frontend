@@ -1,71 +1,28 @@
 <template>
-  <div class="menu bg-gray-500 w-full relative z-40">
+  <div class="menu bg-gray-500 w-full relative z-40 font-magistral">
     <div class="menu_background z-40">
-      <div class="menu_content border-b-[3px] border-[#EE0033] p-4">
+      <div
+        class="menu_content border-b-[3px] border-[#EE0033] p-4 text-white font-magistral_l_i text-sm lg:text-base xl:text-lg"
+      >
         <div class="grid grid-cols-8 gap-8 h-full">
           <div class="col-span-3 h-full">
             <div class="grid grid-cols-2 gap-4 h-full">
               <div class="col-span-1">
                 <div
-                  class="h-full flex justify-start items-center content-center text-white font-magistral_l_i text-xs lg:text-sm xl:text-base"
+                  class="h-full flex justify-start items-center content-center text-white font-magistral text-xs lg:text-sm xl:text-base 2xl:text-lg"
                 >
                   <div class="border-r-2 border-white">
-                    <div class="flex justify-between px-4">
-                      <svg
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g clip-path="url(#clip0_14786_454)">
-                          <path
-                            d="M11.2522 9.57619C12.6688 9.39833 14.0657 9.96845 14.9616 11.072C15.0274 11.1531 15.1447 11.1708 15.229 11.1092C15.6348 10.8127 15.9842 10.4422 16.2582 10.0146C17.9655 7.3507 16.0696 3.75513 12.8304 3.75513C10.7167 3.75513 8.97455 5.37498 8.78065 7.4386C8.77282 7.52196 8.81886 7.60156 8.89545 7.63539C9.77968 8.02648 10.5351 8.67084 11.0657 9.49006C11.106 9.55221 11.1788 9.58538 11.2522 9.57619Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M12.83 3.1293C13.1756 3.1293 13.4558 2.84907 13.4558 2.50344V1.25172C13.4558 0.906084 13.1756 0.625854 12.83 0.625854C12.4843 0.625854 12.2041 0.906084 12.2041 1.25172V2.50344C12.2041 2.84907 12.4843 3.1293 12.83 3.1293Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M19.4015 7.19739H18.1498C17.8041 7.19739 17.5239 7.47762 17.5239 7.82325C17.5239 8.16888 17.8041 8.44911 18.1498 8.44911H19.4015C19.7472 8.44911 20.0274 8.16888 20.0274 7.82325C20.0274 7.47762 19.7472 7.19739 19.4015 7.19739Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M17.0342 11.1424C16.7899 10.898 16.3936 10.898 16.1491 11.1424C15.9047 11.3868 15.9047 11.7831 16.1491 12.0275L17.0342 12.9126C17.1564 13.0348 17.3166 13.0959 17.4768 13.0959C18.0294 13.0959 18.3147 12.4228 17.9193 12.0275L17.0342 11.1424Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M8.62603 4.50413C8.87043 4.74857 9.26668 4.74857 9.51112 4.50413C9.75556 4.25969 9.75556 3.86344 9.51112 3.61904L8.62603 2.73396C8.38171 2.48956 7.98542 2.48956 7.74095 2.73396C7.49651 2.9784 7.49651 3.37465 7.74095 3.61904L8.62603 4.50413Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M16.5919 4.68748C16.7521 4.68748 16.9122 4.62638 17.0344 4.50415L17.9195 3.61906C18.1639 3.37462 18.1639 2.97837 17.9195 2.73397C17.6751 2.48957 17.2788 2.48953 17.0344 2.73397L16.1494 3.6191C15.7539 4.01453 16.0393 4.68748 16.5919 4.68748Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M14.572 14.2384C15.0545 11.8611 12.5649 10.0283 10.4537 11.1116C9.98962 9.58027 8.56735 8.46545 6.88448 8.46545C4.70046 8.46545 2.97621 10.336 3.17038 12.5279C1.39638 12.6665 0 14.1499 0 15.9595C0 17.8553 1.5359 19.4017 3.44224 19.4017H14.6295C16.0554 19.4017 17.2112 18.2459 17.2112 16.82C17.2112 15.4573 16.1389 14.2384 14.572 14.2384Z"
-                            fill="white"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_14786_454">
-                            <rect
-                              width="20.0276"
-                              height="20.0276"
-                              fill="white"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
+                    <div class="flex justify-between items-center px-4">
+                      <icon-tag :name="'weather-icon'"></icon-tag>
                       <p class="ml-2">24°C</p>
                     </div>
                   </div>
+
                   <div class="border-r-2 border-white px-4">
                     <p>15:42:36</p>
                   </div>
                   <div class="px-4">
-                    <p>2022/07/12</p>
+                    <p>2023/09/01</p>
                   </div>
                 </div>
               </div>
@@ -84,7 +41,9 @@
               </div>
             </div>
           </div>
+
           <div class="col-span-2"></div>
+
           <div class="col-span-3 h-full">
             <div class="grid grid-cols-2 gap-4 h-full">
               <div class="col-span-1">
@@ -95,18 +54,20 @@
                     :key="`menu_item_${left_menu.id}`"
                   >
                     <right-menu-item-button
-                      :title1="left_menu.title1"
-                      :title2="left_menu.title2"
+                      :menu_item="left_menu"
                     ></right-menu-item-button>
                   </div>
                 </div>
               </div>
               <div class="col-span-1">
                 <div
-                  class="h-full flex justify-end items-center content-center text-white font-magistral_l_i text-xs lg:text-sm xl:text-base"
+                  class="h-full flex justify-end items-center content-center"
                 >
                   <div class="border-r-2 border-white px-4">
-                    <p>PM 2.3 36</p>
+                    <p>VIE</p>
+                  </div>
+                  <div class="border-r-2 border-white px-4">
+                    <p>VIE</p>
                   </div>
 
                   <div class="border-r-2 border-white px-4">
@@ -160,15 +121,22 @@
       <logo-digital-twin :name="'center-page'"></logo-digital-twin>
     </div>
 
-    <div class="w-1/2 absolute top-0 z-50 mt-28 ml-[25%]">
+    <div
+      class="w-1/2 absolute top-0 z-50 mt-32 ml-[25%] text-lg font-magistral"
+    >
       <div class="flex justify-center">
         <div>
-          <div class="flex justify-start gap-12">
-            <menu-item-button
-              :menu_item="menu_item"
-              v-for="menu_item in sub_menu"
-              :key="`sub-menu-item-${menu_item.id}`"
-            ></menu-item-button>
+          <div class="grid grid-cols-5 justify-center gap-12">
+            <div
+              class="col-span-1"
+              v-for="index in Math.floor((5 - sub_menu.length) / 2)"
+              :key="`sub-menu-item-${index}-tmp`"
+            ></div>
+            <sub-menu-item
+              :sub_menu_item="sub_menu_item"
+              v-for="sub_menu_item in sub_menu"
+              :key="`sub-menu-item-${sub_menu_item.id}`"
+            ></sub-menu-item>
           </div>
         </div>
       </div>
@@ -180,25 +148,29 @@
 import LeftMenuItemButton from "@/components/buttons/LeftMenuItemButton.vue";
 import RightMenuItemButton from "@/components/buttons/RightMenuItemButton.vue";
 import LogoDigitalTwin from "@/components/LogoDigitalTwin.vue";
-import MenuItemButton from "@/components/buttons/MenuItemButton.vue";
+import SubMenuItem from "@/components/buttons/SubMenuItem.vue";
+import IconTag from "@/components/IconTag.vue";
 
 export default {
-  props: ["page"],
+  props: ["page", "sub_menu_active"],
   components: {
-    MenuItemButton,
+    IconTag,
+    SubMenuItem,
     LogoDigitalTwin,
     RightMenuItemButton,
     LeftMenuItemButton,
   },
   data() {
     return {
-      choosing_menu_id: null,
+      menu_path: null,
+      sub_menu_path: null,
       menu: [
         {
           id: "1",
           title1: "Tổng quan",
           title2: "Đô thị",
           routeName: "tongquandothi.index",
+          path: "tong-quan-do-thi",
           position: "left",
           active: false,
           childs: [
@@ -206,21 +178,25 @@ export default {
               id: "12",
               name: "Tổng quan 01",
               routeName: "#",
+              active: false,
             },
             {
               id: "13",
               name: "Tổng quan 02",
               routeName: "#",
+              active: false,
             },
             {
               id: "14",
               name: "Tổng quan 03",
               routeName: "#",
+              active: false,
             },
             {
               id: "15",
               name: "Tổng quan 04",
               routeName: "#",
+              active: false,
             },
           ],
         },
@@ -229,6 +205,7 @@ export default {
           title1: "Quy hoạch",
           title2: "Tổng thể",
           routeName: "quyhoachtongthe.index",
+          path: "quy-hoach-tong-the",
           position: "left",
           active: false,
           childs: [
@@ -236,16 +213,19 @@ export default {
               id: "22",
               name: "Tổng quan 01",
               routeName: "#",
+              active: false,
             },
             {
               id: "23",
               name: "Tổng quan 02",
               routeName: "#",
+              active: false,
             },
             {
               id: "24",
               name: "Tổng quan 03",
               routeName: "#",
+              active: false,
             },
           ],
         },
@@ -253,24 +233,44 @@ export default {
           id: "3",
           title1: "Quản lý",
           title2: "Hạ tầng Đô thị",
-          routeName: "quanlyhatangdothi.index",
+          routeName: "hatangdothi.xaydung",
+          path: "ha-tang-do-thi",
           position: "right",
           active: false,
           childs: [
             {
               id: "32",
-              name: "Tổng quan 01",
-              routeName: "#",
+              name: "Tòa nhà",
+              routeName: "hatangdothi.xaydung",
+              path: "xay-dung",
+              active: false,
             },
             {
               id: "33",
-              name: "Tổng quan 02",
+              name: "Phương tiện",
+              path: "giao-thong",
               routeName: "#",
+              active: false,
             },
             {
               id: "34",
-              name: "Tổng quan 03",
+              name: "Cầu đường",
+              path: "cap-thoat-nuoc",
               routeName: "#",
+              active: false,
+            },
+            {
+              id: "35",
+              name: "Cây xanh",
+              routeName: "#",
+              active: false,
+            },
+            {
+              id: "36",
+              name: "Đèn đường",
+              path: "den-duong",
+              routeName: "#",
+              active: false,
             },
           ],
         },
@@ -286,16 +286,19 @@ export default {
               id: "42",
               name: "Tổng quan 01",
               routeName: "#",
+              active: false,
             },
             {
               id: "43",
               name: "Tổng quan 02",
               routeName: "#",
+              active: false,
             },
             {
               id: "44",
               name: "Tổng quan 03",
               routeName: "#",
+              active: false,
             },
           ],
         },
@@ -303,22 +306,39 @@ export default {
     };
   },
   created() {
-    if (this.page === "tongquandothi") this.choosing_menu_id = "1";
-    else if (this.page === "quyhoachtongthe") this.choosing_menu_id === "2";
+    let path = this.$route.path;
+    let path_split_arr = path.split("/");
+    path_split_arr = path_split_arr.filter((e) => e.trim() !== "");
+    this.menu_path =
+      path_split_arr.length >= 1 && path_split_arr[0]
+        ? path_split_arr[0]
+        : null;
+    this.sub_menu_path =
+      path_split_arr.length >= 2 && path_split_arr[1]
+        ? path_split_arr[1]
+        : null;
+    //console.log("menu_path", this.menu_path);
+    //console.log("sub_menu_path", this.sub_menu_path);
+
+    this.menu.forEach((e) => {
+      this.menu_path !== null && e.path === this.menu_path
+        ? (e.active = true)
+        : (e.active = false);
+      e.childs.forEach((e_item) => {
+        this.sub_menu_path !== null && e_item.path === this.sub_menu_path
+          ? (e_item.active = true)
+          : (e_item.active = false);
+      });
+    });
   },
   computed: {
     sub_menu() {
-      if (this.choosing_menu_id !== null) {
-        let choosing_menu = this.menu.filter(
-          (e) => e.id === this.choosing_menu_id
-        )[0];
-        this.menu.forEach((e) => {
-          e.id === this.choosing_menu_id
-            ? (e.active = true)
-            : (e.active = false);
-        });
-        return choosing_menu.childs;
-      } else return [];
+      if (this.menu_path != null) {
+        let choosing_menu = this.menu.filter((e) => e.path === this.menu_path);
+        console.log(choosing_menu);
+        if (choosing_menu.length > 0) return choosing_menu[0].childs;
+      }
+      return [];
     },
   },
   methods: {

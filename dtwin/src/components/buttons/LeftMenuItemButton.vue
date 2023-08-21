@@ -7,7 +7,7 @@
           <RouterLink :to="{ name: menu_item.routeName }">
             <button
               type="button"
-              class="text-center h-full w-full px-4 py-2 text-[#AD9999] font-magistral_b_i text-xs lg:text-sm xl:text-base"
+              class="text-left h-full w-full px-4 py-2 text-[#AD9999] font-magistral_b_i pl-[25%]"
             >
               {{ menu_item.title1 }} <br />
               {{ menu_item.title2 }}
@@ -23,7 +23,7 @@
           <RouterLink :to="{ name: menu_item.routeName }">
             <button
               type="button"
-              class="text-center h-full w-full px-4 py-2 text-white font-magistral_b_i text-xs lg:text-sm xl:text-base"
+              class="text-left h-full w-full px-4 py-2 text-white font-magistral_b_i pl-[25%]"
             >
               {{ menu_item.title1 }} <br />
               {{ menu_item.title2 }}

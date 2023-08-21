@@ -12,6 +12,8 @@ import BuildingPage from "@/views/front/contents/map/BuildingPage.vue";
 import MapEditPage from "@/views/map/MapEditPage.vue";
 import TongQuanDoThi from "@/views/front/contents/tongquandothi/TongQuanDoThi.vue";
 import QuyHoachTongThe from "@/views/front/contents/quyhoachtongthe/QuyHoachTongThe.vue";
+import HaTangDothi from "@/views/front/contents/quanlyhatang/HaTangDothi.vue";
+import HaTangDothi_XayDung from "@/views/front/contents/quanlyhatang/HaTangDothi_XayDung.vue";
 
 const routes = [
   //home
@@ -105,6 +107,18 @@ const routes = [
     path: "/quan-ly-giao-thong",
     name: "quanlygiaothong.index",
     component: QuyHoachTongThe,
+    meta: { guest: true },
+  },
+  {
+    path: "/ha-tang-do-thi",
+    name: "hatangdothi.index",
+    component: HaTangDothi,
+    meta: { guest: true },
+  },
+  {
+    path: "/ha-tang-do-thi/xay-dung",
+    name: "hatangdothi.xaydung",
+    component: HaTangDothi_XayDung,
     meta: { guest: true },
   },
 ];

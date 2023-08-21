@@ -1,17 +1,21 @@
 import * as Cesium from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
+import store from "../store/";
 
 export default {
-  async initCesium() {
+  initCesium() {
+    console.log("InitCesium");
+    // Add token into Cesium Ion
     Cesium.Ion.defaultAccessToken =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYjJmMDA2NC0yY2YyLTRkOGEtOGVmYi03YmNmZmE1NzcyY2MiLCJpZCI6ODk3NzUsImlhdCI6MTY0OTkyNTEwMX0.VPFCxddX_V2UKjOJeqJszZ25c9z4HA2BSYimPLYrbWo";
 
+    // Init viewer with basic params
     let viewer = new Cesium.Viewer("cesiumContainer", {
-      baseLayerPicker: false, //  type map
+      baseLayerPicker: true, //  type map
       vrButton: false,
       geocoder: false,
       navigationHelpButton: false,
-      selectionIndicator: false,
+      selectionIndicator: true,
       shadows: false,
       timeline: false,
       sceneModePicker: false, // type show map
@@ -34,7 +38,20 @@ export default {
     viewer.cesiumWidget.creditContainer.parentNode.removeChild(
       viewer.cesiumWidget.creditContainer
     );
+    store.dispatch("VIEWER/setViewer", viewer);
 
-    return viewer;
+    console.log("dispatch viewer");
+    // Set up Camera
+    const LAT_DN = 16.094549538872112;
+    const LON_DN = 108.22868212290481;
+    const HEIGHT_DN = 4000;
+    viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(LON_DN, LAT_DN, HEIGHT_DN),
+      orientation: {
+        heading: Cesium.Math.toRadians(0.0),
+        pitch: Cesium.Math.toRadians(-90.0),
+        roll: 0.0,
+      },
+    });
   },
 };

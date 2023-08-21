@@ -13,9 +13,9 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .box_black_linear {
-  background-image: linear-gradient(rgba(5, 5, 5, 0.78), rgba(5, 5, 5, 0.78));
+  background-image: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.7));
 }
 </style>
 <script>

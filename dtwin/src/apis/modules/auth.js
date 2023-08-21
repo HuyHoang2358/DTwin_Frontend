@@ -4,7 +4,7 @@ export default {
   login(credentials) {
     let au = btoa(credentials.identity + ":" + credentials.password);
     console.log(
-      "Login infor: ",
+      "Login info: ",
       credentials.identity + ":" + credentials.password,
       au
     );
