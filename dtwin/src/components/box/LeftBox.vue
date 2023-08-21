@@ -5,15 +5,19 @@
         <div class="w-3 h-4">
           <icon-tag :name="'double-chevron-right'"></icon-tag>
         </div>
-        <div class="font-bold">{{ title }}</div>
+        <div class="font-magistral_b">{{ title }}</div>
       </div>
     </div>
-    <div class="w-full p-4 bg-[#050505] opacity-[0.78]">
+    <div class="w-full p-4 box_black_linear">
       <slot />
     </div>
   </div>
 </template>
-
+<style>
+.box_black_linear {
+  background-image: linear-gradient(rgba(5, 5, 5, 0.78), rgba(5, 5, 5, 0.78));
+}
+</style>
 <script>
 import IconTag from "@/components/IconTag.vue";
 

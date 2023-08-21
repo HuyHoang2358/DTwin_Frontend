@@ -22,6 +22,7 @@ function prepare_model_url(model_id, is_texture = false) {
   let domain = is_texture
     ? MINIO_GLB_TEXTURE_FOLDER_PATH
     : MINIO_GLB_NO_TEXTURE_FOLDER_PATH;
+
   return `${domain}${model_id}.glb`;
 }
 export default {

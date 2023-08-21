@@ -24,3 +24,12 @@
     font-family: FS Magistral-Light;
     src: url("./fonts/FS Magistral/FS Magistral-Light.ttf")
 }
+
+@font-face {
+    font-family:  Fs Magistral-Bold;
+    src: url("./fonts/FS Magistral/FS Magistral-Bold.ttf")
+}
+@font-face {
+     font-family: FS Magistral-Medium;
+    src: url("./fonts/FS Magistral/FS Magistral-Medium.ttf")
+}

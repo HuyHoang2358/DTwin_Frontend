@@ -13,8 +13,8 @@
 ```
 - Install packages
 ```
-    cd into DTwin_Frontend/dtiwn
-    npm install or yarn install
+    cd into DTwin_Frontend/dtwin
+    npm install -force or yarn install
 ```
 - Fix eslint auto
 ```
