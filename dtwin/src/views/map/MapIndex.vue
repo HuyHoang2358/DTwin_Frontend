@@ -38,6 +38,7 @@ export default {
       let building_entities = await ENTITY_API.getAllEntities("building");
       let tree_entities = await ENTITY_API.getAllEntities("plant");
       let streetLight_entities = await ENTITY_API.getAllEntities("streetLight");
+      console.log(streetLight_entities);
       let religion_entities = await ENTITY_API.getAllEntities("religion");
       let carPark_entities = await ENTITY_API.getAllEntities("carPark");
       let bridge_entities = await ENTITY_API.getAllEntities("bridge");

@@ -31,7 +31,7 @@ export default {
 
   methods: {
     click_event() {
-      this.$emit("clickC");
+      this.$emit("click-button");
     },
   },
 };

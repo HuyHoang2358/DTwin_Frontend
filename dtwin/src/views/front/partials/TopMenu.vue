@@ -122,7 +122,7 @@
     </div>
 
     <div
-      class="w-1/2 absolute top-0 z-50 mt-32 ml-[25%] text-lg font-magistral"
+      class="w-1/2 absolute top-0 z-50 mt-28 ml-[25%] text-lg font-magistral"
     >
       <div class="flex justify-center">
         <div>
@@ -152,7 +152,7 @@ import SubMenuItem from "@/components/buttons/SubMenuItem.vue";
 import IconTag from "@/components/IconTag.vue";
 
 export default {
-  props: ["page", "sub_menu_active"],
+  props: [],
   components: {
     IconTag,
     SubMenuItem,
@@ -169,7 +169,7 @@ export default {
           id: "1",
           title1: "Tổng quan",
           title2: "Đô thị",
-          routeName: "tongquandothi.index",
+          routeName: "tongquandothi.tongquan1",
           path: "tong-quan-do-thi",
           position: "left",
           active: false,
@@ -177,7 +177,8 @@ export default {
             {
               id: "12",
               name: "Tổng quan 01",
-              routeName: "#",
+              routeName: "tongquandothi.tongquan1",
+              path: "tong-quan-1",
               active: false,
             },
             {
@@ -192,19 +193,13 @@ export default {
               routeName: "#",
               active: false,
             },
-            {
-              id: "15",
-              name: "Tổng quan 04",
-              routeName: "#",
-              active: false,
-            },
           ],
         },
         {
           id: "2",
           title1: "Quy hoạch",
           title2: "Tổng thể",
-          routeName: "quyhoachtongthe.index",
+          routeName: "quyhoachtongthe.tongquan1",
           path: "quy-hoach-tong-the",
           position: "left",
           active: false,
@@ -212,7 +207,8 @@ export default {
             {
               id: "22",
               name: "Tổng quan 01",
-              routeName: "#",
+              routeName: "quyhoachtongthe.tongquan1",
+              path: "tong-quan-1",
               active: false,
             },
             {

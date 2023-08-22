@@ -16,7 +16,7 @@ function get_position(movement_position, viewer) {
     const latitude = parseFloat(
       Cesium.Math.toDegrees(cartographic.latitude).toFixed(6)
     );
-    console.log("Mouse Position: Lat", latitude, "Long", longitude);
+    //console.log("Mouse Position: Lat", latitude, "Long", longitude);
     return {
       latitude: latitude,
       longitude: longitude,
@@ -56,10 +56,23 @@ export default {
             latitude: mouse_position.latitude,
             longitude: mouse_position.longitude,
           },
+          status_end: false,
         });
       }
     }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
-    console.log(click_get_position_handle);
+    // finish handle when Right Click
+    click_get_position_handle.setInputAction(function () {
+      click_get_position_handle.destroy();
+      emitter.emit(emit_name, {
+        point: {
+          latitude: null,
+          longitude: null,
+        },
+        status_end: true,
+      });
+    }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
+
+    //console.log(click_get_position_handle);
     return click_get_position_handle;
   },
   stop_handle(handle) {

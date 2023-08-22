@@ -1,0 +1,158 @@
+<template>
+  <MainLayout class="h-full" :page="'quyhoachtongthe'">
+    <!--    <div class="h-full w-full bgg"></div>-->
+    <map-view></map-view>
+    <div
+      class="absolute top-0 left-0 w-1/5 justify-start p-5 text-white text-base"
+    >
+      <button
+        class="w-12 h-12 bg-[#C80F36] p-4 flex justify-center items-center"
+        v-if="!map_class_left_box_show"
+        @click="map_class_left_box_show = true"
+      >
+        <icon-tag :name="'double-chevron-right'"></icon-tag>
+      </button>
+      <LeftBox
+        :title="'Các lớp bản đồ'"
+        v-if="map_class_left_box_show"
+        @hidden-box="map_class_left_box_show = false"
+      >
+        <div class="flex justify-start font-magistral_medium">
+          <div class="">Loại bản đồ</div>
+        </div>
+        <div class="font-magistral_l mt-4">
+          <drop-down-box
+            :title="map.name"
+            :icon="map.icon"
+            v-for="map in map_class"
+            :key="`map-box-${map.id}`"
+          >
+            <drop-down-box2
+              :title="sub_map.name"
+              v-for="sub_map in map.childs"
+              :key="`sub-map-box-${sub_map.id}`"
+            ></drop-down-box2>
+          </drop-down-box>
+
+          <div class="w-full mt-4">
+            <button
+              class="add_map_button w-full border-dashed border border-[#C80F36] py-2"
+              @click="open_map_form()"
+            >
+              <div class="flex justify-center items-center gap-2">
+                <div class="w-4 h-4 text-[#C80F36]">
+                  <icon-tag :name="'add-circle'"></icon-tag>
+                </div>
+                <p>Thêm mới bản đồ</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </LeftBox>
+    </div>
+    <div
+      class="absolute top-0 right-0 w-1/5 justify-start p-5 text-white text-lg"
+    >
+      <ToolMap :show="tool_map_show"></ToolMap>
+    </div>
+    <MapForm v-if="map_form" @close-form="close_form()"></MapForm>
+  </MainLayout>
+</template>
+<style>
+.bgg {
+  background-image: url("../../../../../public/images/background/highdefinition-city-scene-sky-architecture-sunset 1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.add_map_button {
+  background-image: url("../../../../../public/images/background/black_opacity_1.png");
+  background-repeat: repeat;
+}
+</style>
+<script>
+import MainLayout from "@/views/front/layouts/MainLayout";
+import LeftBox from "@/components/box/LeftBox.vue";
+import IconTag from "@/components/IconTag.vue";
+import DropDownBox from "@/components/box/DropDownBox.vue";
+import DropDownBox2 from "@/components/box/DropDownBox2.vue";
+import ToolMap from "@/components/map/ToolMap.vue";
+import MapForm from "@/components/map/MapForm.vue";
+import MapView from "@/components/map/MapView.vue";
+export default {
+  props: [""],
+  components: {
+    MapView,
+    MapForm,
+    ToolMap,
+    DropDownBox2,
+    DropDownBox,
+    IconTag,
+    LeftBox,
+    MainLayout,
+  },
+  data() {
+    return {
+      map_form: false,
+      map_class_left_box_show: true,
+      tool_map_show: true,
+      map_class: [
+        {
+          name: "Bản đồ địa chính",
+          id: 1,
+          icon: "map-dia-chinh",
+          childs: [
+            {
+              name: "Địa chính đô thị",
+              id: 11,
+            },
+            {
+              name: "Địa chính nông thôn",
+              id: 12,
+            },
+          ],
+        },
+        {
+          name: "Bản đồ rừng",
+          id: 2,
+          icon: "map-forest",
+          childs: [
+            {
+              name: "Bản đồ rừng 2000",
+              id: 21,
+            },
+            {
+              name: "Bản đồ rừng 2001",
+              id: 22,
+            },
+          ],
+        },
+        {
+          name: "Bản đồ giao thông",
+          id: 3,
+          icon: "map-traffic",
+          childs: [
+            {
+              name: "Bản đồ giao thông 1",
+              id: 31,
+            },
+            {
+              name: "Bản đồ giao thông 2",
+              id: 32,
+            },
+          ],
+        },
+      ],
+    };
+  },
+  methods: {
+    close_form() {
+      this.map_form = false;
+    },
+    open_map_form() {
+      this.map_form = true;
+      this.map_class_left_box_show = false;
+      this.tool_map_show = false;
+    },
+  },
+};
+</script>

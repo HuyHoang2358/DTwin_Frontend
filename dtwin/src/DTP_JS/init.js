@@ -42,16 +42,22 @@ export default {
 
     console.log("dispatch viewer");
     // Set up Camera
-    const LAT_DN = 16.094549538872112;
-    const LON_DN = 108.22868212290481;
+    const LAT_DN = 16.088736179073514;
+    const LON_DN = 108.24324894040332;
     const HEIGHT_DN = 4000;
     viewer.camera.flyTo({
       destination: Cesium.Cartesian3.fromDegrees(LON_DN, LAT_DN, HEIGHT_DN),
       orientation: {
-        heading: Cesium.Math.toRadians(0.0),
-        pitch: Cesium.Math.toRadians(-90.0),
-        roll: 0.0,
+        heading: 5.469271820946611,
+        pitch: -1.0446075782846078,
+        roll: 0.000002230894761368063,
       },
     });
+
+    viewer.imageryLayers.addImageryProvider(
+      new Cesium.OpenStreetMapImageryProvider({
+        url: "https://tile.openstreetmap.org/",
+      })
+    );
   },
 };

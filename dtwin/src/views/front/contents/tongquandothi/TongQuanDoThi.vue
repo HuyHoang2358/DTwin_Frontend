@@ -89,7 +89,7 @@ import { mapGetters, mapActions } from "vuex";
 import DTP_HANDLE_ACTION from "@/DTP_JS/handle_action";
 import DTP_ENTITY from "@/DTP_JS/entity";
 import emitter from "@/mitt";
-
+import { saveAs } from "file-saver";
 export default {
   props: [""],
   components: {
@@ -111,6 +111,38 @@ export default {
       polygon_entity: null,
       endPoint: null,
       movingPoint: null,
+      GeoJsonDataFormat: {
+        type: "FeatureCollection",
+        name: "DaNang_SonTra_NaiHienDong",
+        crs: {
+          type: "name",
+          properties: {
+            name: "urn:ogc:def:crs:OGC:1.3:CRS84",
+          },
+        },
+        features: [
+          {
+            type: "Feature",
+            properties: {
+              maTinh: "79",
+              tenTinh: "Thành phố Hồ Chí Minh",
+              maHuyen: "769",
+              tenHuyen: "thành phố Thủ Đức",
+            },
+            geometry: {
+              type: "MultiPolygon",
+              coordinates: [
+                [
+                  [
+                    //[106.840192623351072, 10.898778743370588],
+                    //[106.840439149629731, 10.898089127944202],
+                  ],
+                ],
+              ],
+            },
+          },
+        ],
+      },
     };
   },
   computed: {
@@ -127,8 +159,13 @@ export default {
     console.log("mounted tongquan");
     this.init_handle();
     this.$store.dispatch("POLYGON/clearPoints");
+
+    let surface_entity = DTP_ENTITY.load_entity_from_geo_json(
+      "./Data/geoJson/DaNang_SonTra_NaiHienDong.json"
+    );
+    console.log(surface_entity);
     emitter.on(this.handle_move_get_position_emit, async (eventData) => {
-      console.log("eventData: ", eventData);
+      //console.log("eventData: ", eventData);
       if (this.movingPoint === null) {
         this.movingPoint = DTP_ENTITY.point_entity(eventData["point"]);
       } else {
@@ -143,26 +180,38 @@ export default {
       }
     });
     emitter.on(this.handle_click_get_position_emit, async (eventData) => {
-      this.$store.dispatch("POLYGON/addPoint", eventData.point.longitude);
-      this.$store.dispatch("POLYGON/addPoint", eventData.point.latitude);
-      console.log("store, polygon: ", this["POLYGON/getPoints"]);
-      console.log("store, getEndPoint: ", this["POLYGON/getEndPoint"]);
-      if (this.polygon_entity === null) {
-        this.polygon_entity = DTP_ENTITY.polygon_entity(
-          this["POLYGON/getPoints"]
-        );
-        this.point_entity = DTP_ENTITY.point_entity(
+      if (!eventData["status_end"]) {
+        this.$store.dispatch("POLYGON/addPoint", eventData.point.longitude);
+        this.$store.dispatch("POLYGON/addPoint", eventData.point.latitude);
+        //console.log("store, polygon: ", this["POLYGON/getPoints"]);
+        //console.log("store, getEndPoint: ", this["POLYGON/getEndPoint"]);
+        if (this.polygon_entity === null) {
+          this.polygon_entity = DTP_ENTITY.polygon_entity(
+            this["POLYGON/getPoints"]
+          );
+          this.point_entity = DTP_ENTITY.point_entity(
+            this["POLYGON/getEndPoint"]
+          );
+        } else
+          DTP_ENTITY.update_polygon_entity(
+            this.polygon_entity,
+            this["POLYGON/getPoints"]
+          );
+        DTP_ENTITY.update_point_entity(
+          this.point_entity,
           this["POLYGON/getEndPoint"]
         );
-      } else
+      } else {
+        console.log("store, polygon: ", this["POLYGON/getPoints"]);
+        DTP_HANDLE_ACTION.stop_handle(this.handle_move_get_position);
+        this["VIEWER/getViewer"].entities.remove(this.endPoint);
+        this["VIEWER/getViewer"].entities.remove(this.movingPoint);
         DTP_ENTITY.update_polygon_entity(
           this.polygon_entity,
           this["POLYGON/getPoints"]
         );
-      DTP_ENTITY.update_point_entity(
-        this.point_entity,
-        this["POLYGON/getEndPoint"]
-      );
+        this.initGeoJson();
+      }
     });
   },
   methods: {
@@ -185,6 +234,21 @@ export default {
     },
     submit() {
       console.log("submit");
+    },
+    initGeoJson() {
+      let points = this["POLYGON/getPoints"];
+      for (let i = 0; i < Math.floor(points.length / 2); i++) {
+        this.GeoJsonDataFormat.features[0].geometry.coordinates[0][0].push([
+          points[i * 2],
+          points[i * 2 + 1],
+        ]);
+      }
+      console.log(this.GeoJsonDataFormat);
+      const jsonData = JSON.stringify(this.GeoJsonDataFormat, null, 4);
+      // Tạo một đối tượng Blob từ chuỗi JSON
+      const blob = new Blob([jsonData], { type: "application/json" });
+      // Sử dụng thư viện file-saver để lưu đối tượng Blob thành file JSON
+      saveAs(blob, "geojson.json");
     },
   },
 };

@@ -14,6 +14,8 @@ import TongQuanDoThi from "@/views/front/contents/tongquandothi/TongQuanDoThi.vu
 import QuyHoachTongThe from "@/views/front/contents/quyhoachtongthe/QuyHoachTongThe.vue";
 import HaTangDothi from "@/views/front/contents/quanlyhatang/HaTangDothi.vue";
 import HaTangDothi_XayDung from "@/views/front/contents/quanlyhatang/HaTangDothi_XayDung.vue";
+import TongQuanDoThi_TongQuan1 from "@/views/front/contents/tongquandothi/TongQuanDoThi_TongQuan1.vue";
+import QuyHoachTongThe_TongQuan1 from "@/views/front/contents/quyhoachtongthe/QuyHoachTongThe_TongQuan1.vue";
 
 const routes = [
   //home
@@ -92,9 +94,21 @@ const routes = [
     meta: { guest: true },
   },
   {
+    path: "/tong-quan-do-thi/tong-quan-1",
+    name: "tongquandothi.tongquan1",
+    component: TongQuanDoThi_TongQuan1,
+    meta: { guest: true },
+  },
+  {
     path: "/quy-hoach-tong-the",
     name: "quyhoachtongthe.index",
     component: QuyHoachTongThe,
+    meta: { guest: true },
+  },
+  {
+    path: "/quy-hoach-tong-the/tong-quan-1",
+    name: "quyhoachtongthe.tongquan1",
+    component: QuyHoachTongThe_TongQuan1,
     meta: { guest: true },
   },
   {

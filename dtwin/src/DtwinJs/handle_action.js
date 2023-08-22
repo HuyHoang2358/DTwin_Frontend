@@ -21,7 +21,7 @@ export default {
   },
 
   start_handle_move_object(viewer) {
-    console.log("starting");
+    //console.log("starting");
     let move_object_handle = new Cesium.ScreenSpaceEventHandler(
       viewer.scene.canvas
     );
@@ -45,7 +45,7 @@ export default {
       }
     }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
     move_object_handle.setInputAction(function () {
-      console.log("finish");
+      //console.log("finish");
       move_object_handle.destroy();
     }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
   },
