@@ -44,7 +44,43 @@ export default {
       return [];
     }
   },
-
+  async getInfoDetail(entity_id) {
+    try {
+      let response = await Api.webApi().get(`${API_GET_ENTITY}${entity_id}`, {
+        headers,
+      });
+      console.log(response.data.data);
+      let entity_json = response.data.data;
+      let entity_info = {
+        id: entity_json.id,
+        name: entity_json.ten_toa_nha,
+        area: entity_json.dien_tich,
+        floor: entity_json.so_tang,
+        address: {
+          commune: entity_json.dia_chi.commune,
+          district: entity_json.dia_chi.district,
+          province: entity_json.dia_chi.province,
+        },
+        thua_dat: {
+          address: entity_json.dia_chi_thua_dat,
+        },
+        date_complete: entity_json.ngay_hoan_thanh,
+        date_build: entity_json.ngay_xay_dung,
+        validate: entity_json.duoc_cap_phep,
+        matdo: entity_json.mat_do,
+        type: entity_json.type,
+      };
+      if (entity_info.name === null || entity_info.name === "") return null;
+      return entity_info;
+    } catch (e) {
+      console.log({
+        Type: "Err API getEntityInfo",
+        File: "apis/modules/entity.js",
+        Error: e,
+      });
+      return null;
+    }
+  },
   async getEntityInfo(entity_id) {
     try {
       let response = await Api.webApi().get(`${API_GET_ENTITY}${entity_id}`, {

@@ -75,6 +75,29 @@ export default {
     //console.log(click_get_position_handle);
     return click_get_position_handle;
   },
+  handle_click_object(emit_name) {
+    const viewer = store.getters["VIEWER/getViewer"];
+    const click_object_handle = new Cesium.ScreenSpaceEventHandler(
+      viewer.scene.canvas
+    );
+    click_object_handle.setInputAction(function (movement) {
+      const pickedFeature = viewer.scene.pick(movement.position);
+      if (Cesium.defined(pickedFeature)) {
+        let id = null;
+        try {
+          id = pickedFeature.id.name;
+        } catch (e) {
+          console.log(e);
+        }
+        if (id !== null) {
+          emitter.emit(emit_name, {
+            obj_id: id,
+          });
+        }
+      }
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+    return click_object_handle;
+  },
   stop_handle(handle) {
     handle.destroy();
   },

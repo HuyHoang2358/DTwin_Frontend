@@ -229,7 +229,7 @@ export default {
           id: "3",
           title1: "Quản lý",
           title2: "Hạ tầng Đô thị",
-          routeName: "hatangdothi.xaydung",
+          routeName: "hatangdothi.index",
           path: "ha-tang-do-thi",
           position: "right",
           active: false,

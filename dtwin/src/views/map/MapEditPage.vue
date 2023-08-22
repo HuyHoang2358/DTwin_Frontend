@@ -261,6 +261,7 @@ export default {
       },
     };
   },
+
   mounted() {
     // Listen for the 'cesiumClick' event on the event bus
     emitter.on("show-edit-form", async (eventData) => {
