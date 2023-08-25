@@ -2,14 +2,14 @@
   <div class="menu bg-gray-500 w-full relative z-40 font-magistral">
     <div class="menu_background z-40">
       <div
-        class="menu_content border-b-[3px] border-[#EE0033] p-4 text-white font-magistral_l_i text-sm lg:text-base xl:text-lg"
+        class="menu_content border-b-[3px] border-[#EE0033] p-4 text-white font-magistral_l_i text-xs"
       >
         <div class="grid grid-cols-8 gap-8 h-full">
           <div class="col-span-3 h-full">
             <div class="grid grid-cols-2 gap-4 h-full">
               <div class="col-span-1">
                 <div
-                  class="h-full flex justify-start items-center content-center text-white font-magistral text-xs lg:text-sm xl:text-base 2xl:text-lg"
+                  class="h-full flex justify-start items-center content-center font-magistral text-base"
                 >
                   <div class="border-r-2 border-white">
                     <div class="flex justify-between items-center px-4">
@@ -19,10 +19,10 @@
                   </div>
 
                   <div class="border-r-2 border-white px-4">
-                    <p>15:42:36</p>
+                    <p id="time_header">15:42:36</p>
                   </div>
                   <div class="px-4">
-                    <p>2023/09/01</p>
+                    <p id="date_time_header">2023/09/01</p>
                   </div>
                 </div>
               </div>
@@ -61,13 +61,13 @@
               </div>
               <div class="col-span-1">
                 <div
-                  class="h-full flex justify-end items-center content-center"
+                  class="h-full flex justify-end items-center content-center text-base"
                 >
                   <div class="border-r-2 border-white px-4">
                     <p>VIE</p>
                   </div>
                   <div class="border-r-2 border-white px-4">
-                    <p>VIE</p>
+                    <p>MP</p>
                   </div>
 
                   <div class="border-r-2 border-white px-4">
@@ -118,11 +118,13 @@
     </div>
 
     <div class="h-full w-1/4 absolute top-0 menu_logo_area z-50">
-      <logo-digital-twin :name="'center-page'"></logo-digital-twin>
+      <router-link :to="{ name: 'homepage' }">
+        <logo-digital-twin :name="'center-page'"></logo-digital-twin>
+      </router-link>
     </div>
 
     <div
-      class="w-1/2 absolute top-0 z-50 mt-28 ml-[25%] text-lg font-magistral"
+      class="w-1/2 absolute top-0 z-40 mt-28 ml-[25%] text-base font-magistral"
     >
       <div class="flex justify-center">
         <div>

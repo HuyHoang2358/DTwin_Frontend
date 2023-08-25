@@ -6,7 +6,7 @@
       class="absolute top-0 left-0 w-1/5 justify-start p-5 text-white text-base"
     >
       <button
-        class="w-12 h-12 bg-[#C80F36] p-4 flex justify-center items-center"
+        class="w-10 h-10 bg-[#C80F36] p-3 flex justify-center items-center"
         v-if="!map_class_left_box_show"
         @click="map_class_left_box_show = true"
       >
@@ -59,11 +59,6 @@
   </MainLayout>
 </template>
 <style>
-.bgg {
-  background-image: url("../../../../../public/images/background/highdefinition-city-scene-sky-architecture-sunset 1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .add_map_button {
   background-image: url("../../../../../public/images/background/black_opacity_1.png");
   background-repeat: repeat;
@@ -78,6 +73,8 @@ import DropDownBox2 from "@/components/box/DropDownBox2.vue";
 import ToolMap from "@/components/map/ToolMap.vue";
 import MapForm from "@/components/map/MapForm.vue";
 import MapView from "@/components/map/MapView.vue";
+import DTP_ENTITY from "@/DTP_JS/entity";
+import DTP_MAP from "@/DTP_JS/map";
 export default {
   props: [""],
   components: {
@@ -143,6 +140,12 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    this.boundary_entity = DTP_ENTITY.load_entity_from_geo_json(
+      "/Data/geoJson/DaNang_SonTra_NaiHienDong.json"
+    );
+    DTP_MAP.open_openstreetmap();
   },
   methods: {
     close_form() {

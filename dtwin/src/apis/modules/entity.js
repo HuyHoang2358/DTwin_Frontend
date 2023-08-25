@@ -2,6 +2,9 @@ import Api from "../../apis";
 import store from "../../store";
 import { API_ADD_ENTITY, API_GET_ENTITIES, API_GET_ENTITY } from "@/config";
 
+function prepareDateFormat(dateString) {
+  return dateString.split("/").reverse().join("-");
+}
 export const headers = {
   Authorization: `Bearer ${store.getters["AUTH/getToken"]}`,
   "Content-Type": "application/json",
@@ -11,9 +14,26 @@ export default {
   addEntity(data) {
     return Api.webApi().post(API_ADD_ENTITY, data, { headers });
   },
-  updateEntity(data) {
-    console.log(data);
-    return Api.webApi().post(`/entities/${data.id}/attrs`, data, { headers });
+  async updateEntity(data) {
+    //console.log("Update Entity", data);
+    try {
+      let response = await Api.webApi().post(
+        `/entities/${data.id}/attrs`,
+        data,
+        {
+          headers,
+        }
+      );
+      console.log("updateEntityResponse: ", response);
+      return true;
+    } catch (e) {
+      console.log({
+        Type: "Err API updateEntity",
+        File: "apis/modules/entity.js",
+        Error: e,
+      });
+      return false;
+    }
   },
 
   async getAllEntities(type) {
@@ -51,27 +71,44 @@ export default {
       });
       console.log(response.data.data);
       let entity_json = response.data.data;
-      let entity_info = {
+      return {
         id: entity_json.id,
-        name: entity_json.ten_toa_nha,
-        area: entity_json.dien_tich,
-        floor: entity_json.so_tang,
-        address: {
-          commune: entity_json.dia_chi.commune,
-          district: entity_json.dia_chi.district,
-          province: entity_json.dia_chi.province,
+        ten_toa_nha: entity_json.ten_toa_nha ? entity_json.ten_toa_nha : null,
+        dien_tich: entity_json.dien_tich ? entity_json.dien_tich : null,
+        so_tang: entity_json.so_tang ? entity_json.so_tang : null,
+        dia_chi: {
+          commune: entity_json.dia_chi.commune
+            ? entity_json.dia_chi.commune
+            : null,
+          district: entity_json.dia_chi.district
+            ? entity_json.dia_chi.district
+            : null,
+          province: entity_json.dia_chi.province
+            ? entity_json.dia_chi.province
+            : null,
+          streetAddress: entity_json.dia_chi.streetAddress
+            ? entity_json.dia_chi.streetAddress
+            : null,
         },
-        thua_dat: {
-          address: entity_json.dia_chi_thua_dat,
-        },
-        date_complete: entity_json.ngay_hoan_thanh,
-        date_build: entity_json.ngay_xay_dung,
-        validate: entity_json.duoc_cap_phep,
-        matdo: entity_json.mat_do,
-        type: entity_json.type,
+        dia_chi_thua_dat: entity_json.dia_chi_thua_dat
+          ? entity_json.dia_chi_thua_dat
+          : null,
+
+        ngay_hoan_thanh: entity_json.ngay_hoan_thanh
+          ? prepareDateFormat(entity_json.ngay_hoan_thanh)
+          : null,
+        ngay_xay_dung: entity_json.ngay_xay_dung
+          ? prepareDateFormat(entity_json.ngay_xay_dung)
+          : null,
+        trang_thai_toa_nha: entity_json.trang_thai_toa_nha
+          ? entity_json.trang_thai_toa_nha
+          : null,
+        mat_do: entity_json.mat_do ? entity_json.mat_do : null,
+        type: entity_json.type ? entity_json.type : null,
+        phan_loai_toa_nha: entity_json.phan_loai_toa_nha
+          ? entity_json.phan_loai_toa_nha
+          : null,
       };
-      if (entity_info.name === null || entity_info.name === "") return null;
-      return entity_info;
     } catch (e) {
       console.log({
         Type: "Err API getEntityInfo",

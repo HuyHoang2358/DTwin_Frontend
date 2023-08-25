@@ -1,14 +1,11 @@
 <template>
   <MainLayout class="h-full font-magistral" :page="'tongquandothi'">
-    <!--    <div class="h-full w-full bgg"></div>-->
     <MapView></MapView>
-    <div
-      class="absolute top-0 left-0 w-1/5 justify-start p-5 text-white text-lg"
-    >
+    <div class="absolute top-0 left-0 w-1/5 justify-start p-5 text-white">
       <LeftBox :title="'Loại báo cáo'">
-        <div class="flex justify-between font-magistral_medium">
-          <div class="">Báo cáo tổng hợp</div>
-          <div class="">Hiển thị</div>
+        <div class="flex justify-between font-magistral">
+          <div class="text-sm">Báo cáo tổng hợp</div>
+          <div class="text-base">Hiển thị</div>
         </div>
         <div class="font-magistral_l mt-4">
           <drop-down-box :title="'Chiều cao tòa nhà'"> </drop-down-box>
@@ -69,7 +66,7 @@
     </div>
 
     <div
-      class="absolute top-0 right-0 w-1/5 justify-start p-5 text-white text-lg"
+      class="absolute top-0 right-0 w-1/5 justify-start p-5 text-white text-base"
     >
       <ToolMap></ToolMap>
     </div>

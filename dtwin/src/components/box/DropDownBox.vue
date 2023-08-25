@@ -5,8 +5,11 @@
       v-if="title != null"
     >
       <div class="flex justify-start items-center gap-2">
-        <div class="w-6 h-6 flex justify-center items-center">
-          <icon-tag :name="icon" v-if="icon !== null"></icon-tag>
+        <div
+          class="w-6 h-6 flex justify-center items-center"
+          v-if="icon !== null"
+        >
+          <icon-tag :name="icon"></icon-tag>
         </div>
 
         <p>{{ title }}</p>

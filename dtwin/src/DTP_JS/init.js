@@ -25,12 +25,22 @@ export default {
     // set Time Format
     viewer.animation.viewModel.timeFormatter = function (date) {
       date = Cesium.JulianDate.toDate(date);
+      let day = date.getDate();
+      let month = date.getMonth();
+      let year = date.getFullYear();
+      day = day < 10 ? "0" + day : day;
+      month = month < 10 ? "0" + month : month;
+
       let hh = date.getHours();
       let mm = date.getMinutes();
       let ss = date.getSeconds();
       hh = hh < 10 ? "0" + hh : hh;
       mm = mm < 10 ? "0" + mm : mm;
       ss = ss < 10 ? "0" + ss : ss;
+      document.getElementById("time_header").innerText = `${hh}:${mm}:${ss}`;
+      document.getElementById(
+        "date_time_header"
+      ).innerText = `${day}/${month}/${year}`;
       return `${hh}:${mm}:${ss}`;
     };
     viewer.clock.shouldAnimate = true;
@@ -53,11 +63,5 @@ export default {
         roll: 0.000002230894761368063,
       },
     });
-
-    viewer.imageryLayers.addImageryProvider(
-      new Cesium.OpenStreetMapImageryProvider({
-        url: "https://tile.openstreetmap.org/",
-      })
-    );
   },
 };

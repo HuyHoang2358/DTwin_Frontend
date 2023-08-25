@@ -2,7 +2,9 @@
   <div class="flex w-1/6 bg-[#201C1D]">
     <div class="flex flex-col w-full h-full">
       <div class="w-full">
-        <logo-digital-twin :name="'sidebar-page'"></logo-digital-twin>
+        <router-link :to="{ name: 'homepage' }">
+          <logo-digital-twin :name="'sidebar-page'"></logo-digital-twin>
+        </router-link>
       </div>
       <div class="flex-grow w-full">
         <nav class="mt-24 p-0">

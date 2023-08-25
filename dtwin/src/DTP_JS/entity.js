@@ -5,6 +5,7 @@ import {
   MINIO_GLB_NO_TEXTURE_FOLDER_PATH,
   MINIO_GLB_TEXTURE_FOLDER_PATH,
 } from "@/config";
+
 function prepare_position(long, lat, height, heading, pitch, roll) {
   // heading, pitch, roll is degrees
   let position = Cesium.Cartesian3.fromDegrees(long, lat, height);
@@ -75,10 +76,8 @@ export default {
       //console.log(entities);
       geo_json_entity = entities[0];
       //console.log(city_bounding_entity);
-      (geo_json_entity.polygon.material = Cesium.Color.YELLOW.withAlpha(0.3)),
-        //Remove the outlines.
-        (geo_json_entity.polygon.outline = true);
-      geo_json_entity.polygon.outlineColor = Cesium.Color.YELLOW;
+      geo_json_entity.polygon.material = Cesium.Color.YELLOW.withAlpha(0.3);
+      //Remove the outlines.
       geo_json_entity.polygon.height = 1;
       geo_json_entity.polygon.outlineWidth = 10;
     });

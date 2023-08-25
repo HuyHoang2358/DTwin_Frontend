@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-//import store from "../store";
+import store from "../store";
 import DashBoard from "@/views/admin/contents/homepage/DashBoard";
 import RightPage from "@/views/admin/contents/right/RightPage.vue";
 import HomePage from "@/views/front/contents/homepage/HomePage.vue";
@@ -16,6 +16,7 @@ import HaTangDothi from "@/views/front/contents/quanlyhatang/HaTangDothi.vue";
 import HaTangDothi_XayDung from "@/views/front/contents/quanlyhatang/HaTangDothi_XayDung.vue";
 import TongQuanDoThi_TongQuan1 from "@/views/front/contents/tongquandothi/TongQuanDoThi_TongQuan1.vue";
 import QuyHoachTongThe_TongQuan1 from "@/views/front/contents/quyhoachtongthe/QuyHoachTongThe_TongQuan1.vue";
+import MapThuaDat from "@/views/map/MapThuaDat.vue";
 
 const routes = [
   //home
@@ -88,52 +89,58 @@ const routes = [
     meta: { guest: true },
   },
   {
+    path: "/map/thua-dat/edit",
+    name: "map.thua_dat.edit",
+    component: MapThuaDat,
+    meta: { guest: true },
+  },
+  {
     path: "/tong-quan-do-thi",
     name: "tongquandothi.index",
     component: TongQuanDoThi,
-    meta: { guest: true },
+    meta: { requiresAuth: true },
   },
   {
     path: "/tong-quan-do-thi/tong-quan-1",
     name: "tongquandothi.tongquan1",
     component: TongQuanDoThi_TongQuan1,
-    meta: { guest: true },
+    meta: { requiresAuth: true },
   },
   {
     path: "/quy-hoach-tong-the",
     name: "quyhoachtongthe.index",
     component: QuyHoachTongThe,
-    meta: { guest: true },
+    meta: { requiresAuth: true },
   },
   {
     path: "/quy-hoach-tong-the/tong-quan-1",
     name: "quyhoachtongthe.tongquan1",
     component: QuyHoachTongThe_TongQuan1,
-    meta: { guest: true },
+    meta: { requiresAuth: true },
   },
   {
     path: "/quan-ly-ha-tang-do-thi",
     name: "quanlyhatangdothi.index",
     component: QuyHoachTongThe,
-    meta: { guest: true },
+    meta: { requiresAuth: true },
   },
   {
     path: "/quan-ly-giao-thong",
     name: "quanlygiaothong.index",
     component: QuyHoachTongThe,
-    meta: { guest: true },
+    meta: { requiresAuth: true },
   },
   {
     path: "/ha-tang-do-thi",
     name: "hatangdothi.index",
     component: HaTangDothi,
-    meta: { guest: true },
+    meta: { requiresAuth: true },
   },
   {
     path: "/ha-tang-do-thi/xay-dung",
     name: "hatangdothi.xaydung",
     component: HaTangDothi_XayDung,
-    meta: { guest: true },
+    meta: { requiresAuth: true },
   },
 ];
 
@@ -142,7 +149,7 @@ const router = createRouter({
   routes,
 });
 
-/*router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   const isLoggedIn = store.getters["AUTH/isLoggedIn"];
 
@@ -151,6 +158,6 @@ const router = createRouter({
   } else {
     next();
   }
-});*/
+});
 
 export default router;

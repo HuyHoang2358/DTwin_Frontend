@@ -39,4 +39,40 @@ export default {
   exit_fullscreen() {
     Cesium.Fullscreen.exitFullscreen();
   },
+
+  fly_to_ThuDuc() {
+    const viewer = store.getters["VIEWER/getViewer"];
+    let HCM_latitude = 10.762;
+    let HCM_longitude = 106.776;
+    let HCM_height = 29000;
+    // Fly to a position with an orientation using heading, pitch and roll.
+    viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(
+        HCM_longitude,
+        HCM_latitude,
+        HCM_height
+      ),
+      orientation: {
+        heading: Cesium.Math.toRadians(0.0),
+        pitch: Cesium.Math.toRadians(-80.0),
+        roll: 0.0,
+      },
+    });
+  },
+
+  fly_to_NewCity() {
+    const viewer = store.getters["VIEWER/getViewer"];
+    let lat = 16.094184230925293;
+    let lon = 108.22316596382925;
+    let height = 42.5;
+    // Fly to a position with an orientation using heading, pitch and roll.
+    viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(lon, lat, height),
+      orientation: {
+        heading: 1.8204192912713557,
+        pitch: -0.06265730544520909,
+        roll: 6.283184095884908,
+      },
+    });
+  },
 };

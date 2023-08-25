@@ -3,10 +3,10 @@
     <!--    <div class="h-full w-full bgg"></div>-->
     <MapView></MapView>
     <div
-      class="absolute top-0 left-0 w-1/5 justify-start p-5 text-white text-lg"
+      class="absolute top-0 left-0 w-1/5 justify-start p-5 text-white text-base"
     >
       <button
-        class="w-12 h-12 bg-[#C80F36] p-4 flex justify-center items-center"
+        class="w-10 h-10 bg-[#C80F36] p-3 flex justify-center items-center"
         v-if="!left_box_show"
         @click="left_box_show = true"
       >
@@ -82,7 +82,9 @@
     <div
       class="absolute top-0 right-0 w-1/5 justify-start p-5 text-white text-lg"
     >
-      <ToolMap></ToolMap>
+      <ToolMap :show="true"></ToolMap>
+      <city-overview :show="true"></city-overview>
+      <city-popular :show="true"></city-popular>
     </div>
   </MainLayout>
 </template>
@@ -100,10 +102,15 @@ import GrayButton from "@/components/buttons/GrayButton.vue";
 import LeftBox from "@/components/box/LeftBox.vue";
 import DropDownBox from "@/components/box/DropDownBox.vue";
 import IconTag from "@/components/IconTag.vue";
+import DTP_CAMERA from "@/DTP_JS/camera";
+import CityOverview from "@/views/front/contents/tongquandothi/CityOverview.vue";
+import CityPopular from "@/views/front/contents/tongquandothi/CityPopular.vue";
 
 export default {
   props: [""],
   components: {
+    CityPopular,
+    CityOverview,
     IconTag,
     DropDownBox,
     LeftBox,
@@ -128,9 +135,10 @@ export default {
       this["VIEWER/getViewer"].screenSpaceEventHandler
     );
     this.boundary_entity = DTP_ENTITY.load_entity_from_geo_json(
-      "/Data/geoJson/DaNang_SonTra_NaiHienDong.json"
+      //"/Data/geoJson/DaNang_SonTra_NaiHienDong.json"
+      "/Data/geoJson/ThuDuc_HC_Phuong.geojson"
     );
-    console.log(this.boundary_entity);
+    DTP_CAMERA.fly_to_ThuDuc();
   },
   methods: {
     onOff() {

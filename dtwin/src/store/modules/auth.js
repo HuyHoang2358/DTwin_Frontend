@@ -31,8 +31,8 @@ const actions = {
       const response = await AuthServices.login(credentials);
       let token = response.data.data.accessToken;
       //console.log("token", token);
-      commit("SET_TOKEN", token);
       localStorage.setItem("token", token);
+      commit("SET_TOKEN", token);
       return token;
     } catch (error) {
       console.log("ERR LOGIN", error);
@@ -40,8 +40,8 @@ const actions = {
     }
   },
   async logout({ commit }) {
-    commit("CLEAR_TOKEN");
     localStorage.removeItem("token");
+    commit("CLEAR_TOKEN");
   },
 };
 

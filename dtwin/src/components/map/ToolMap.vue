@@ -2,14 +2,19 @@
   <div class="w-full">
     <div class="flex justify-end">
       <button
-        class="w-12 h-12 bg-[#C80F36] p-4 flex justify-center items-center"
-        v-if="!show"
+        class="w-10 h-10 bg-[#C80F36] p-3 flex justify-center items-center"
+        v-if="!tool_map_show"
+        @click="tool_map_show = !tool_map_show"
       >
         <icon-tag :name="'double-chevron-left'"></icon-tag>
       </button>
     </div>
 
-    <LeftBox :title="'Công cụ bản đồ'" v-if="show">
+    <LeftBox
+      :title="'Công cụ bản đồ'"
+      v-if="tool_map_show"
+      @hidden-box="tool_map_show = !tool_map_show"
+    >
       <div class="flex justify-center gap-2">
         <ToolItemButton
           :icon="null"
