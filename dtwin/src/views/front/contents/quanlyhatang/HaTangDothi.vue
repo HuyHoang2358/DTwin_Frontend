@@ -47,6 +47,7 @@ import ENTITY_API from "@/apis/modules/entity";
 import DTP_ENTITY from "@/DTP_JS/entity";
 import DTP_HANDLE_ACTION from "@/DTP_JS/handle_action";
 import DTP_CAMERA from "@/DTP_JS/camera";
+import DTP_MAP from "@/DTP_JS/map";
 import { mapGetters } from "vuex";
 import LeftBox from "@/components/box/LeftBox.vue";
 import BuildingEntityForm from "@/components/forms/BuildingEntityForm.vue";
@@ -85,6 +86,7 @@ export default {
     DTP_HANDLE_ACTION.stop_handle(
       this["VIEWER/getViewer"].screenSpaceEventHandler
     );
+    DTP_MAP.open_openstreetmap();
     this.nameOverLay = DTP_HANDLE_ACTION.createNameOverLay();
     console.log(this.nameOverLay);
     this.handle_click_object = DTP_HANDLE_ACTION.handle_click_object(

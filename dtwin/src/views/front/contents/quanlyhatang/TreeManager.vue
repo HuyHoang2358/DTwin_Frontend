@@ -78,7 +78,7 @@ export default {
         },
         plugins: {
           legend: {
-            display: true,
+            display: false,
             color: "white",
           },
         },
