@@ -4,6 +4,9 @@ import store from "../store/";
 import {
   MINIO_GLB_NO_TEXTURE_FOLDER_PATH,
   MINIO_GLB_TEXTURE_FOLDER_PATH,
+  ENV_NETWORK,
+  LOCAL_GLB_TEXTURE_FOLDER_PATH,
+  LOCAL_GLB_NO_TEXTURE_FOLDER_PATH,
 } from "@/config";
 
 function prepare_position(long, lat, height, heading, pitch, roll) {
@@ -20,13 +23,20 @@ function prepare_position(long, lat, height, heading, pitch, roll) {
   );
   return { position: position, orientation: orientation };
 }
-function prepare_model_url(model_id, is_texture = false) {
-  let domain = is_texture
-    ? MINIO_GLB_TEXTURE_FOLDER_PATH
-    : MINIO_GLB_NO_TEXTURE_FOLDER_PATH;
 
+function prepare_model_url(model_id, is_texture = false) {
+  let domain = "";
+  if (ENV_NETWORK === "OFFLINE")
+    domain = is_texture
+      ? LOCAL_GLB_TEXTURE_FOLDER_PATH
+      : LOCAL_GLB_NO_TEXTURE_FOLDER_PATH;
+  else
+    domain = is_texture
+      ? MINIO_GLB_TEXTURE_FOLDER_PATH
+      : MINIO_GLB_NO_TEXTURE_FOLDER_PATH;
   return `${domain}${model_id}.glb`;
 }
+
 export default {
   polygon_entity(polygon_points) {
     const viewer = store.getters["VIEWER/getViewer"];
@@ -101,8 +111,66 @@ export default {
       orientation: position_info.orientation,
       model: {
         uri: prepare_model_url(model.modelUrl, true),
-        color: model.color ? null : null /*Cesium.Color.BLUE*/,
         scale: model.scale,
+      },
+    });
+  },
+
+  draw_x_y_z(center_point) {
+    const viewer = store.getters["VIEWER/getViewer"];
+    let position_info = prepare_position(
+      center_point.longitude,
+      center_point.latitude,
+      center_point.height,
+      0,
+      0,
+      0
+    );
+    viewer.entities.add({
+      name: "XXXX",
+      description: "",
+      position: position_info.position,
+      orientation: position_info.orientation,
+      model: {
+        uri: "/Data/map/truc.glb",
+        color: Cesium.Color.BLUE,
+        scale: 0.5,
+      },
+    });
+    position_info = prepare_position(
+      center_point.longitude,
+      center_point.latitude,
+      center_point.height,
+      0,
+      0,
+      90
+    );
+    viewer.entities.add({
+      name: "YYYY",
+      description: "",
+      position: position_info.position,
+      orientation: position_info.orientation,
+      model: {
+        uri: "/Data/map/truc.glb",
+        color: Cesium.Color.RED,
+      },
+    });
+    position_info = prepare_position(
+      center_point.longitude,
+      center_point.latitude,
+      center_point.height,
+      90,
+      0,
+      90
+    );
+    viewer.entities.add({
+      name: "YYYY",
+      description: "",
+      position: position_info.position,
+      orientation: position_info.orientation,
+      model: {
+        uri: "/Data/map/truc.glb",
+        color: Cesium.Color.GREEN,
       },
     });
   },

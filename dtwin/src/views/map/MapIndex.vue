@@ -9,7 +9,6 @@
 </template>
 <script>
 import Init from "@/DtwinJs/Init.js";
-import NewCityInitMap from "@/new_city/init_map";
 import HandleAction from "@/DtwinJs/handle_action";
 import ENTITY_API from "@/apis/modules/entity";
 import ENTITY_MODEL from "@/DtwinJs/entity_model";
@@ -23,7 +22,6 @@ export default {
   },
   async mounted() {
     this.viewer = await Init.initCesium();
-    await NewCityInitMap.init_new_city_map(this.viewer);
     HandleAction.start_left_click_object_handle(this.viewer);
 
     //let models = NewCityInitMap.visualize_models(this.viewer);

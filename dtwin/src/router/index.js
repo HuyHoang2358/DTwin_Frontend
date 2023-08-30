@@ -17,6 +17,7 @@ import HaTangDothi_XayDung from "@/views/front/contents/quanlyhatang/HaTangDothi
 import TongQuanDoThi_TongQuan1 from "@/views/front/contents/tongquandothi/TongQuanDoThi_TongQuan1.vue";
 import QuyHoachTongThe_TongQuan1 from "@/views/front/contents/quyhoachtongthe/QuyHoachTongThe_TongQuan1.vue";
 import MapThuaDat from "@/views/map/MapThuaDat.vue";
+import MapAddEntity from "@/views/map/MapAddEntity.vue";
 
 const routes = [
   //home
@@ -141,6 +142,12 @@ const routes = [
     name: "hatangdothi.xaydung",
     component: HaTangDothi_XayDung,
     meta: { requiresAuth: true },
+  },
+  {
+    path: "/mo-phong/them-doi-tuong",
+    name: "simulation.addEntity",
+    component: MapAddEntity,
+    meta: { requiresAuth: false },
   },
 ];
 

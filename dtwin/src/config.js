@@ -29,6 +29,10 @@ export const API_ADD_ENTITY = "/entities";
 export const API_GET_ENTITIES = "entities/types/basicModel?type=";
 export const API_GET_ENTITY = "entities/";
 
+export const ENV_NETWORK = "OFFLINE";
+
+export const LOCAL_GLB_TEXTURE_FOLDER_PATH = "/Data/models/glb/texture/";
+export const LOCAL_GLB_NO_TEXTURE_FOLDER_PATH = "/Data/models/glb/no_texture/";
 export const MINIO_GLB_TEXTURE_FOLDER_PATH =
   "http://172.16.30.214:9000/dtp-model-18-8/building/glb/glb_texture/";
 //"http://172.16.30.214:9000/model-3d-v2/building/glb/glb_texture/";

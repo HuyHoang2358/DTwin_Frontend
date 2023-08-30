@@ -19,7 +19,7 @@
                   </div>
 
                   <div class="border-r-2 border-white px-4">
-                    <p id="time_header">15:42:36</p>
+                    <p id="time_header" class="w-16 text-left">15:42:36</p>
                   </div>
                   <div class="px-4">
                     <p id="date_time_header">2023/09/01</p>
@@ -66,8 +66,10 @@
                   <div class="border-r-2 border-white px-4">
                     <p>VIE</p>
                   </div>
-                  <div class="border-r-2 border-white px-4">
-                    <p>MP</p>
+                  <div class="border-r-2 border-white px-4 flex items-center">
+                    <div class="w-4 h-6">
+                      <icon-tag :name="'simulation'"></icon-tag>
+                    </div>
                   </div>
 
                   <div class="border-r-2 border-white px-4">
