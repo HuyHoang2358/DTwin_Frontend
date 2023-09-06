@@ -63,9 +63,13 @@
                 <div
                   class="h-full flex justify-end items-center content-center text-base"
                 >
-                  <div class="border-r-2 border-white px-4">
-                    <p>VIE</p>
-                  </div>
+                  <button
+                    class="border-r-2 border-white px-4 font-bold"
+                    @click="config_lang = !config_lang"
+                  >
+                    <p v-if="config_lang">VIE</p>
+                    <p v-else>EN</p>
+                  </button>
                   <div class="border-r-2 border-white px-4 flex items-center">
                     <div class="w-4 h-6">
                       <icon-tag :name="'simulation'"></icon-tag>
@@ -73,7 +77,7 @@
                   </div>
 
                   <div class="border-r-2 border-white px-4">
-                    <button @click="goToAdmin()">
+                    <button>
                       <svg
                         width="18"
                         height="18"
@@ -96,7 +100,7 @@
                     </button>
                   </div>
                   <div class="pl-4">
-                    <button>
+                    <button @click="goToAdmin()">
                       <svg
                         width="18"
                         height="18"
@@ -166,6 +170,7 @@ export default {
   },
   data() {
     return {
+      config_lang: true,
       menu_path: null,
       sub_menu_path: null,
       menu: [

@@ -3,33 +3,33 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: FS Magistral-BoldItalic;
-    src: url("./fonts/FS Magistral/FS Magistral-BoldItalic.ttf")
+    font-family: Magistral-BoldItalic;
+    src: url("./fonts/Magistral/Bold_Italic.otf")
 }
 @font-face {
-    font-family: FS Magistral-BookItalic;
-    src: url("./fonts/FS Magistral/FS Magistral-BookItalic.ttf")
+    font-family: Magistral-BookItalic;
+    src: url("./fonts/Magistral/Book_Italic.ttf")
 }
 @font-face {
-    font-family: FS Magistral-LightItalic;
-    src: url("./fonts/FS Magistral/FS Magistral-LightItalic.ttf")
-}
-
-@font-face {
-    font-family: FS Magistral-Book;
-    src: url("./fonts/FS Magistral/FS Magistral-Book.ttf")
+    font-family: Magistral-LightItalic;
+    src: url("./fonts/Magistral/Light_Italic.ttf")
 }
 
 @font-face {
-    font-family: FS Magistral-Light;
-    src: url("./fonts/FS Magistral/FS Magistral-Light.ttf")
+    font-family: Magistral-Book;
+    src: url("./fonts/Magistral/Book.ttf")
 }
 
 @font-face {
-    font-family:  Fs Magistral-Bold;
-    src: url("./fonts/FS Magistral/FS Magistral-Bold.ttf")
+    font-family: Magistral-Light;
+    src: url("./fonts/Magistral/Light.ttf")
+}
+
+@font-face {
+    font-family:  Magistral-Bold;
+    src: url("./fonts/Magistral/Bold.ttf")
 }
 @font-face {
-     font-family: FS Magistral-Medium;
-    src: url("./fonts/FS Magistral/FS Magistral-Medium.ttf")
+     font-family: Magistral-Medium;
+    src: url("./fonts/Magistral/Medium.ttf")
 }

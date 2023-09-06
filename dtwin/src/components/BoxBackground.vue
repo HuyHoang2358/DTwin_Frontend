@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <!-- User Icon -->
+  <div class="w-full h-full">
     <svg
       v-if="name === 'sub-menu-item-active'"
       class="fill-current w-full h-full"
@@ -66,7 +65,7 @@
     </svg>
 
     <svg
-      v-if="name === 'sub-menu-item'"
+      v-else-if="name === 'sub-menu-item'"
       class="fill-current w-full h-full"
       viewBox="0 0 147 53"
       fill="none"
@@ -112,6 +111,74 @@
           <stop stop-color="#E20439" stop-opacity="0.51" />
           <stop offset="1" stop-color="#373737" stop-opacity="0" />
         </linearGradient>
+      </defs>
+    </svg>
+
+    <svg
+      v-else-if="name === 'tool-map-item-button'"
+      class="w-full h-full"
+      viewBox="0 0 47 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        opacity="0.5"
+        width="47"
+        height="44"
+        fill="url(#paint0_linear_14786_520)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_14786_520"
+          x1="23.5"
+          y1="0"
+          x2="23.5"
+          y2="44"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#050505" />
+          <stop offset="1" stop-color="#050505" stop-opacity="0.78" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <svg
+      v-else-if="name === 'tool-map-item-button-active'"
+      class="w-full h-full"
+      viewBox="0 0 47 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        opacity="0.5"
+        width="47"
+        height="44"
+        fill="url(#paint0_linear_14786_504)"
+      />
+      <circle cx="23" cy="22" r="22" fill="url(#paint1_radial_14786_504)" />
+      <defs>
+        <linearGradient
+          id="paint0_linear_14786_504"
+          x1="23.5"
+          y1="0"
+          x2="23.5"
+          y2="44"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#050505" />
+          <stop offset="1" stop-color="#050505" stop-opacity="0.78" />
+        </linearGradient>
+        <radialGradient
+          id="paint1_radial_14786_504"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(23 22) rotate(90) scale(24.5)"
+        >
+          <stop stop-color="#FF3D3D" stop-opacity="0.5" />
+          <stop offset="1" stop-color="#303030" stop-opacity="0" />
+        </radialGradient>
       </defs>
     </svg>
   </div>

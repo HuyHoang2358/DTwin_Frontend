@@ -8,7 +8,7 @@
         <div class="w-3 h-4">
           <icon-tag :name="'double-chevron-right'"></icon-tag>
         </div>
-        <div class="font-magistral_medium text-base">{{ title }}</div>
+        <div class="magistral_b_i text-base">{{ title }}</div>
       </div>
     </button>
     <div class="w-full p-4 box_black_linear">

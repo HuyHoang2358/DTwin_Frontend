@@ -321,7 +321,7 @@
       class="fill-current w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 15 22"
+      viewBox="0 0 15 20"
     >
       <path
         d="M7.5 0C3.364 0 0 3.468 0 7.732c0 1.548.44 3.036 1.275 4.313L7.5 22l6.225-9.955A7.852 7.852 0 0 0 15 7.732C15 3.468 11.636 0 7.5 0Zm0 11.597c-2.068 0-3.75-1.734-3.75-3.865 0-2.132 1.682-3.866 3.75-3.866s3.75 1.734 3.75 3.866c0 2.131-1.682 3.865-3.75 3.865Z"
@@ -449,9 +449,9 @@
       />
     </svg>
     <svg
-      v-else-if="name === 'double-chevron-left'"
-      class="fill-current w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
+      v-else-if="name === 'double-chevron-left'"
+      class="w-full h-full"
       fill="none"
       viewBox="0 0 13 18"
     >
@@ -460,13 +460,13 @@
     </svg>
     <svg
       v-else-if="name === 'double-chevron-right'"
-      class="fill-current w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
+      class="h-full w-full"
       viewBox="0 0 13 18"
     >
       <path stroke="#fff" d="M5 15.5 12 9 5 2.5" />
-      <path d="M10 9 0 0v18l10-9Z" />
+      <path fill="#fff" d="M10 9 0 0v18l10-9Z" />
     </svg>
 
     <svg

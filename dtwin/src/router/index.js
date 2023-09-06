@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import store from "../store";
+/*import store from "../store";*/
 import DashBoard from "@/views/admin/contents/homepage/DashBoard";
 import RightPage from "@/views/admin/contents/right/RightPage.vue";
 import HomePage from "@/views/front/contents/homepage/HomePage.vue";
@@ -156,7 +156,7 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
+/*router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   const isLoggedIn = store.getters["AUTH/isLoggedIn"];
 
@@ -165,6 +165,6 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
-});
+});*/
 
 export default router;

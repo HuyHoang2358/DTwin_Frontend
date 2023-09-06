@@ -26,7 +26,7 @@ export default {
     viewer.animation.viewModel.timeFormatter = function (date) {
       date = Cesium.JulianDate.toDate(date);
       let day = date.getDate();
-      let month = date.getMonth();
+      let month = date.getMonth() + 1;
       let year = date.getFullYear();
       day = day < 10 ? "0" + day : day;
       month = month < 10 ? "0" + month : month;

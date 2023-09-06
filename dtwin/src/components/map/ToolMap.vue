@@ -1,71 +1,65 @@
 <template>
   <div class="w-full">
-    <div class="flex justify-end">
-      <button
-        class="w-10 h-10 bg-[#C80F36] p-3 flex justify-center items-center"
-        v-if="!tool_map_show"
-        @click="tool_map_show = !tool_map_show"
-      >
-        <icon-tag :name="'double-chevron-left'"></icon-tag>
-      </button>
-    </div>
-
-    <LeftBox
-      :title="'Công cụ bản đồ'"
-      v-if="tool_map_show"
-      @hidden-box="tool_map_show = !tool_map_show"
-    >
+    <right-box :title="'Công cụ bản đồ'" :is_show="show">
       <div class="flex justify-center gap-2">
         <ToolItemButton
           :icon="null"
           :text="'3D'"
+          :toolTip="'Hiển thị 3D'"
+          :active="false"
           @click-button="clickC"
         ></ToolItemButton>
         <ToolItemButton
           :icon="'add'"
           :text="null"
+          :toolTip="'Phóng to'"
           @click-button="zoomInMap()"
         ></ToolItemButton>
         <ToolItemButton
           :icon="'minus'"
           :text="null"
+          :toolTip="'Thu nhỏ'"
           @click-button="zoomOutMap()"
         ></ToolItemButton>
         <ToolItemButton
           :icon="'full-screen'"
           :text="null"
+          :toolTip="'Toàn màn hình'"
           @click-button="openFullScreen()"
           v-if="!is_full_screen"
         ></ToolItemButton>
         <ToolItemButton
           :icon="'full-screen'"
           :text="null"
+          :toolTip="'Thoát'"
           @click-button="exitFullScreen()"
           v-else
         ></ToolItemButton>
         <ToolItemButton
           :icon="'shadow'"
           :text="null"
+          :toolTip="'Đổ bóng'"
           @click-button="clickC"
         ></ToolItemButton>
         <ToolItemButton
           :icon="'address'"
           :text="null"
+          :toolTip="'Vị trí của bạn'"
           @click-button="show_camera_position()"
         ></ToolItemButton>
       </div>
-    </LeftBox>
+    </right-box>
   </div>
 </template>
 
 <script>
-import LeftBox from "@/components/box/LeftBox.vue";
 import ToolItemButton from "@/components/map/ToolItemButton.vue";
 import DTP_CAMERA from "@/DTP_JS/camera";
-import IconTag from "@/components/IconTag.vue";
+
+import RightBox from "@/components/box/RightBox.vue";
 export default {
   props: ["show"],
-  components: { IconTag, ToolItemButton, LeftBox },
+  components: { RightBox, ToolItemButton },
   data() {
     return {
       is_full_screen: false,

@@ -5,12 +5,15 @@
       <div class="relative">
         <button
           type="button"
-          class="w-4 h-6"
+          class="w-4 h-6 z-40"
           @click="action_dropbox_show = true"
         >
           <icon-tag :name="'more'"></icon-tag>
         </button>
-        <div class="absolute top-0 left-0 w-[200px]" v-if="action_dropbox_show">
+        <div
+          class="absolute top-0 left-0 w-[200px] mt-6 ml-[-14px] z-50"
+          v-if="action_dropbox_show"
+        >
           <message-drop-down @mouseleave="action_dropbox_show = false">
             <button type="button" class="mt-4 w-full">
               <div class="flex justify-start items-center gap-4">

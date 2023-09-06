@@ -4,24 +4,24 @@
     <div
       class="absolute top-0 right-0 w-1/5 justify-start p-5 text-white text-base"
     >
-      <ToolMap></ToolMap>
+      <tool-map :show="true"></tool-map>
     </div>
   </MainLayout>
 </template>
 <script>
 import MainLayout from "@/views/front/layouts/MainLayout";
-import ToolMap from "@/components/map/ToolMap.vue";
 import MapView from "@/components/map/MapView.vue";
 
 import { mapGetters } from "vuex";
 import DTP_ENTITY from "@/DTP_JS/entity";
 import DTP_HANDLE_ACTION from "@/DTP_JS/handle_action";
 import DTP_CAMERA from "@/DTP_JS/camera";
+import ToolMap from "@/components/map/ToolMap.vue";
 export default {
   props: [""],
   components: {
-    MapView,
     ToolMap,
+    MapView,
     MainLayout,
   },
   data() {
@@ -37,11 +37,10 @@ export default {
       this["VIEWER/getViewer"].screenSpaceEventHandler
     );
     this.boundary_entity = DTP_ENTITY.load_entity_from_geo_json(
-      "/Data/geoJson/ThuDuc_HC_Phuong.geojson"
+      "/Data/geoJson/ThuDuc_HC_Phuong.geojson",
+      true
     );
     DTP_CAMERA.fly_to_ThuDuc();
-
-    console.log(this.boundary_entity);
   },
   methods: {},
 };

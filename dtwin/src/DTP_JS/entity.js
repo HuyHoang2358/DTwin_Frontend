@@ -73,7 +73,7 @@ export default {
     );
   },
 
-  async load_entity_from_geo_json(path_file) {
+  async load_entity_from_geo_json(path_file, show_name = true) {
     let geo_json_entity = null;
     const viewer = store.getters["VIEWER/getViewer"];
     const promise = Cesium.GeoJsonDataSource.load(path_file);
@@ -83,13 +83,37 @@ export default {
 
       //Get the array of entities
       let entities = dataSource.entities.values;
-      //console.log(entities);
       geo_json_entity = entities[0];
-      //console.log(city_bounding_entity);
-      geo_json_entity.polygon.material = Cesium.Color.YELLOW.withAlpha(0.3);
-      //Remove the outlines.
+      /*geo_json_entity.polygon.material = Cesium.Color.YELLOW.withAlpha(0.3);
       geo_json_entity.polygon.height = 1;
-      geo_json_entity.polygon.outlineWidth = 10;
+      geo_json_entity.polygon.outlineWidth = 10;*/
+
+      for (let i = 0; i < entities.length; i++) {
+        try {
+          const entity = entities[i];
+          entity.polygon.material = Cesium.Color.WHITE.withAlpha(0.1);
+          entity.polygon.height = 1;
+          entity.polygon.outline = true;
+          entity.polygon.outlineColor = Cesium.Color.YELLOW;
+          entity.polygon.outlineWidth = 10;
+
+          if (show_name) {
+            let positions = entity.polygon.hierarchy["_value"]["positions"];
+            let centerPoint =
+              Cesium.BoundingSphere.fromPoints(positions).center;
+            viewer.entities.add({
+              position: centerPoint,
+              label: {
+                text: entities[i]["_properties"]["_ten"]["_value"].slice(7),
+                font: "Helvetica",
+                fillColor: Cesium.Color.YELLOW,
+              },
+            });
+          }
+        } catch (e) {
+          console.log(e);
+        }
+      }
     });
     return geo_json_entity;
   },
