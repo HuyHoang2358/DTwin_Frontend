@@ -7,13 +7,13 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-        magistral_b_i: "Magistral-BoldItalic",
-        magistral_bk_i: "Magistral-BookItalic",
-        magistral_l_i: "Magistral-LightItalic",
-        magistral: "Magistral-Book",
-        magistral_l: "Magistral-Light",
-        magistral_b: "Magistral-Bold",
-        magistral_medium: "Magistral-Medium",
+        sarabun_bold_italic: "Sarabun-BoldItalic",
+        sarabun_bold: "Sarabun-Bold",
+        sarabun_regular: "Sarabun-Regular",
+        sarabun_medium: "Sarabun-Medium",
+        sarabun_light: "Sarabun-Light",
+        sarabun_extra_light: "Sarabun-ExtraLight",
+        sarabun_medium_italic: "Sarabun-MediumItalic",
       },
       colors: {
         bodydark2: "#8A99AF",

@@ -8,7 +8,7 @@
             v-on:submit.prevent="submitForm"
           >
             <div
-              class="map_form_title pt-2 pb-3 text-xl font-magistral_b_i relative"
+              class="map_form_title pt-2 pb-3 text-xl font-sarabun_bold_italic relative"
             >
               {{ isEditing ? "Chỉnh sửa bản đồ" : "Thêm bản đồ mới" }}
               <div class="absolute w-6 top-0 right-0 h-full mr-4">
@@ -19,7 +19,9 @@
                 </div>
               </div>
             </div>
-            <div class="w-full px-16 pb-2 text-base font-magistral_l text-left">
+            <div
+              class="w-full px-16 pb-2 text-base font-sarabun_regular text-left"
+            >
               <div class="w-full grid grid-cols-4 gap-12">
                 <div class="col-span-1">
                   <div class="form_field mt-2">
@@ -300,9 +302,9 @@
                 </div>
               </div>
               <div class="w-full">
-                <p class="font-magistral_b_i text-lg">File bản đồ</p>
+                <p class="font-sarabun_medium_italic text-lg">File bản đồ</p>
                 <div
-                  class="font-magistral_b_i text-lg w-full flex justify-start items-center"
+                  class="font-sarabun_bold_italic text-lg w-full flex justify-start items-center"
                 >
                   <button class="bg-[#C80F36] px-4 pt-1 pb-2">
                     <div class="flex justify-start items-center gap-2">
@@ -321,80 +323,51 @@
                     </div>
                   </button>
                 </div>
-                <div class="map_form_info px-12 py-2 grid grid-cols-5 gap-8">
+                <div
+                  class="map_form_info px-12 py-2 grid grid-cols-5 gap-8 font-sarabun_light"
+                >
                   <div class="col-span-1">
-                    <div class="form_field mt-2">
-                      <p>File SHP</p>
-                      <button
-                        class="add_map_button w-full border-dashed border border-[#C80F36] py-1"
-                      >
-                        <div class="flex justify-center items-center gap-2">
-                          <div class="w-4 h-4 text-[#C80F36]">
-                            <icon-tag :name="'upload-file'"></icon-tag>
-                          </div>
-                          <p>Tải file</p>
-                        </div>
-                      </button>
+                    <div class="form_field">
+                      <p>File DAT</p>
+                      <div>
+                        <upload-file
+                          :file-type="'DAT'"
+                          @upload-file="uploadFile"
+                        ></upload-file>
+                      </div>
                     </div>
                   </div>
                   <div class="col-span-1">
-                    <div class="form_field mt-2">
-                      <p>File SHX</p>
-                      <button
-                        class="add_map_button w-full border-dashed border border-[#808080] py-1"
-                      >
-                        <div class="flex justify-center items-center gap-2">
-                          <div class="w-4 h-4 text-[#C80F36]">
-                            <icon-tag :name="'upload-file'"></icon-tag>
-                          </div>
-                          <p>Chọn file tải lên</p>
-                        </div>
-                      </button>
+                    <div class="form_field">
+                      <p>File ID</p>
+                      <div>
+                        <upload-file
+                          :file-type="'ID'"
+                          @upload-file="uploadFile"
+                        ></upload-file>
+                      </div>
                     </div>
                   </div>
                   <div class="col-span-1">
-                    <div class="form_field mt-2">
-                      <p>File DBF</p>
-                      <button
-                        class="add_map_button w-full border-dashed border border-[#808080] py-1"
-                      >
-                        <div class="flex justify-center items-center gap-2">
-                          <div class="w-4 h-4 text-[#C80F36]">
-                            <icon-tag :name="'upload-file'"></icon-tag>
-                          </div>
-                          <p>Chọn file tải lên</p>
-                        </div>
-                      </button>
+                    <div class="form_field">
+                      <p>File MAP</p>
+                      <div>
+                        <upload-file
+                          :file-type="'MAP'"
+                          @upload-file="uploadFile"
+                        ></upload-file>
+                      </div>
                     </div>
                   </div>
                   <div class="col-span-1">
-                    <div class="form_field mt-2">
-                      <p>File PRJ</p>
-                      <button
-                        class="add_map_button w-full border-dashed border border-[#808080] py-1"
-                      >
-                        <div class="flex justify-center items-center gap-2">
-                          <div class="w-4 h-4 text-[#C80F36]">
-                            <icon-tag :name="'upload-file'"></icon-tag>
-                          </div>
-                          <p>Chọn file tải lên</p>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="col-span-1">
-                    <div class="form_field mt-2">
-                      <p>File XML</p>
-                      <button
-                        class="add_map_button w-full border-dashed border border-[#808080] py-1"
-                      >
-                        <div class="flex justify-center items-center gap-2">
-                          <div class="w-4 h-4 text-[#C80F36]">
-                            <icon-tag :name="'upload-file'"></icon-tag>
-                          </div>
-                          <p>Chọn file tải lên</p>
-                        </div>
-                      </button>
+                    <div class="form_field">
+                      <p>File TAB</p>
+                      <div>
+                        <upload-file
+                          :file-type="'TAB'"
+                          @upload-file="uploadFile"
+                        ></upload-file>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -425,9 +398,6 @@
   background-repeat: repeat;
 }
 .map_form_input {
-  //background-image: url("../../../public/images/background/map_form_input.png");
-  //background-repeat: no-repeat;
-  //background-size: cover;
   background-color: rgba(5, 5, 5, 0.58);
   border: none;
 }
@@ -435,21 +405,15 @@
   background-color: rgba(5, 5, 5, 0.48);
   border: none;
 }
-.add_map_button {
-  background-image: url("../../../public/images/background/black_opacity_1.png");
-  background-repeat: repeat;
-}
 </style>
 <script>
 import IconTag from "@/components/IconTag.vue";
 import GrayButton from "@/components/buttons/GrayButton.vue";
 import RedButton from "@/components/buttons/RedButton.vue";
+import UploadFile from "@/components/forms/UploadFile.vue";
 
 export default {
   props: {
-    menu_tree: {
-      type: Object,
-    },
     isEditing: {
       type: Boolean,
       default: false,
@@ -457,18 +421,16 @@ export default {
     formData: {
       type: Object,
       default: () => ({
-        id: "",
-        name: "",
-        icon: "",
-        sortOrder: "",
-        url: "",
-        appId: "",
-        parentId: "",
-        description: "",
+        datFile: null,
+        idFile: null,
+        mapFile: null,
+        tabFile: null,
+        mapInfo:
+          '{ "layerGroupName":"test", "layerName":"khanh hoa", "serviceType":"test1", "layerType":"50000", "outlineColor":"RGB", "fillColor":"RGB", "outlineThickness": 12, "transparent": 12, "layerDisplayOrder": 1, "defaultDisplay": true, "labelDisplay":true, "zIndex":12, "coordinate":"213", "shareType":"123", "useCache": true, "available":true, "description":"test123", "shapeEncoding":"123", "timeCreate":"12/12/2022", "validity":"test123", "office":"test123", "mapProvider":"vtcc" }',
       }),
     },
   },
-  components: { RedButton, GrayButton, IconTag },
+  components: { UploadFile, RedButton, GrayButton, IconTag },
   data() {
     return {
       form: { ...this.formData },
@@ -477,18 +439,37 @@ export default {
   computed: {},
   created() {},
   methods: {
+    validateForm() {
+      return !!(
+        this.form.datFile &&
+        this.form.idFile &&
+        this.form.mapFile &&
+        this.form.tabFile
+      );
+    },
+    uploadFile([uploaded_file, file_type]) {
+      console.log(uploaded_file);
+      console.log(file_type);
+      switch (file_type) {
+        case "DAT":
+          this.form.datFile = uploaded_file ? uploaded_file : null;
+          break;
+        case "ID":
+          this.form.idFile = uploaded_file ? uploaded_file : null;
+          break;
+        case "MAP":
+          this.form.mapFile = uploaded_file ? uploaded_file : null;
+          break;
+        case "TAB":
+          this.form.tabFile = uploaded_file ? uploaded_file : null;
+          break;
+        default:
+          break;
+      }
+      console.log(this.form);
+    },
     submitForm() {
-      this.$emit("submit_form", this.form);
-      this.form = {
-        id: "",
-        name: "",
-        icon: "",
-        sortOrder: "",
-        url: "",
-        appId: "",
-        parentId: "",
-        description: "",
-      };
+      if (this.validateForm()) this.$emit("submit-form", this.form);
     },
 
     close_form() {

@@ -1,32 +1,16 @@
 <template>
   <div class="w-full mt-2">
-    <div class="flex justify-end">
-      <button
-        class="w-10 h-10 bg-[#C80F36] p-3 flex justify-center items-center"
-        v-if="!show_box"
-        @click="show_box = !show_box"
-      >
-        <icon-tag :name="'double-chevron-left'"></icon-tag>
-      </button>
-    </div>
-
-    <LeftBox
-      :title="'Mật độ dân số'"
-      v-if="show_box"
-      @hidden-box="show_box = !show_box"
-    >
+    <RightBox :is_show="show" :title="'Mật độ dân số'">
       <div class="flex justify-center gap-2">
         <div>
           <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
         </div>
       </div>
-    </LeftBox>
+    </RightBox>
   </div>
 </template>
 
 <script>
-import LeftBox from "@/components/box/LeftBox.vue";
-import IconTag from "@/components/IconTag.vue";
 import { Bar } from "vue-chartjs";
 import {
   Chart as ChartJS,
@@ -37,6 +21,7 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
+import RightBox from "@/components/box/RightBox.vue";
 
 ChartJS.register(
   Title,
@@ -48,10 +33,9 @@ ChartJS.register(
 );
 export default {
   props: ["show"],
-  components: { IconTag, LeftBox, Bar },
+  components: { RightBox, Bar },
   data() {
     return {
-      show_box: this.show,
       chartData: {
         labels: ["0-10", "10-20", "20-30", "30-60", "60-80", ">80"],
         datasets: [

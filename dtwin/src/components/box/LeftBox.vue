@@ -1,25 +1,36 @@
 <template>
   <div class="w-full">
-    <button
-      class="w-full px-4 py-2 text-white bg-[#C80F36]"
-      @click="hiddenBox()"
-    >
-      <div class="flex justify-start gap-2 items-center">
-        <div class="w-3 h-4">
+    <div class="flex justify-start">
+      <button
+        class="bg-[#C80F36] pl-4 px-2 py-1.5 flex justify-center items-center"
+        v-if="!show_box"
+        @click="show_box = !show_box"
+      >
+        <div class="w-3.5 h-4.5">
           <icon-tag :name="'double-chevron-right'"></icon-tag>
         </div>
-        <div class="magistral_b_i text-base">{{ title }}</div>
+      </button>
+    </div>
+    <div class="w-full" v-if="show_box">
+      <button
+        class="w-full px-4 py-1 text-base text-white bg-[#C80F36]"
+        @click="show_box = !show_box"
+      >
+        <div class="flex justify-start gap-2 items-center">
+          <div class="w-3.5 h-4.5">
+            <icon-tag :name="'double-chevron-right'"></icon-tag>
+          </div>
+          <div class="font-sarabun_bold_italic">{{ title }}</div>
+        </div>
+      </button>
+      <div class="w-full p-4 box_black_linear">
+        <slot />
       </div>
-    </button>
-    <div class="w-full p-4 box_black_linear">
-      <slot />
     </div>
   </div>
 </template>
 <style scoped>
 .box_black_linear {
-  /* background-image: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.7));*/
-
   background-image: url("../../../public/images/background/black_opacity_100.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,15 +40,13 @@
 import IconTag from "@/components/IconTag.vue";
 
 export default {
-  props: ["title"],
+  props: ["title", "is_show"],
   components: { IconTag },
   data() {
-    return {};
+    return {
+      show_box: this.is_show,
+    };
   },
-  methods: {
-    hiddenBox() {
-      this.$emit("hidden-box");
-    },
-  },
+  methods: {},
 };
 </script>

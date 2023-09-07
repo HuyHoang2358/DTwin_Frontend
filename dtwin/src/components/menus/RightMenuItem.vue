@@ -1,5 +1,7 @@
 <template>
-  <div class="menu_item_right w-full h-full relative rounded">
+  <div
+    class="menu_item_right w-full h-full relative rounded font-sarabun_bold_italic text-sm"
+  >
     <div v-if="!menu_item.active">
       <div class="menu_item_border absolute top-0 h-full w-full rounded"></div>
       <div class="menu_item_background h-full w-full">
@@ -7,7 +9,7 @@
           <RouterLink :to="{ name: menu_item.routeName }">
             <button
               type="button"
-              class="text-right h-full w-full px-4 py-2 text-[#AD9999] font-magistral_b_i pr-[25%]"
+              class="text-right h-full w-full px-4 py-1 text-[#AD9999] pr-[25%]"
             >
               {{ menu_item.title1 }} <br />
               {{ menu_item.title2 }}
@@ -23,7 +25,7 @@
           <RouterLink :to="{ name: menu_item.routeName }">
             <button
               type="button"
-              class="text-right h-full w-full px-4 py-2 text-white font-magistral_b_i pr-[25%]"
+              class="text-right h-full w-full px-4 py-1 pr-[25%]"
             >
               {{ menu_item.title1 }} <br />
               {{ menu_item.title2 }}

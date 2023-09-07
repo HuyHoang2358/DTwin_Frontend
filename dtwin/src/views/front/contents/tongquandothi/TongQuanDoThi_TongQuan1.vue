@@ -5,26 +5,24 @@
     <div
       class="absolute top-0 left-0 w-1/5 justify-start p-5 text-white text-base"
     >
-      <button
-        class="w-10 h-10 bg-[#C80F36] p-3 flex justify-center items-center"
-        v-if="!left_box_show"
-        @click="left_box_show = true"
-      >
-        <icon-tag :name="'double-chevron-right'"></icon-tag>
-      </button>
-      <LeftBox
-        :title="'Loại báo cáo'"
-        v-if="left_box_show"
-        @hidden-box="left_box_show = false"
-      >
-        <div class="flex justify-between font-magistral_medium">
+      <LeftBox :title="'Loại báo cáo'" :is_show="true">
+        <div class="flex justify-between items-center font-sarabun_bold">
           <div class="">Báo cáo tổng hợp</div>
           <div class="">Hiển thị</div>
         </div>
-        <div class="font-magistral_l mt-4">
-          <drop-down-box :title="'Chiều cao tòa nhà'" :icon="null">
+        <div class="font-sarabun_extra_light mt-4">
+          <drop-down-box
+            :title="'Chiều cao tòa nhà'"
+            :icon="null"
+            :have_body="false"
+          >
           </drop-down-box>
-          <drop-down-box :title="'Phân loại tòa nhà'" :icon="null">
+
+          <drop-down-box
+            :title="'Phân loại tòa nhà'"
+            :icon="null"
+            :have_body="true"
+          >
             <on-off-button
               :title="'Số lượng'"
               @click-button="onOff()"
@@ -38,19 +36,26 @@
               @click-button="onOff()"
             ></on-off-button>
           </drop-down-box>
-          <drop-down-box :title="null" :icon="null">
+
+          <drop-down-box :title="null" :icon="null" :have_body="true">
             <on-off-button
               :title="'Số lượng nhà vi phạm'"
               @click-button="onOff()"
             ></on-off-button>
           </drop-down-box>
-          <drop-down-box :title="null" :icon="null">
+
+          <drop-down-box :title="null" :icon="null" :have_body="true">
             <on-off-button
               :title="'Không gian xanh'"
               @click-button="onOff()"
             ></on-off-button>
           </drop-down-box>
-          <drop-down-box :title="'Phân loại cây xanh'" :icon="null">
+
+          <drop-down-box
+            :title="'Phân loại cây xanh'"
+            :icon="null"
+            :have_body="true"
+          >
             <on-off-button
               :title="'Số lượng'"
               @click-button="onOff()"
@@ -64,7 +69,8 @@
               @click-button="onOff()"
             ></on-off-button>
           </drop-down-box>
-          <div class="w-full mt-8">
+
+          <div class="w-full mt-6">
             <div class="flex justify-end gap-4">
               <gray-button
                 :title="'Hủy bỏ'"
@@ -80,7 +86,7 @@
       </LeftBox>
     </div>
     <div
-      class="absolute top-0 right-0 w-1/5 justify-start p-5 text-white text-lg"
+      class="absolute top-0 right-0 w-1/5 justify-start p-5 text-white text-base"
     >
       <ToolMap :show="true"></ToolMap>
       <city-overview :show="true"></city-overview>
@@ -101,7 +107,6 @@ import RedButton from "@/components/buttons/RedButton.vue";
 import GrayButton from "@/components/buttons/GrayButton.vue";
 import LeftBox from "@/components/box/LeftBox.vue";
 import DropDownBox from "@/components/box/DropDownBox.vue";
-import IconTag from "@/components/IconTag.vue";
 import DTP_CAMERA from "@/DTP_JS/camera";
 import CityOverview from "@/views/front/contents/tongquandothi/CityOverview.vue";
 import CityPopular from "@/views/front/contents/tongquandothi/CityPopular.vue";
@@ -111,7 +116,6 @@ export default {
   components: {
     CityPopular,
     CityOverview,
-    IconTag,
     DropDownBox,
     LeftBox,
     GrayButton,

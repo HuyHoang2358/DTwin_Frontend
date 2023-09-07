@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mt-2">
+  <div class="w-full mt-1">
     <div
       class="px-4 py-1 flex justify-between items-center box_black_linear"
       v-if="title != null"
@@ -15,13 +15,23 @@
         <p>{{ title }}</p>
       </div>
 
-      <button type="button" class="w-4" @click="show_drop_box = !show_drop_box">
-        <icon-tag :name="'more'" v-if="!show_drop_box"></icon-tag>
-        <icon-tag :name="'thin-down'" v-else></icon-tag>
+      <button
+        type="button"
+        @click="show_drop_box = !show_drop_box"
+        v-if="have_body"
+      >
+        <div class="w-3" v-if="!show_drop_box">
+          <icon-tag :name="'thin-right'"></icon-tag>
+        </div>
+        <div class="w-4" v-else>
+          <icon-tag :name="'thin-down'"></icon-tag>
+        </div>
       </button>
     </div>
-    <div class="box_black_linear1 py-2" v-if="show_drop_box">
-      <slot />
+    <div v-if="have_body">
+      <div class="box_black_linear1 py-2" v-if="show_drop_box">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -39,7 +49,7 @@
 import IconTag from "@/components/IconTag.vue";
 
 export default {
-  props: ["title", "icon"],
+  props: ["title", "icon", "have_body"],
   components: { IconTag },
   data() {
     return {

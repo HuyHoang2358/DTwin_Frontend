@@ -3,33 +3,31 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: Magistral-BoldItalic;
-    src: url("./fonts/Magistral/Bold_Italic.otf")
-}
-@font-face {
-    font-family: Magistral-BookItalic;
-    src: url("./fonts/Magistral/Book_Italic.ttf")
-}
-@font-face {
-    font-family: Magistral-LightItalic;
-    src: url("./fonts/Magistral/Light_Italic.ttf")
+    font-family: "Sarabun-BoldItalic";
+    src: url("./fonts/Sarabun/Sarabun-BoldItalic.ttf");
 }
 
 @font-face {
-    font-family: Magistral-Book;
-    src: url("./fonts/Magistral/Book.ttf")
-}
-
-@font-face {
-    font-family: Magistral-Light;
-    src: url("./fonts/Magistral/Light.ttf")
-}
-
-@font-face {
-    font-family:  Magistral-Bold;
-    src: url("./fonts/Magistral/Bold.ttf")
+    font-family: "Sarabun-Bold";
+    src: url("./fonts/Sarabun/Sarabun-Bold.ttf");
 }
 @font-face {
-     font-family: Magistral-Medium;
-    src: url("./fonts/Magistral/Medium.ttf")
+    font-family: "Sarabun-Regular";
+    src: url("./fonts/Sarabun/Sarabun-Regular.ttf");
+}
+@font-face {
+    font-family: "Sarabun-Medium";
+    src: url("./fonts/Sarabun/Sarabun-Medium.ttf");
+}
+@font-face {
+    font-family: "Sarabun-Light";
+    src: url("./fonts/Sarabun/Sarabun-Light.ttf");
+}
+@font-face {
+    font-family: "Sarabun-ExtraLight";
+    src: url("./fonts/Sarabun/Sarabun-ExtraLight.ttf");
+}
+@font-face {
+    font-family: "Sarabun-MediumItalic";
+    src: url("./fonts/Sarabun/Sarabun-MediumItalic.ttf");
 }

@@ -2,7 +2,7 @@
   <div class="w-full">
     <div class="flex justify-end">
       <button
-        class="bg-[#C80F36] px-3 py-2 flex justify-center items-center"
+        class="bg-[#C80F36] px-2 py-1.5 pr-4 flex justify-center items-center"
         v-if="!show_box"
         @click="show_box = !show_box"
       >
@@ -13,14 +13,14 @@
     </div>
     <div class="w-full" v-if="show_box">
       <button
-        class="w-full px-4 py-2 text-white bg-[#C80F36]"
+        class="w-full px-4 py-1 text-base text-white bg-[#C80F36]"
         @click="show_box = !show_box"
       >
         <div class="flex justify-start gap-2 items-center">
           <div class="w-3.5 h-4.5">
             <icon-tag :name="'double-chevron-right'"></icon-tag>
           </div>
-          <div class="font-magistral_b_i text-[16px]">{{ title }}</div>
+          <div class="font-sarabun_bold_italic">{{ title }}</div>
         </div>
       </button>
       <div class="w-full p-4 box_black_linear">
@@ -47,10 +47,6 @@ export default {
       show_box: this.is_show,
     };
   },
-  methods: {
-    hiddenBox() {
-      this.$emit("hidden-box");
-    },
-  },
+  methods: {},
 };
 </script>

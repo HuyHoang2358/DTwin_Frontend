@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import TopMenu from "@/views/front/partials/TopMenu.vue";
+import TopMenu from "@/components/menus/TopMenu.vue";
 export default {
   props: [],
   components: { TopMenu },

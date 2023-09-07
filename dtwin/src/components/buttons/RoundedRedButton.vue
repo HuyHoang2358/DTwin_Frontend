@@ -1,6 +1,6 @@
 <template>
   <button
-    class="px-6 py-1.5 bg-[#C80F36] text-white align-middle"
+    class="px-8 py-2 rounded bg-[#C80F36] text-white"
     @click="click_event()"
   >
     {{ title }}
