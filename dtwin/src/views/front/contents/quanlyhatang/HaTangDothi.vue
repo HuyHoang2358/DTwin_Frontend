@@ -44,9 +44,9 @@ import MapView from "@/components/map/MapView.vue";
 import emitter from "@/mitt";
 
 import ENTITY_API from "@/apis/modules/entity";
-import DTP_ENTITY from "@/DTP_JS/entity";
 import DTP_HANDLE_ACTION from "@/DTP_JS/handle_action";
-import DTP_CAMERA from "@/DTP_JS/camera";
+import DTP_CONTROLLER from "@/DTP_JS/controller";
+
 import DTP_MAP from "@/DTP_JS/map";
 import { mapGetters } from "vuex";
 import LeftBox from "@/components/box/LeftBox.vue";
@@ -93,11 +93,9 @@ export default {
       this.nameOverLay,
       this.handle_click_object_emit
     );
-    /*this.handle_click_object = DTP_HANDLE_ACTION.handel_move_and_click_object(
-      this.handle_click_object_emit
-    );*/
-    await this.visualize_city_entities();
-    DTP_CAMERA.fly_to_NewCity();
+
+    DTP_CONTROLLER.open3D();
+
     emitter.on(this.handle_click_object_emit, async (eventData) => {
       //console.log("eventData: ", eventData);
       let info = await ENTITY_API.getInfoDetail(eventData.obj_id);
@@ -134,53 +132,7 @@ export default {
         type: null,
       };
     },
-    async visualize_city_entities() {
-      let building_entities = await ENTITY_API.getAllEntities("building");
-      let tree_entities = await ENTITY_API.getAllEntities("plant");
-      let streetLight_entities = await ENTITY_API.getAllEntities("streetLight");
-      let religion_entities = await ENTITY_API.getAllEntities("religion");
-      let carPark_entities = await ENTITY_API.getAllEntities("carPark");
-      let bridge_entities = await ENTITY_API.getAllEntities("bridge");
-      let construction_entities = await ENTITY_API.getAllEntities(
-        "construction"
-      );
-      let ship_entities = await ENTITY_API.getAllEntities("ship");
-      let good_entities = await ENTITY_API.getAllEntities("goods");
-      let vehicle_entities = await ENTITY_API.getAllEntities("vehicle");
 
-      console.log(building_entities);
-      // Visualization
-      building_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-      tree_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-      streetLight_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-      religion_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-      carPark_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-      bridge_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-      construction_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-      vehicle_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-      good_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-      ship_entities.forEach((e) => {
-        this.entities.push(DTP_ENTITY.model_entity(e));
-      });
-    },
     editModelInformation(model_information) {
       this.is_edit_form = true;
       this.selectedBuilding = model_information;

@@ -69,6 +69,7 @@ import MapForm from "@/components/map/MapForm.vue";
 /*import MapView from "@/components/map/MapView.vue";*/
 /*import DTP_ENTITY from "@/DTP_JS/entity";
 import DTP_MAP from "@/DTP_JS/map";*/
+import MAP_API from "@/apis/modules/map";
 export default {
   props: [""],
   components: {
@@ -151,7 +152,9 @@ export default {
       this.tool_map_show = false;
     },
     submitForm(data) {
-      console.log(data);
+      console.log("data:", data);
+      let respone = MAP_API.addMap(data);
+      console.log(respone);
     },
   },
 };

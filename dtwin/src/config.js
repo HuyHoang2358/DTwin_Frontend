@@ -29,6 +29,8 @@ export const API_ADD_ENTITY = "/entities";
 export const API_GET_ENTITIES = "entities/types/basicModel?type=";
 export const API_GET_ENTITY = "entities/";
 
+export const API_ADD_MAP = "/maps/add/";
+
 export const ENV_NETWORK = "OFFLINE";
 
 export const LOCAL_GLB_TEXTURE_FOLDER_PATH = "/Data/models/glb/texture/";

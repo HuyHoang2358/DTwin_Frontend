@@ -8,6 +8,7 @@
               class="bg-white rounded-lg drop-shadow-lg w-full h-full px-16 py-8 pb-16"
             >
               <form
+                enctype="multipart/form-data"
                 class="w-full h-full text-[#201C1D] text-lg text-left"
                 v-on:submit.prevent="submitForm"
               >

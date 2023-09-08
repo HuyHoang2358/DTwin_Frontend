@@ -136,7 +136,7 @@ export default {
           store.dispatch("VIEWER/setSelectedEntity", pickedFeature.id.model);
           pickedFeature.id.model.color = Cesium.Color.fromAlpha(
             Cesium.Color.fromBytes(238, 0, 51, 255),
-            0.6
+            1
           );
           let info = await ENTITY_API.getInfoDetail(id);
           console.log(info);
